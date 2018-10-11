@@ -1,0 +1,32 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Camden Pizza</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="ifrm" src="https://online.ordertiger.com/menu/camden-pizza?companyId=223" style="height: 0; max-height: 100%; max-width: 100%; min-height: 100%; min-width: 100%; width: 0;"></iframe>
+    <!-- <iframe id="ifrm" src="http://your-level-up.com/zzzz/index2.html" style="height: 0; max-height: 100%; max-width: 100%; min-height: 100%; min-width: 100%; width: 0;"></iframe> -->
+    <script type="text/javascript">
+     document.getElementById('ifrm').onload = function() {
+         window.scrollTo(0,0);
+     }
+    </script>
+</body></html>
+
+
