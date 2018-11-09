@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <iframe id="ifrm" src="https://online.ordertiger.com/menu/camden-pizza?companyId=223" style="height: 0; max-height: 100%; max-width: 100%; min-height: 100%; min-width: 100%; width: 0;"></iframe>
+    <iframe id="ifrm" src="http://your-level-up.com/iframe/" style="height: 0; max-height: 100%; max-width: 100%; min-height: 100%; min-width: 100%; width: 0;"></iframe>
     <!-- <iframe id="ifrm" src="http://your-level-up.com/zzzz/index2.html" style="height: 0; max-height: 100%; max-width: 100%; min-height: 100%; min-width: 100%; width: 0;"></iframe> -->
     <script type="text/javascript">
      document.getElementById('ifrm').onload = function() {
@@ -30,3 +30,216 @@
 </body></html>
 
 
+
+<script type="text/javascript">
+    function cartTopNew() {
+      
+        console.log('asdas3');
+        if($('.col-basket').length) {
+            var colBasket = $('.shooping-panel .cart-bottom .value').text();
+            if(colBasket == 0) {
+                colBasket = '£0';
+            }
+            $('.col-basket span').text(colBasket);
+            if($('.loader-style').length) {
+                setTimeout(function() {
+                    loaderHide();
+                }, 500);
+            }
+        }
+    }
+    function updateShoppingCart() {
+        console.log('asdas2_start');
+        var preorderHtml = $('.pre-order-section-new').html();
+        var radioHtml = $('.shooping-panel .pre-order-radio input:checked').val();
+        $.ajax({
+            type: "POST",
+            url: '/ajaxupdatecartresponsive',
+            data: {
+                    menuId: 1204, 
+                    companyId: 223, 
+                  },
+            success: function(response) {
+                console.log('asdas2_success1');
+                console.log(response);
+                $("#cartdiv").html(response.contentShoppingCart);
+                $("#cartdivmob").html(response.contentShoppingCartMob);
+                cartTopNew();
+                console.log('asdas2_success2');
+                $('.pre-order-section-new').html(preorderHtml);
+                $('.shooping-panel .pre-order-radio input[value="' + radioHtml + '"]').prop('checked', true);
+                updateCartSelectClick();
+            },
+            error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    console.log('erorrName: ' + msg);
+                },
+            dataType: 'html'
+        });
+    }
+
+    function updateCartSelectClick() {
+        $('.shooping-panel .pre-order-radio li input').change(function(){
+            if( $(this).val() == 'later') {
+                if( $('.order-type-tabs .active').attr('data-order-type') == 'DELIVERY'){
+                    $('.pre-order-section-new').html($('.pre-order-js .delivery-order-for-later').clone());
+                }
+                if( $('.order-type-tabs .active').attr('data-order-type') == 'COLLECTION'){
+                    $('.pre-order-section-new').html($('.pre-order-js .collection-order-for-later').clone());
+                }
+            }
+            if( $(this).val() == 'now') {
+                if( $('.order-type-tabs .active').attr('data-order-type') == 'DELIVERY'){
+                    $('.pre-order-section-new').html($('.pre-order-js .delivery-order-for-now').clone());
+                }
+                if( $('.order-type-tabs .active').attr('data-order-type') == 'COLLECTION'){
+                    $('.pre-order-section-new').html($('.pre-order-js .collection-order-for-now').clone());
+                }
+            }
+        });
+        $('.order-type-tabs button').click(function(){
+            var thisButton = $(this);
+            if( $('.shooping-panel .pre-order-radio input:checked').val() == 'later') {
+                if( thisButton.attr('data-order-type') == 'DELIVERY'){
+                    $('.pre-order-section-new').html($('.delivery-order-for-later').clone());
+                }
+                if( thisButton.attr('data-order-type') == 'COLLECTION'){
+                    $('.pre-order-section-new').html($('.collection-order-for-later').clone());
+                }
+            }
+            if( $('.shooping-panel .pre-order-radio input:checked').val() == 'now') {
+                if( thisButton.attr('data-order-type') == 'DELIVERY'){
+                    $('.pre-order-section-new').html($('.delivery-order-for-now').clone());
+                }
+                if( thisButton.attr('data-order-type') == 'COLLECTION'){
+                    $('.pre-order-section-new').html($('.collection-order-for-now').clone());
+                }
+            }
+        });
+    }
+    
+    function addItem() {
+        console.log('asdas1_start');
+        $.ajax({
+            type: "POST",
+            url: '/ajaxadditem',
+            data: $('#submenuform').serialize(),
+            success: function(response) {
+                console.log('asdas1_success1');
+                console.log(response);
+                if (response.status == 'failure') {
+                    $("#errorDiv").html("<div class=\"alert alert-dismissible alert-danger\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><strong>" + response.errorMessage + "</strong><a href=\"#\" class=\"alert-link\"></a></div>");
+                    $('#addMenuItemModal').scrollTop(0);
+                    console.log('asdas1_success2');
+                } else {
+                    $('#addMenuItemModal').modal('toggle');
+                    updateShoppingCart();
+                    console.log('asdas1_success3');
+                }
+                console.log('asdas1_success4');
+            },
+            dataType: 'json'
+        });
+        return false;
+    };
+    
+    addItem();
+    
+    function nestedOptionGroupRadio(optionGroupId, optionId, element) {
+        $.ajax({
+            type: "POST",
+            url: "/ajaxnestedoptiongroup",
+            data: ({companyId: 223, optionId : optionId}),
+            success: function(responseText) {
+                        if (element.checked) {
+                            $('#nested_'+ optionGroupId).html(responseText);
+                            $(".fancybox-inner").css("height", $('#submenu-submenu').outerHeight(true));        
+                        } else {
+                            $('#nested_'+ optionGroupId).html("");
+                        }
+                    },
+            dataType: "html"
+        }); 
+    }
+
+    function nestedOptionGroupSelectBox(optionGroupId, element) {
+        $.ajax({
+            type: "POST",
+            url: "/ajaxnestedoptiongroup",
+            data: ({companyId: 223, optionId : element.value}),
+            success: function(responseText) {
+                        if (element.value!="") {
+                            $('#nested_'+ optionGroupId).html(responseText);
+                            //$(".fancybox-inner").css("height", $('#submenu-submenu').outerHeight(true));      
+                        } else {
+                            $('#nested_'+ optionGroupId).html("");
+                        }
+                    },
+            dataType: "html"
+        }); 
+    }
+
+    function nestedOptionGroupCheckBox(optionGroupId, optionId, element) {
+        $.ajax({
+            type: "POST",
+            url: "/ajaxnestedoptiongroup",
+            data: ({companyId: 223, optionId : optionId}),
+            success: function(responseText) {
+                        if (element.checked) {
+                            $('#nested_'+ optionGroupId + "_" + optionId).html(responseText);
+                            $(".fancybox-inner").css("height", $('#submenu-submenu').outerHeight(true)); 
+                        } else {
+                            $('#nested_'+ optionGroupId + "_" + optionId).html("");
+                        }
+                    },
+            dataType: "html"
+        }); 
+    }
+
+    function nestedOptionGroupRadioMobile(optionGroupId, optionId, element) {
+        $.ajax({
+            type: "POST",
+            url: "/ajaxnestedoptiongroupmobile",
+            data: ({companyId: 223, optionId : optionId}),
+            success: function(responseText) {
+                        if (element.checked) {
+                            $('#nested_'+ optionGroupId).html(responseText);
+                        } else {
+                            $('#nested_'+ optionGroupId).html("");
+                        }
+                    },
+            dataType: "html"
+        }); 
+    }
+
+    function nestedOptionGroupCheckBoxMobile(optionGroupId, optionId, element) {
+        $.ajax({
+            type: "POST",
+            url: "/ajaxnestedoptiongroupmobile",
+            data: ({companyId: 223, optionId : optionId}),
+            success: function(responseText) {
+                        if (element.checked) {
+                            $('#nested_'+ optionGroupId + "_" + optionId).html(responseText);
+                        } else {
+                            $('#nested_'+ optionGroupId + "_" + optionId).html("");
+                        }
+                    },
+            dataType: "html"
+        }); 
+    }
+</script>
