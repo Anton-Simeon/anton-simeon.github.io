@@ -7,7 +7,7 @@ function updateShoppingCart() {
     			menuId: 124, 
     			companyId: 15, 
     			clearcartflag: 'false'
-    		  },
+    		  }, 
     	success: function(response) {
     		alert('done');
     		console.log('asdas2_success1');
