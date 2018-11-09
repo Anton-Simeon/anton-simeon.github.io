@@ -2,7 +2,7 @@ function updateShoppingCart() {
 	console.log('asdas2_start');
 	$.ajax({
     	type: "POST",
-    	url: 'http://www.mocky.io/v2/5bd6293f310000600041dbfd',
+    	url: 'https://www.mocky.io/v2/5bd6293f310000600041dbfd',
     	data: {
     			menuId: 124, 
     			companyId: 15, 
