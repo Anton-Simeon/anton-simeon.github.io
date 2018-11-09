@@ -9,7 +9,7 @@ function updateShoppingCart() {
     			clearcartflag: 'false'
     		  },
     	success: function(response) {
-    		alert('asdasdasdasdas');
+    		alert('done');
     		console.log('asdas2_success1');
     		console.log(response);
 			console.log('asdas2_success2');
