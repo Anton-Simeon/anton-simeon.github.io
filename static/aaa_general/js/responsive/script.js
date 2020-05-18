@@ -1179,7 +1179,7 @@ jQuery(document).ready(function(){
 			selectorName = jQuery('.mainWrapp_scroll');
 		}
 
-		var topScroll = jQuery('.header').outerHeight() + jQuery('.menu-nav-wrap-main').outerHeight() + 40;
+		var topScroll = jQuery('.header').outerHeight() + jQuery('.menu-nav-wrap-main').outerHeight() + 30;
 		
 		selectorName.stop().animate({
 			'scrollTop': $target[0].offsetTop - topScroll
