@@ -1,0 +1,222 @@
+.padding-left(@pl){
+	html:not([dir="rtl"]) & {
+		padding-left: @pl;
+	}
+	html[dir="rtl"] & {
+		padding-right: @pl;
+	}
+}
+.padding-right(@pr) {
+	html:not([dir="rtl"]) & {
+		padding-right: @pr;
+	}
+	html[dir="rtl"] & {
+		padding-left: @pr;
+	}
+}
+.padding-top(@mt) {
+	html:not([dir="rtl"]) & {
+		padding-top: @mt;
+	}
+	html[dir="rtl"] & {
+		padding-top: @mt;
+	}
+}
+.padding-bottom(@mb) {
+	html:not([dir="rtl"]) & {
+		padding-bottom: @mb;
+	}
+	html[dir="rtl"] & {
+		padding-bottom: @mb;
+	}
+}
+.padding1(@p1) {
+	html:not([dir="rtl"]) & {
+		padding: @p1;
+	}
+	html[dir="rtl"] & {
+		padding: @p1;
+	}
+}
+.padding2(@p1, @p2) {
+	html:not([dir="rtl"]) & {
+		padding: @p1 @p2;
+	}
+	html[dir="rtl"] & {
+		padding: @p1 @p2;
+	}
+}
+.padding3(@p1, @p2, @p3) {
+	html:not([dir="rtl"]) & {
+		padding: @p1 @p2 @p3;
+	}
+	html[dir="rtl"] & {
+		padding: @p1 @p2 @p3;
+	}
+}
+.padding(@p1, @p2, @p3, @p4) {
+	html:not([dir="rtl"]) & {
+		padding: @p1 @p2 @p3 @p4;
+	}
+	html[dir="rtl"] & {
+		padding: @p1 @p4 @p3 @p2;
+	}
+}
+
+
+.margin-left(@ml){
+	html:not([dir="rtl"]) & {
+		margin-left: @ml;
+	}
+	html[dir="rtl"] & {
+		margin-right: @ml;
+	}
+}
+.margin-right(@mr) {
+	html:not([dir="rtl"]) & {
+		margin-right: @mr;
+	}
+	html[dir="rtl"] & {
+		margin-left: @mr;
+	}
+}
+.margin-top(@mt) {
+	html:not([dir="rtl"]) & {
+		margin-top: @mt;
+	}
+	html[dir="rtl"] & {
+		margin-top: @mt;
+	}
+}
+.margin-bottom(@mb) {
+	html:not([dir="rtl"]) & {
+		margin-bottom: @mb;
+	}
+	html[dir="rtl"] & {
+		margin-bottom: @mb;
+	}
+}
+.margin1(@m1) {
+	html:not([dir="rtl"]) & {
+		margin: @m1;
+	}
+	html[dir="rtl"] & {
+		margin: @m1;
+	}
+}
+.margin2(@m1, @m2) {
+	html:not([dir="rtl"]) & {
+		margin: @m1 @m2;
+	}
+	html[dir="rtl"] & {
+		margin: @m1 @m2;
+	}
+}
+.margin3(@m1, @m2, @m3) {
+	html:not([dir="rtl"]) & {
+		margin: @m1 @m2 @m3;
+	}
+	html[dir="rtl"] & {
+		margin: @m1 @m2 @m3;
+	}
+}
+.margin(@m1, @m2, @m3, @m4) {
+	html:not([dir="rtl"]) & {
+		margin: @m1 @m2 @m3 @m4;
+	}
+	html[dir="rtl"] & {
+		margin: @m1 @m4 @m3 @m2;
+	}
+}
+
+
+
+.float(@float) when (@float = left) {
+	html:not([dir="rtl"]) & {
+		float: left;
+	}
+	html[dir="rtl"] & {
+		float: right;
+	}
+}
+.float(@float) when (@float = right) {
+	html:not([dir="rtl"]) & {
+		float: right;
+	}
+	html[dir="rtl"] & {
+		float: left;
+	}
+}
+.float(@float) when (@float = 'right !important') {
+	html:not([dir="rtl"]) & {
+		float: right !important;
+	}
+	html[dir="rtl"] & {
+		float: left !important;
+	}
+}
+.float(@float) when (@float = 'left !important') {
+	html:not([dir="rtl"]) & {
+		float: left !important;
+	}
+	html[dir="rtl"] & {
+		float: right !important;
+	}
+}
+.float(@float) when (@float = 'inherit !important') {
+	html:not([dir="rtl"]) & {
+		float: inherit !important;
+	}
+	html[dir="rtl"] & {
+		float: inherit !important;
+	}
+}
+.float(@float) when not (@float = left) and not (@float = right) and not (@float = 'left !important') and not (@float = 'right !important') and not (@float = 'inherit !important') {
+	html:not([dir="rtl"]) & {
+		float: @float;
+	}
+	html[dir="rtl"] & {
+		float: @float;
+	}
+}
+.right(@right) {
+	html:not([dir="rtl"]) & {
+		right: @right;
+	}
+	html[dir="rtl"] & {
+		left: @right;
+	}
+}
+.left(@left) {
+	html:not([dir="rtl"]) & {
+		left: @left;
+	}
+	html[dir="rtl"] & {
+		right: @left;
+	}
+}
+
+.text-align(@text-align) when (@text-align = left) {
+	html:not([dir="rtl"]) & {
+		text-align: left;
+	}
+	html[dir="rtl"] & {
+		text-align: right;
+	}
+}
+.text-align(@text-align) when (@text-align = right) {
+	html:not([dir="rtl"]) & {
+		text-align: right;
+	}
+	html[dir="rtl"] & {
+		text-align: left;
+	}
+}
+.text-align(@text-align) when not (@text-align = left) and not (@text-align = right) {
+	html:not([dir="rtl"]) & {
+		text-align: @text-align;
+	}
+	html[dir="rtl"] & {
+		text-align: @text-align;
+	}
+}

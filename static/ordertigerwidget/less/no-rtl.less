@@ -1,0 +1,87 @@
+.padding-left(@pl){
+	padding-left: @pl;
+}
+.padding-right(@pr) {
+	padding-right: @pr;
+}
+.padding-top(@mt) {
+	padding-top: @mt;
+}
+.padding-bottom(@mb) {
+	padding-bottom: @mb;
+}
+.padding1(@p1) {
+	padding: @p1;
+}
+.padding2(@p1, @p2) {
+	padding: @p1 @p2;
+}
+.padding3(@p1, @p2, @p3) {
+	padding: @p1 @p2 @p3;
+}
+.padding(@p1, @p2, @p3, @p4) {
+	padding: @p1 @p2 @p3 @p4;
+}
+
+
+.margin-left(@ml){
+	margin-left: @ml;
+}
+.margin-right(@mr) {
+	margin-right: @mr;
+}
+.margin-top(@mt) {
+	margin-top: @mt;
+}
+.margin-bottom(@mb) {
+	margin-bottom: @mb;
+}
+.margin1(@m1) {
+	margin: @m1;
+}
+.margin2(@m1, @m2) {
+	margin: @m1 @m2;
+}
+.margin3(@m1, @m2, @m3) {
+	margin: @m1 @m2 @m3;
+}
+.margin(@m1, @m2, @m3, @m4) {
+	margin: @m1 @m2 @m3 @m4;
+}
+
+
+
+.float(@float) when (@float = left) {
+	float: left;
+}
+.float(@float) when (@float = right) {
+	float: right;
+}
+.float(@float) when (@float = 'right !important') {
+	float: right !important;
+}
+.float(@float) when (@float = 'left !important') {
+	float: left !important;
+}
+.float(@float) when (@float = 'inherit !important') {
+	float: inherit !important;
+}
+.float(@float) when not (@float = left) and not (@float = right) and not (@float = 'left !important') and not (@float = 'right !important') and not (@float = 'inherit !important') {
+	float: @float;
+}
+.right(@right) {
+	right: @right;
+}
+.left(@left) {
+	left: @left;
+}
+
+.text-align(@text-align) when (@text-align = left) {
+	text-align: left;
+}
+.text-align(@text-align) when (@text-align = right) {
+	text-align: right;
+}
+.text-align(@text-align) when not (@text-align = left) and not (@text-align = right) {
+	text-align: @text-align;
+}
