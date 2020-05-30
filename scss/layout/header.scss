@@ -1,0 +1,166 @@
+.main-header {
+	font-size: 14px;
+	position: fixed;
+	text-align: right;
+	width: 100%;
+	z-index: 1000;
+	padding: 47px 0;
+	transition: 0.2s all 0s;
+	border-bottom: 1px solid $black;
+	> .main-width {
+		position: relative;
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+			width: 100%;
+		}
+	}
+	+ .section-style {
+		padding-top: 160px;
+	}
+}
+.header-active .main-header {
+	background: $black;
+	border-bottom-color: rgba(162, 164, 167, 0.2);
+}
+
+.menu-btn {
+	padding: 15px;
+	position: absolute;
+	top: 50%;
+	margin-top: -32px;
+	left: 0;
+	cursor: pointer;
+	> div {
+		background: $secondary;
+		height: 2px;
+		margin: 7px 0;
+		width: 25px;
+		&:nth-child(2) {
+			width: 20px;
+		}
+	}
+}
+
+.logo {
+	width: 178px;
+	height: 50px;
+	background-size: contain;
+	background-position: 50% 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -89px;
+}
+
+.main-nav {
+	font-size: 14px;
+	color: $secondary;
+	font-weight: 500;
+	float: right;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 19px;
+	}
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.main-nav-mobile-wrap {
+	background: #484848;
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+.main-nav-mobile {
+	text-align: center;
+	overflow-y: scroll;
+	padding: 50px 30px;
+	height: 100%;
+	font-size: 0;
+	letter-spacing: 0;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&:after {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 80vh;
+	}
+	li {
+		margin: 12px 0;
+	}
+	a {
+		font-size: 27px;
+		line-height: 1;
+		font-weight: 700;
+		text-decoration: none;
+		&:hover {
+			color: $secondary;
+		}
+	}
+	.active {
+		a {
+			color: $secondary;
+		}
+	}
+}
+.close-main-nav-mobile {
+	background-image: url(../images/close.svg);
+	background-size: 24px auto;
+	background-position: 50% 50%;
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	left: 50%;
+	margin-left: 607px;
+	top: 35px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.open-menu {
+	overflow: hidden;
+	body {
+		overflow: hidden;
+	}
+	.main-nav-mobile-wrap {
+		display: block;
+	}
+}
+
+@media(max-width: 1400px) {
+	.close-main-nav-mobile {
+		margin-left: 0;
+		left: auto;
+		top: 5px;
+		right: 5px;
+	}
+}
+@media(max-width: 1150px) {
+	.main-nav {
+		display: none;
+	}
+	.main-header {
+		padding: 37px 0;
+	}
+}
