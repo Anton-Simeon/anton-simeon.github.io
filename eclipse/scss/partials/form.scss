@@ -1,0 +1,128 @@
+.form-group-radio {
+	position: relative;
+	label {
+		font-weight: 700;
+		padding-left: 30px;
+		display: block;
+		margin: 0;
+	}
+}
+input[type="radio"] {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	height: 14px;
+	width: 14px;
+	border-radius: 100%;
+	position: absolute;
+	top: 0.5rem;
+	left: 0;
+	border: 3px solid $white;
+	box-shadow: 0 0 0 1px #000;
+	outline: none;
+	cursor: pointer;
+	&:checked {
+		background: $primary;
+	}
+}
+.form-group {
+	margin-bottom: 15px;
+}
+.form-control {
+	height: 50px;
+	width: 100%;
+	background: #000;
+	padding: 11px 15px;
+	color: #fff;
+	font-size: 15px;
+	border-radius: 0;
+	border: 1px solid $secondary;
+	transition: 0.2s all 0s;
+	&:focus {
+		background: #000;
+		border-color: #fff;
+		color: #fff;
+		box-shadow: none;
+		outline: none;
+	}
+	option {
+		background: $primary;
+		color: #fff;
+	}
+}
+
+.form-style {
+	position: relative;
+	margin: 0 0 15px;
+}
+.input-style {
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 100%;
+	border: none;
+	display: block;
+	box-shadow: none;
+	background: transparent;
+	outline: none;
+	padding: 11px 15px;
+	color: #fff;
+	font-size: 15px;
+	border-radius: 0;
+	font-weight: 400;
+	z-index: 2;
+	&:focus {
+		background: inherit;
+		border: none;
+		color: #fff;
+		box-shadow: none;
+		outline: none;
+	}
+}
+textarea.input-style {
+	height: 150px;
+}
+.input-border {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 0;
+	border: 1px solid $secondary;
+	transition: 0.2s all 0s;
+}
+.label-form {
+	position: absolute;
+	top: 12px;
+	left: 10px;
+	z-index: 1;
+	font-size: 15px;
+	background: $black;
+	padding: 0 5px;
+	font-weight: 400;
+	color: $primary;
+	transition: 0.2s all 0s;
+}
+
+.input-style:focus, .form-opacity-active {
+	~ .label-form {
+		top: -9px;
+		font-size: 11px;
+	}
+}
+.input-style:focus ~ .input-border {
+	border-color: #fff;
+}
+.form-btn {
+	margin-top: 40px;
+}
+.form-wrap {
+	margin: 54px 0 0;
+	h5 {
+		font-size: 22px;
+		font-weight: 500;
+		margin: 0 0 34px;
+	}
+}

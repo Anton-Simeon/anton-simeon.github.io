@@ -10,7 +10,7 @@
 $slick-font-path: "./fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
-$slick-arrow-color: white !default;
+$slick-arrow-color: #181818 !default;
 $slick-dot-color: black !default;
 $slick-dot-color-active: $slick-dot-color !default;
 $slick-prev-character: "\2190" !default;
@@ -64,8 +64,8 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-next {
     position: absolute;
     display: block;
-    height: 60px;
-    width: 60px;
+    height: 120px;
+    width: 120px;
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
@@ -77,23 +77,23 @@ $slick-opacity-not-active: 0.25 !default;
     transform: translate(0, -50%);
     padding: 0;
     border: none;
-    border-radius: 100%;
+    border-radius: 0;
     outline: none;
     box-shadow: none;
     z-index: 1000;
-    opacity: 0.8;
-    &:hover {
-        opacity: 1;
+    transition: 0.2s all 0s;
+    &:hover:before{
+        color: $gray;
     }
 }
 
 .slick-prev {
-    left: -44px;
-    @extend .icon-chevron-left;
+    left: 50px;
+    @extend .icon-arrow-prev;
     &:before {
         font-family: 'icomoon';
         display: inline-block;
-        font-size: 40px;
+        font-size: 8px;
         vertical-align: middle;
         color: $primary;
     }
@@ -103,17 +103,28 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-    right: -44px;
-    @extend .icon-chevron-right;
+    right: 50px;
+    @extend .icon-arrow-next;
     &:before {
         font-family: 'icomoon';
         display: inline-block;
-        font-size: 40px;
+        font-size: 8px;
         vertical-align: middle;
         color: $primary;
     }
     &:focus {
         outline: none
+    }
+}
+.slider-carousel{
+    .slick-prev {
+        left: -68px;
+    }
+}
+.slider-carousel{
+    margin: 15px -30px 0;
+    .slick-next {
+        right: -68px;
     }
 }
 
@@ -122,8 +133,10 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-dotted.slick-slider {
     margin-bottom: 30px;
 }
-.slider {
-    padding-bottom: 30px;
+.slider{
+    .title-style{
+        margin: 42px 0 0;
+    }
 }
 .slick-dots {
     position: absolute;
@@ -162,6 +175,125 @@ $slick-opacity-not-active: 0.25 !default;
         &.slick-active button {
             background: #A04695;
             opacity: 1;
+        }
+    }
+}
+@media(max-width: 1350px) {
+    .slider-carousel{
+        .slick-prev {
+            left: 15px;
+        }
+        .slick-next {
+            right: 15px;
+        }
+    }
+    
+}
+
+
+.slider-carousel{
+    .one-slide{
+        padding: 0 30px;
+    }
+}
+.slick-disabled {
+    opacity: 0.2;
+    cursor: default !important;
+}
+
+@media(max-width: 1199px) {
+    .slick-prev,
+    .slick-next {
+        height: 50px;
+        width: 50px;
+        &:before {
+            font-size: 4.5px;
+        }
+    }
+
+
+    .slick-prev:before {
+        content: "\e900";
+    }
+
+    .slick-next:before {
+        content: "\e901";
+    }
+
+
+}
+@media(max-width: 991px) {
+    .slider .title-style {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        margin: 0;
+        font-size: 21px;
+        padding: 11px 13px;
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) );
+    }
+    .one-slide > div {
+        position: relative;
+    }
+}
+
+
+@media(max-width: 1199px) and (min-width: 992px) {
+    .slider-image {
+        padding: 0 28px;
+    }
+    .slider-carousel .one-slide {
+        padding: 0 24px;       
+    }
+    .slider-carousel {
+        margin: 0 -24px;
+    }
+    .slider  {
+        .slick-prev {
+            left: 85px;
+        }
+        .slick-next {
+            right: 85px;
+        }
+    }
+}
+@media(max-width: 991px) and (min-width: 576px) {
+    .slider-image {
+        padding: 0 21px;
+    }
+    .slider-carousel .one-slide {
+        padding: 0 15px;       
+    }
+    .slider-carousel {
+        margin: 0 -15px;
+    }
+    .slider  {
+        .slick-prev {
+            left: 18px;
+        }
+        .slick-next {
+            right: 18px;
+        }
+    }
+}
+@media(max-width: 575px) {
+    .slider-image {
+        padding: 0 0;
+    }
+    .slider-carousel .one-slide {
+        padding: 0 5px;       
+    }
+    .slider-carousel {
+        margin: 0 -5px;
+    }
+    .slider  {
+        .slick-prev {
+            left: 10px;
+        }
+        .slick-next {
+            right: 10px;
         }
     }
 }

@@ -1,95 +1,82 @@
 .main-footer {
-	background-color: $primary;
-	color: $black;
-	padding: 42px 0;
-}
-.list-footer {
-	list-style: none;
-	padding: 0;
-	margin: 0 0 20px;
-	column-count: 3;
-	column-gap: 38px;
-	float: left;
-	font-size: 14px;
-	font-weight: 400;
-	li {
-		margin-bottom: 9px;
+	background: $primary;
+	padding-top: 92px;
+	color: rgba(255, 255, 255, 0.8);
+	.btn:hover{
+		background: $white;
+		color: $primary;
+
 	}
-	a {
-		text-decoration: none;
+	.phone{
+		color: rgba(255, 255, 255, 0.8);
 	}
 }
-.social-list {
-	list-style: none;
-	padding: 0;
-	margin: 3px 0 22px;
-	li {
-		display: inline-block;
-		vertical-align: top;
-		margin-right: 10px;
-		margin-bottom: 5px;
+.footer-logo{
+	display: inline-block;
+	margin-top: -6px;
+	border-bottom: none;
+
+	.icon{
+		font-size: 90px;
 	}
 }
-.social {
-	height: 50px;
-	width: 50px;
-	border-radius: 100%;
-	padding: 15px;
-	display: block;
-	background: $black;
-	> div {
-		height: 100%;
-		width: 100%;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		background-size: contain;
+.footer-contact{
+	.title-style{
+		margin-bottom: 57px;
 	}
+	p{
+		margin-bottom: 10px;
+	}
+}
+.bottom-footer{
+	font-size: 12px;
+	padding: 16px 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	margin-top: 100px;
+}
+.copyright{
+	display: inline-block;
+}
+.site-developer{
+	float: right;
+	a{
+		margin-left: 20px;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+.phone-footer {
+	text-decoration: none;
+	font-size: 26px;
+	text-decoration: none;
+	border-bottom: none;
 }
 
-.info-footer-block-wrap {
-	> * {
-		display: inline-block;
-		vertical-align: top;
-		padding-right: 24px;
+
+
+@media (max-width:992px) {
+	.main-footer{
+		
 	}
 }
-.info-footer-block {
-	font-size: 14px;
-	font-weight: 400;
-	padding-left: 34px;
-	margin-bottom: 10px;
-	background-repeat: no-repeat;
-	background-position: 0 5px;
-	background-size: 18px auto;
-	a {
-		text-decoration: none;
+@media (max-width:575px) {
+	.form-style {
+		margin-bottom: 45px;
 	}
-}
-.info-footer-block-email {
-	background-image: url(../images/email.svg);
-}
-.info-footer-block-location {
-	background-image: url(../images/location.svg);
-}
-.footer-block {
-	font-size: 10px;
-	line-height: 16px;
-	p {
-		margin-bottom: 6px;
+	.footer-contact .title-style {
+		margin-bottom: 20px;
 	}
-}
-.logo-footer {
-	width: 160px;
-	display: inline-block;
-	margin: 3px 0 9px;
-}
-@media (max-width: 991px) {
-	.list-footer {
-		margin: 0 0 40px;
-		column-count: 3;
-		column-gap: 10px;
+	.form-style .title-style {
+		margin-bottom: 20px;
 	}
-	.info-footer-block-wrap {
-		margin-bottom: 30px;
+	.bottom-footer {
+		font-size: 10px;
 	}
-}
+	.site-developer a {
+		margin-left: 4px;
+	}
+	.phone-footer {
+		font-size: 18px;
+	}
+}	

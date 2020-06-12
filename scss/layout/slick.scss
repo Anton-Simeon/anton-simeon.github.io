@@ -65,11 +65,13 @@
     float: left;
     height: 100%;
     min-height: 1px;
+    outline: none;
     [dir="rtl"] & {
         float: right;
     }
     img {
         display: block;
+        width: 100%;
     }
     &.slick-loading img {
         display: none;
@@ -97,4 +99,11 @@
 }
 .slick-arrow.slick-hidden {
     display: none;
+}
+.slider-image{
+    padding: 0 45px;
+   opacity: 0.5;
+}
+.slick-current{
+    opacity: 1;
 }
