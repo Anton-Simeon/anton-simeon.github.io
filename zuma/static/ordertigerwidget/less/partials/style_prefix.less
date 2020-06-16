@@ -1,0 +1,62 @@
+.border-radius(@radius: 3* @rem){
+  -moz-border-radius: @radius; 
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+.transition(@transition: 0.6s, @effect_transition: ease-out, @pause_transition: 0s){
+  -webkit-transition: all @transition @effect_transition @pause_transition;
+  -moz-transition: all @transition @effect_transition @pause_transition;
+  -o-transition: all @transition @effect_transition @pause_transition;
+  -ms-transition: all @transition @effect_transition @pause_transition;
+  transition: all @transition @effect_transition @pause_transition;
+}
+.rotate(@rotate_angle: 10deg){
+ 	-ms-transform: rotate(@rotate_angle);
+    -webkit-transform: rotate(@rotate_angle);
+    transform: rotate(@rotate_angle);
+}
+.scale(@scaleX: 1.2, @scaleY: 1.2){
+	-ms-transform: scale( @scaleX , @scaleY );
+    -webkit-transform: scale( @scaleX , @scaleY );
+    transform: scale( @scaleX , @scaleY );
+}
+.skew(@skewX: 30deg, @skewY: 20deg,){
+    -ms-transform: skew( @skewX , @skewY );
+    -webkit-transform: skew( @skewX , @skewY );
+    transform: skew( @skewX , @skewY );
+}
+.skewY(@skewY: 20deg,){
+    -ms-transform: skewY(@skewY );
+    -webkit-transform: skewY(@skewY );
+    transform: skewY(@skewY );
+}
+.gradient(@gradient_angle: 90deg, @gradient_color1: rgb(99, 179, 233) 0%, @gradient_color2: rgb(99, 179, 233) 100%){
+  background-image: -moz-linear-gradient( 90 - @gradient_angle , @gradient_color1, @gradient_color2 );
+  background-image: -webkit-linear-gradient( 90 - @gradient_angle , @gradient_color1, @gradient_color2 );
+  background-image: -o-linear-gradient( 90 - @gradient_angle , @gradient_color1, @gradient_color2 );
+  background-image: -ms-linear-gradient( 90 - @gradient_angle , @gradient_color1, @gradient_color2 );
+  background-image: linear-gradient(@gradient_angle, @gradient_color1, @gradient_color2 );
+}
+.gradient4(@gradient_angle: 90deg, @gradient_color1: rgb(255, 0, 0) 0%, @gradient_color2: rgb(255, 0, 0) 49%, @gradient_color3: rgb(0, 0, 0) 50%, @gradient_color4: rgb(0, 0, 0) 100%){
+	background-image: -moz-linear-gradient( 90 - @gradient_angle , @gradient_color1, @gradient_color2, @gradient_color3, @gradient_color4 );
+	background-image: -webkit-linear-gradient( 90 - @gradient_angle , @gradient_color1, @gradient_color2 );
+	background-image: -o-linear-gradient( 90 - @gradient_angle , @gradient_color1, @gradient_color2, @gradient_color3, @gradient_color4 );
+	background-image: -ms-linear-gradient( 90 - @gradient_angle , @gradient_color1, @gradient_color2, @gradient_color3, @gradient_color4 );
+	background-image: linear-gradient(@gradient_angle , @gradient_color1, @gradient_color2, @gradient_color3, @gradient_color4 );
+}
+.box-sizing(@sizing: border-box) {
+  -ms-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+.box-shadow(@shadow: inset 1* @rem 1* @rem 0 #e3e3e3){
+  -moz-box-shadow: @shadow;
+  -webkit-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+.text-shadow(@shadow_text: 1* @rem 1* @rem #e3e3e3){
+  -moz-text-shadow: @shadow_text;
+  -webkit-text-shadow: @shadow_text;
+  text-shadow: @shadow_text;
+}
