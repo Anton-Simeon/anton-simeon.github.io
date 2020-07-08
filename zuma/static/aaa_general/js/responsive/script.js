@@ -30,12 +30,14 @@ function menuNavFun(selectorName) {
 	var widthMenuSub = jQuery('.menu-nav-wrap-main-js').width();
 
 	if(menuNavWrapMain_top2 < selectorName.scrollTop() ) {
+		jQuery('.menu-nav-wrap-main').addClass('menu-nav-wrap-main-active');
 		jQuery('.menu-nav-wrap-main').css({
 			'top': menuNavWrapMain_topNew, 
 			'position': 'fixed',
 			'width': widthMenuSub
 		});
 	}else {
+		jQuery('.menu-nav-wrap-main').removeClass('menu-nav-wrap-main-active');
 		jQuery('.menu-nav-wrap-main').css({
 			'top': '0', 
 			'position': 'relative',
