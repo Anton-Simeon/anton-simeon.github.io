@@ -7,17 +7,19 @@ body, html {
 	margin-top: 0 !important;
 }
 .smartbanner {
-	position: fixed;
+	position: fixed !important;
 }
-body {
-	padding-top: 84px !important;
-}
-.header {
-	top: 84px !important;
-}
-.cart-wrap-sidebar {
-	margin-top: 84px !important;
-}
-.menu-nav-wrap-main-active {
-	margin-top: 84px !important;
+.smartbanner-active {
+	body {
+		padding-top: 84px !important;
+	}
+	.header {
+		top: 84px !important;
+	}
+	.cart-wrap-sidebar {
+		margin-top: 84px !important;
+	}
+	.menu-nav-wrap-main-active {
+		margin-top: 84px !important;
+	}
 }
