@@ -5,8 +5,26 @@
 	<meta itemprop="image" content="https://www.lynden.de/media/image/4b/cd/94/lynden-logoAt4AoyviXK2zT.jpg"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 	<script type="text/javascript">
-		setTimeout(function() {window.scrollTo(0, 1)}, 100);
+		// setTimeout(function() {window.scrollTo(0, 1)}, 100);
+
+
+
+		$(function() {
+		    function orientationChange(e) {
+		        $("body").scrollTop(1);
+		    }
+		    $("body").css({ height: "+=300" }).scrollTop(1);
+		    $(window).bind("orientationchange", orientationChange);
+		});
+
+
+
+
 	</script>
 </head>
 <body class="is--ctl-campaign is--act-index
