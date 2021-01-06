@@ -1,10 +1,7 @@
-html, body {
-  height: 100%;
-}
 body {
-	font-weight: 300;
-	position: relative;
-	z-index: 2;
+  font-weight: 300;
+  position: relative;
+  z-index: 2;
 }
 select::-ms-expand {
     display: none;
@@ -12,11 +9,33 @@ select::-ms-expand {
 a, button, input, select {
   outline: none !important;
 }
-
-
+@media (min-width: 1025px) {
+  html, body {
+    height: 100%;
+  }
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  .mainWrapp_scroll {
+    height: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  .mainWrapp_scroll {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 .mainWrapp {
   min-height: 100%;
 }
+
+
 .containerWrapp {
 	.padding3( 110px, 30px, 114px );
 }
@@ -579,7 +598,24 @@ select.form-control {
 }
 
 
+@media (max-width: 1025px) {
+  .modal-open {
+    .modal-backdrop {
+      display: none !important;
+    }
+    .bg-mobile {
+      display: block !important;
+    }
+    #header {
+      z-index: 100 !important;
+    }
+  }
+}
+
+
 #checkOutForm .btn[disabled] {
   background: #919191 !important;
   border-color: #919191 !important;
 }
+
+

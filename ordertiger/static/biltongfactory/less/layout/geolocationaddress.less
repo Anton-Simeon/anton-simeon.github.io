@@ -1,0 +1,122 @@
+.poygon-map-div {
+    .margin-bottom(128px);
+    width: 100%;
+    height: 350px;
+}
+#mapSection .centerMarker, .centerMarker {
+    position: absolute;
+    background: url(https://maps.gstatic.com/mapfiles/markers2/marker.png) no-repeat;
+    top: 50%;
+    .left(50%);
+    z-index: 1;
+    .margin-left(-10px);
+    .margin-top(-34px);
+    height: 34px;
+    width: 20px;
+    cursor: pointer;
+}
+#mapError {
+    display: none;
+    .padding1(7px);
+    .margin-top(6px);
+    .margin-bottom(0);
+}
+.wrap-address-lists {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 100%;
+    .margin-right(5px);
+}
+.address-section {
+    .margin2(12px, 0);
+    position: relative;
+}
+.map-polygon {
+	.margin-left(-10px);
+	.margin-right(-10px);
+}
+.map-polygon .form-group {
+	width: 50%;
+	.float(left);
+	.padding2(0, 10px);
+}
+.map-polygon .form-group.instruction-section {
+    width: 100%;
+}
+.map-polygon .form-group > label {
+    width: 25%;
+    .float(left);
+}
+.map-polygon .form-group > .form-control {
+    width: 75%;
+    .float(left);
+}
+.map-polygon .form-group.instruction-section >.form-control {
+    width: 85%;
+    position: relative;
+    .float(left);
+}
+.map-polygon .form-group.instruction-section >label {
+    width: 15%;
+    .float(left);
+}
+
+.my-location {
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
+}
+.address-section {
+    position: relative;
+}
+.confirm-location-div {
+    .margin-top(10px);
+    .text-align(center);
+}
+.polygon-map-list {
+    position: absolute;
+    top: 100%;
+    .left(0);
+    width: 100%;
+}
+.address-row {
+    border-color: #e0e0e0;
+    &:hover {
+        background: #fff - 10%;
+    }
+}
+.address-lists {
+    background: #fff;
+}
+@media (max-width: 767px) {
+    .wrap-address-lists {
+        width: 100%;
+    }
+    .index-page .text-box {
+        width: 100% !important;
+    }
+    .index-page .search-button {
+        width: 100% !important;
+    }
+    .index-page .drop-down {
+        width: 100% !important;
+    }
+    .map-polygon .form-group > label {
+        .float(none);
+        width: 100%;
+    }
+    .map-polygon .form-group.instruction-section > label {
+        .float(none);
+        width: 100%;
+    }
+    .map-polygon .form-group.instruction-section > .form-control {
+        .float(none);
+        width: 100%;
+    }
+    .map-polygon .form-group > .form-control {
+        .float(none);
+        width: 100%;
+    }
+}

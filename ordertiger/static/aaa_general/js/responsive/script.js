@@ -30,14 +30,12 @@ function menuNavFun(selectorName) {
 	var widthMenuSub = jQuery('.menu-nav-wrap-main-js').width();
 
 	if(menuNavWrapMain_top2 < selectorName.scrollTop() ) {
-		jQuery('.menu-nav-wrap-main').addClass('menu-nav-wrap-main-active');
 		jQuery('.menu-nav-wrap-main').css({
 			'top': menuNavWrapMain_topNew, 
 			'position': 'fixed',
 			'width': widthMenuSub
 		});
 	}else {
-		jQuery('.menu-nav-wrap-main').removeClass('menu-nav-wrap-main-active');
 		jQuery('.menu-nav-wrap-main').css({
 			'top': '0', 
 			'position': 'relative',
@@ -70,6 +68,7 @@ function newDesignMenu() {
 
 
 	jQuery("#load-restaurant-list ul li").each(function(){
+
 		if(!jQuery(this).children().hasClass('one-product')) {
 
 			var imgSrc = jQuery(this).find('.rest-logo').find('img').attr('src');
@@ -112,9 +111,10 @@ function newDesignMenu() {
 
 			if(jQuery(this).find('.rating-section').length) {
 				var ratingNumber = jQuery(this).find('.rating-section > .pull-left:last-child').text();
-				if(ratingNumber == 0) {
-					jQuery(this).find('.rating-section').css('opacity', 0);
-				}
+
+				// if(ratingNumber == 0 ) {
+				// 	jQuery(this).find('.rating-section').css('opacity', 0);
+				// }
 
 				jQuery(this).find('.rating-section').wrapAll('<div class="clearfix rating-wrap">');
 				jQuery(this).find('.subdesc').after(jQuery(this).find('.rating-wrap'));
@@ -151,6 +151,7 @@ function newDesignMenu() {
 		}
 
 	});
+
 
 }
 
@@ -281,39 +282,542 @@ jQuery(document).ready(function(){
 
 
 	function menuNavBusinessJsClickFun(thisFun) {
-			var companyId = jQuery('#companyId').val();
-			var thisId = thisFun.attr('id');
-			jQuery('.menu-nav-business-js a').removeClass('click');
-			jQuery('.products-list2').html("");
-			thisFun.addClass('click');
-			var pageBusinessFilterURL;
-			if (thisId == 'all') {
-				pageBusinessFilterURL = "/stores/all/filter?companyId=" + companyId;
-			}else {
-				pageBusinessFilterURL = "/stores/all/filter?companyId=" + companyId + "&businessCategoryID=" + thisId;
-			}
-			jQuery.ajax({
-				type: "GET",
-				url: pageBusinessFilterURL,
-				success: function(response) {
-					jQuery('.products-list2').html(response.branchHTML);
-					newDesignMenu();
-					if (response.nextLink != null) {
-						oldLink = "";
-						document.getElementById("nextURL").value = response.nextLink;
-					} else {
-						oldLink = "";
-						document.getElementById("nextURL").value = "";
-					}					
-				},
-				dataType: 'json'
-			});
+
+
+
+		var companyId = jQuery('#companyId').val();
+		var thisId = thisFun.attr('id');
+		jQuery('.menu-nav-business-js a').removeClass('click');
+		jQuery('.products-list2').html("");
+		thisFun.addClass('click');
+		var pageBusinessFilterURL;
+		if (thisId == 'all') {
+			pageBusinessFilterURL = "/stores/all/filter?companyId=" + companyId;
+		}else {
+			pageBusinessFilterURL = "/stores/all/filter?companyId=" + companyId + "&businessCategoryID=" + thisId;
+		}
+
+		jQuery.ajax({
+			type: "GET",
+			url: pageBusinessFilterURL,
+			success: function(response) {
+				jQuery('.products-list2').html(response.branchHTML);
+				newDesignMenu();
+
+
+				if (response.nextLink != null) {
+					oldLink = "";
+					document.getElementById("nextURL").value = response.nextLink;
+				} else {
+					oldLink = "";
+					document.getElementById("nextURL").value = "";
+				}					
+			},
+			dataType: 'json'
+		});
 
 	}
 	jQuery('body').on('click','.menu-nav-business-js a', function(){
 		menuNavBusinessJsClickFun(jQuery(this));
 		return false
 	});
+
+
+
+
+
+	if(jQuery('.menu-nav-business-new-js').length){
+		var companyId = jQuery('#companyId').val();
+		var longitude_var = $('#longitude').val();
+		var latitude_var = $('#latitude').val();
+		var pageBusinessURL;
+
+
+		if(longitude_var && latitude_var ) {
+			pageBusinessURL = "/businesscategories?latitude=" + latitude_var + "&longitude=" + longitude_var + "&companyId=" + companyId;
+		}else {
+			pageBusinessURL = "/businesscategories?companyId=" + companyId;
+		}
+
+		jQuery.ajax({
+			type: "GET",
+			url: pageBusinessURL,
+			success: function(response) {
+
+				if(response.length) {
+					if(response.length < 2) {
+
+						jQuery('.menu-nav-business-new-js li:first-child').removeClass('click').hide();
+						jQuery('.menu-nav-business-new-js li:first-child a').removeClass('click');
+						jQuery('.menu-nav-business-new-js').append('<li><a href="#" class="click" id=' + response[0].id + '>' + response[0].name + '</a></li>');
+
+
+						var thisLink = jQuery('.menu-nav-business-new-js > li:nth-child(2) > a');
+						var businessCategoryID = response[0].id;
+						var businesssubCategoriesUrl;
+
+						if(longitude_var && latitude_var ) {
+							businesssubCategoriesUrl = "/businesssubcategories?latitude=" + latitude_var + "&longitude=" + longitude_var + "&companyId=" + companyId + "&businessCategoryID=" + businessCategoryID;
+						}else {
+							businesssubCategoriesUrl = "/businesssubcategories?companyId=" + companyId + "&businessCategoryID=" + businessCategoryID;
+						}
+
+
+						jQuery.ajax({
+							type: "GET",
+							url: businesssubCategoriesUrl,
+							success: function(response) {
+								var htmlUl = "";
+								for (var i = 0; i < response.length; i++) {
+									if ( (response[i].name != 'Any') && (response[i].name != thisLink.text()) ){
+										htmlUl = htmlUl + '<li><a href="#" id=' + response[i].id + ' data-businessCategoryId="' + response[i].businessCategoryId + '">' + response[i].name + '</a></li>';
+									}
+								}
+								if(htmlUl != "") {
+									thisLink.parent().append('<ul>' + htmlUl + '</ul>');
+
+									showBusinessSidebar();
+								}
+							},
+							dataType: 'json'
+						});
+
+					}else {
+
+						showBusinessSidebar();
+
+						for (var i = 0; i < response.length; i++) {
+							jQuery('.menu-nav-business-new-js').append('<li><a href="#" id=' + response[i].id + '>' + response[i].name + '</a></li>');
+
+							setTimeout(function(){
+								MenuNavMoreShow();
+							}, 400);
+						}
+
+					}
+				}
+				
+			},
+			error: function (error) {
+			    console.log(error);
+			},
+			dataType: 'json'
+		});
+
+	}
+
+
+
+	$.fn.isOnScreen = function(){
+	    var win = jQuery(window);
+	    
+	    var viewport = {
+	        top : win.scrollTop(),
+	        left : win.scrollLeft()
+	    };
+	    viewport.right = viewport.left + win.width();
+	    viewport.bottom = viewport.top + win.height();
+	    
+	    var bounds = this.offset();
+	    bounds.right = bounds.left + this.outerWidth();
+	    bounds.bottom = bounds.top + this.outerHeight();
+	    
+	    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+	};
+
+	var timeout;
+	var lastScrollTop = 0;
+	var oldLink = "";
+	var oldLiCol = 30;
+	var oldLiColNew = 0;
+
+	jQuery(window).scroll(function() {
+		var st = jQuery(this).scrollTop();
+	   	if (st > lastScrollTop && jQuery('#load-restaurant-link').length > 0){
+
+	    	if (jQuery('#load-restaurant-link').isOnScreen() == true) {
+
+
+	    		clearTimeout(timeout);  
+		    	timeout = setTimeout(function() {
+
+
+		    		// $( jQuery('.products-list2 > li').length ) {
+
+		    		// }
+
+
+		    		// if (oldLink != document.getElementById("nextURL").value) {
+		    			oldLiCol = jQuery('.products-list2 > li').length;
+
+		    			if(oldLiCol != oldLiColNew) {
+		    				oldLiColNew = jQuery('.products-list2 > li').length;
+			    			scrollAjax(oldLiCol);
+			    		}
+
+		    		// }
+			   	}, 50);
+	    	}
+	   } else {
+	   }
+	   lastScrollTop = st;
+	});
+
+	jQuery(document).ready(function() {
+		var loading = jQuery("#loadingDiv");
+        jQuery(document).ajaxStart(function () {
+            loading.show();
+        });
+
+        jQuery(document).ajaxStop(function () {
+            loading.hide();
+        });
+    });
+
+
+
+	function scrollAjax(oldLi) {
+
+
+		var pageURLfilter;
+		var companyId = jQuery('#companyId').val();
+		var longitude = jQuery('#longitude').val();
+		var latitude = jQuery('#latitude').val();
+
+
+		var thisId = jQuery('.menu-nav-business-new-js > li > .click').attr('id');
+
+		var businessSubCategoryIDs = "";
+		jQuery('.menu-nav-business-new-js > li > .click + ul .click').each(function(){
+			var businessSubCategoryID = jQuery(this).attr('id');
+			businessSubCategoryIDs = businessSubCategoryIDs + businessSubCategoryID + ',';
+		});
+
+
+		latitude
+
+		if (thisId == 'all') {
+			pageBusinessFilterURL = "/branches?latitude=" + latitude + "&longitude=" + longitude + "&offset=" + oldLi + "&limit=30&companyId=" + companyId;
+		}else {
+			if(businessSubCategoryIDs.length) {
+				businessSubCategoryIDs = businessSubCategoryIDs.substring(0, businessSubCategoryIDs.length - 1);
+				pageBusinessFilterURL = "/branches?latitude=" + latitude + "&longitude=" + longitude + "&offset=" + oldLi + "&limit=30&companyId=" + companyId + "&businessCategoryID=" + thisId + "&businessSubCategoryID=" + businessSubCategoryIDs;
+			}else {
+				pageBusinessFilterURL = "/branches?latitude=" + latitude + "&longitude=" + longitude + "&offset=" + oldLi + "&limit=30&companyId=" + companyId + "&businessCategoryID=" + thisId;
+			}
+		}
+
+
+
+		console.log(oldLi);
+
+		loadResuts(pageBusinessFilterURL);
+	}
+
+
+
+	// if(jQuery('.business-page').length) {
+	// 	scrollAjax();
+	// }
+
+
+
+
+
+
+
+	function loadResuts(pageURL){
+		// console.log(pageURL);
+		jQuery.ajax({
+	    	type: "GET",
+	    	url: pageURL,
+	    	success: function(response) {
+	    		console.log(response);
+
+
+	    		var varStore = "";
+	    		for (var i = 0; response.length > i; i++) {
+	    	
+
+		    		var openText = '';
+		    		var openTextClass = '';
+		    		var reviewCount = 0;
+					var nowBranchOpenForASAP, branchOnlineForASAP, nowBranchOpenForPreOrdering, branchOnlineForPreOrdering, nowBranchOpenForASAP, nowBranchOpenForPreOrdering;
+
+		    		
+		    		
+
+		    		var averageReviewScore = 0;
+		    		for (var b = 0; response[i].locationMetaDatas.length > b; b++) {
+		    			if(response[i].locationMetaDatas[b].paramName == "reviewCount" ) {
+		    				reviewCount = response[i].locationMetaDatas[b].paramValue;
+		    			}
+		    			if(response[i].locationMetaDatas[b].paramName == "averageReviewScore" ) {
+		    				averageReviewScore = response[i].locationMetaDatas[b].paramValue;
+		    			}
+
+		    			if(response[i].locationMetaDatas[b].paramName == "nowBranchOpenForASAP" ) {
+							nowBranchOpenForASAP = response[i].locationMetaDatas[b].paramValue;
+		    			}
+		    			if(response[i].locationMetaDatas[b].paramName == "branchOnlineForASAP" ) {
+							branchOnlineForASAP = response[i].locationMetaDatas[b].paramValue;
+		    			}
+
+
+		    			if(response[i].locationMetaDatas[b].paramName == "nowBranchOpenForPreOrdering" ) {
+							nowBranchOpenForPreOrdering = response[i].locationMetaDatas[b].paramValue;
+		    			}
+		    			if(response[i].locationMetaDatas[b].paramName == "branchOnlineForPreOrdering" ) {
+							branchOnlineForPreOrdering = response[i].locationMetaDatas[b].paramValue;
+		    			}
+
+
+		    			if(response[i].locationMetaDatas[b].paramName == "nowBranchOpenForASAP" ) {
+							nowBranchOpenForASAP = response[i].locationMetaDatas[b].paramValue;
+		    			}
+		    			if(response[i].locationMetaDatas[b].paramName == "nowBranchOpenForPreOrdering" ) {
+							nowBranchOpenForPreOrdering = response[i].locationMetaDatas[b].paramValue;
+		    			}
+
+
+		    		}
+
+
+
+					if(nowBranchOpenForASAP == "true" && branchOnlineForASAP == "true") {
+						openText = "Open";
+						openTextClass = "status-menu-open";
+					}else if(nowBranchOpenForPreOrdering == "true" && branchOnlineForPreOrdering == "true") {
+						openText = "Preordering";
+						openTextClass = "status-menu-pre";
+					}else if(nowBranchOpenForASAP != "true" && nowBranchOpenForPreOrdering != "true") {
+						openText = "Close";
+						openTextClass = "status-menu-close";
+					}else {
+						// offline
+						openText = "Offline";
+						openTextClass = "status-menu-offline";
+					}
+
+
+					var ratingText = '<div class="rating-section"><span class="pull-left"><span class="branch-rate" id="branchRating-' + response[i].id + '" data-rate="' + averageReviewScore + '"></span></span><span class="pull-left">' + reviewCount + '</span></div>';
+
+					if(response[i].hasReviews == false) {
+						ratingText = "";
+					}
+
+
+		    		varStore = varStore + '<li id="' + response[i].id + '" onclick="location.href=\'' + '/store/' + response[i].urlPath + '\';"><a href="' + '/store/' + response[i].urlPath + '" class="one-product2"><div class="product-img-wrap-main"><div class="product-img-wrap"><div style="background-image: url(' + response[i].locationWebLogoUrl + ');"></div></div><span class="status-menu ' + openTextClass + '">' + openText + '</span></div><h2 class="product-title">' + response[i].name + '</h2><div class="clearfix"><div class="clearfix rating-wrap">' + ratingText + '</div></div></a></li>';
+
+
+
+
+	    		}		
+		    	jQuery("#load-restaurant-list ul").append(varStore);
+
+
+		    	jQuery(".branch-rate").each(function(){
+					var that = this;
+					var raingVar = 0;
+					if(parseInt(jQuery(that).data("rate"))) {
+						raingVar = parseInt(jQuery(that).data("rate"));
+					}else {
+						jQuery(this).parent().next().html('0');
+					}
+					jQuery(that).rateYo({rating : raingVar, readOnly : true, starWidth : '14px'})	
+				});
+
+	    	},
+	    	dataType: 'json'
+	    });
+	}
+
+
+
+
+
+
+
+
+
+
+	function showBusinessSidebar() {
+		jQuery('.business-page').removeClass('no-sidebar-business-page');
+	}
+
+
+	function menuNavBusinessNewJsClickFun(thisFun) {
+		var companyId = jQuery('#companyId').val();
+		var longitude = jQuery('#longitude').val();
+		var latitude = jQuery('#latitude').val();
+		var thisId = thisFun.attr('id');
+		jQuery('.menu-nav-business-new-js a').removeClass('click');
+		jQuery('.products-list2').html("");
+		thisFun.addClass('click');
+		var businessFilterLink;
+
+		var pageBusinessFilterURL;
+		if (thisId == 'all') {
+			pageBusinessFilterURL = "/branches?latitude=" + latitude + "&longitude=" + longitude + "&offset=0&limit=30&companyId=" + companyId;
+		}else {
+			pageBusinessFilterURL = "/branches?latitude=" + latitude + "&longitude=" + longitude + "&offset=0&limit=30&companyId=" + companyId + "&businessCategoryID=" + thisId;
+		}
+
+		console.log('main pageBusinessFilter');
+		pageBusinessFilter(pageBusinessFilterURL);
+
+	}
+	var companyId = jQuery('#companyId').val();
+	var longitude = jQuery('#longitude').val();
+	var latitude = jQuery('#latitude').val();
+
+
+
+	if(jQuery('.business-page').length) {
+		// pageBusinessFilter("/branches?latitude=" + latitude + "&longitude=" + longitude + "&offset=0&limit=30&companyId=" + companyId);
+	}
+
+
+
+
+	function menuNavBusinessNewJsClickFunSub() {
+		var companyId = jQuery('#companyId').val();
+		var longitude = jQuery('#longitude').val();
+		var latitude = jQuery('#latitude').val();
+		jQuery('.products-list2').html("");
+		var thisId = jQuery('.menu-nav-business-new-js > li > .click').attr('id');
+
+		var businessSubCategoryIDs = "";
+		jQuery('.menu-nav-business-new-js > li > .click + ul .click').each(function(){
+			var businessSubCategoryID = jQuery(this).attr('id');
+			businessSubCategoryIDs = businessSubCategoryIDs + businessSubCategoryID + ',';
+
+		});
+
+		var pageBusinessFilterURL;
+
+		if(businessSubCategoryIDs.length) {
+			businessSubCategoryIDs = businessSubCategoryIDs.substring(0, businessSubCategoryIDs.length - 1);
+			pageBusinessFilterURL = "/branches?latitude=" + latitude + "&longitude=" + longitude + "&offset=0&limit=30&companyId=" + companyId + "&businessCategoryID=" + thisId + "&businessSubCategoryID=" + businessSubCategoryIDs;
+
+		}else {
+
+			console.log('businessSubCategoryIDs false ');
+			pageBusinessFilterURL = "/branches?latitude=" + latitude + "&longitude=" + longitude + "&offset=0&limit=30&companyId=" + companyId + "&businessCategoryID=" + thisId;
+		}
+
+		pageBusinessFilter(pageBusinessFilterURL);
+
+	}
+
+
+
+
+
+
+
+
+
+
+	function pageBusinessFilter(pageBusinessFilterURL) {
+		jQuery('.products-list2').html('');
+		loadResuts(pageBusinessFilterURL);
+	}
+
+	jQuery('body').on('click','.menu-nav-business-new-js > li ul a', function(){
+		jQuery(this).toggleClass('click');
+		menuNavBusinessNewJsClickFunSub();
+	});
+
+
+	jQuery('body').on('click','.menu-nav-business-new-js > li >  a', function(){
+		$('.menu-nav-business-new-js > li ul').remove();
+		menuNavBusinessNewJsClickFun(jQuery(this));
+		var thisLink = jQuery(this);
+		var businessCategoryID = jQuery(this).attr('id');
+		var companyId = jQuery('#companyId').val();
+		var longitude_var = $('#longitude').val();
+		var latitude_var = $('#latitude').val();
+
+		if(businessCategoryID != 'all') {
+
+			var businesssubCategoriesUrl;
+
+			if(longitude_var && latitude_var ) {
+				businesssubCategoriesUrl = "/businesssubcategories?latitude=" + latitude_var + "&longitude=" + longitude_var + "&companyId=" + companyId + "&businessCategoryID=" + businessCategoryID;
+			}else {
+				businesssubCategoriesUrl = "/businesssubcategories?companyId=" + companyId + "&businessCategoryID=" + businessCategoryID;
+			}
+
+
+			jQuery.ajax({
+				type: "GET",
+				url: businesssubCategoriesUrl,
+				success: function(response) {
+					var htmlUl = "";
+					for (var i = 0; i < response.length; i++) {
+						if ( (response[i].name != 'Any') && (response[i].name != thisLink.text()) ){
+							htmlUl = htmlUl + '<li><a href="#" id=' + response[i].id + ' data-businessCategoryId="' + response[i].businessCategoryId + '">' + response[i].name + '</a></li>';
+						}
+					}
+					if(htmlUl != "") {
+						thisLink.parent().append('<ul>' + htmlUl + '</ul>');
+					}
+				},
+				dataType: 'json'
+			});
+		}
+		return false
+	});
+
+
+
+
+	if (jQuery('.business-page').length) {
+
+		function filterScrollFun() {
+			var scrollThis = jQuery(window).scrollTop() + jQuery(window).outerHeight();
+			var businessPageHeight = jQuery('.business-page .mainWrapp').outerHeight();
+
+			var topScrollHeight = scrollThis - businessPageHeight;
+			if ( topScrollHeight > 0 ) {
+				jQuery('.sidebar-filter').css('bottom', topScrollHeight + 'px');
+			}else {
+				jQuery('.sidebar-filter').css('bottom', 0);
+			}
+		}
+
+		filterScrollFun();
+
+		jQuery(window).scroll(function(){
+			filterScrollFun();
+		});
+
+
+
+	}
+	
+
+	jQuery('body').on('click','.filter-button-sidebar a', function(){
+		jQuery('.wrap-sidebar-filter').show();
+		setTimeout(function(){
+			jQuery('html').addClass('sidebar-filter-active');
+		}, 100);
+		setTimeout(function(){
+			jQuery('.filter-button-sidebar a').removeClass('disable-btn');
+		}, 300);
+		return false 
+	});
+	jQuery('body').on('click','.close-sidebar-filter', function(){
+		jQuery('html').removeClass('sidebar-filter-active');
+		jQuery('.wrap-sidebar-filter').hide();
+		return false 
+	});
+
+
+
+
+
 
 	jQuery('body').on('click','.menu-nav-dropdown-business-js a', function(){
 		menuNavBusinessJsClickFun(jQuery(this));
@@ -329,7 +833,6 @@ jQuery(document).ready(function(){
 			type: "GET",
 			url: pageBusinessURL,
 			success: function(response) {
-				// console.log(response);
 				for (var i = 0; i < response.length; i++) {
 					jQuery('.menu-nav-business-js').append('<li><a href="#" id=' + response[i].id + '>' + response[i].name + '</a></li>');
 
@@ -399,13 +902,100 @@ jQuery(document).ready(function(){
 						document.getElementById("nextURL").value = "";
 					}
 				}
-				if (jQuery('.menu-nav-wrap-main-js').length) {
+				if (jQuery('.menu-nav-wrap-main-js').length || jQuery('.business-page').length) {
 					newDesignMenu();
 				}
 			},
 			dataType: 'json'
 		});
 	});
+
+
+
+	var varClickRestname;
+
+
+
+
+	jQuery('#business-restname').on('input',function(e){
+		clearTimeout(varClickRestname);
+		varClickRestname = setTimeout(function(){ 
+			clickRestname();
+		}, 800);
+	});
+
+
+	function clickRestname() {
+
+
+		jQuery(".radio-option").each(function(i) {
+			jQuery(this).removeClass('click');	
+		});
+		var restaurantName = document.getElementById("business-restname").value;
+		var filterURL = document.getElementById("filterURL").value;
+		if (filterURL.indexOf("&listCuisines=") >= 0) {
+			filterURL = filterURL.substr(0, filterURL.indexOf("&listCuisines="));
+		}
+		
+		if (restaurantName != '') {
+			if (filterURL.indexOf("?") >= 0) {
+				filterURL = filterURL + "&name="+restaurantName;
+				jQuery('.business-search-list').show();
+				jQuery('.business-search-button-close').show();
+				
+			} else {
+				filterURL = filterURL + "?name="+restaurantName;
+			}
+		}else {
+			jQuery('.business-search-list').hide();
+			jQuery('.business-search-button-close').hide();
+		}
+		jQuery(".business-search-list").html("");
+		
+		// queue up an ajax request
+		jQuery.ajaxQueue({
+			url: filterURL,
+			type: 'GET',
+			success: function(response) {
+				if (response.status == 'failure') {
+					//alert("Failed to Delete");
+				} else {
+					if (response.firstBranchId != '0') {
+						jQuery(".business-search-list").html(response.branchHTML);
+					} else {
+
+						jQuery(".business-search-list").html("<div class='no-result-filter'>No Results</div>");
+					}
+				}
+			},
+			dataType: 'json'
+		});
+
+	}
+
+
+
+
+
+
+
+	
+	jQuery('.business-search-button-close').click(function(){
+		jQuery('.business-search-list').hide();
+		jQuery('.business-search-button-close').hide();
+		jQuery('#business-restname').val('');
+		return false
+	});
+
+
+
+
+
+
+
+
+
+
 	
 	jQuery('#restnamemob').on('input',function(e){
 		jQuery(".radio-option-mob").each(function(i) {
@@ -577,8 +1167,8 @@ jQuery(document).ready(function(){
 					jQuery(".total-restaurants").html(response.totalBranches);
 					if (response.firstBranchId != '0') {
 						jQuery("#load-restaurant-list ul").append(response.branchHTML);
-
-						if (jQuery('.menu-nav-wrap-main-js').length) {
+			
+						if (jQuery('.menu-nav-wrap-main-js').length || jQuery('.business-page').length) {
 							newDesignMenu();
 						}
 
@@ -995,7 +1585,6 @@ jQuery(document).ready(function(){
 			var el = jQuery(jQuery(this).parent().data('target'));
 			var elId = el.attr('id');
 			jQuery('#menu-content .active').removeClass('active');
-			console.log( elId );
 			jQuery('#' + elId + 'ab').collapse('show');
 			jQuery(this).parent().addClass('active');
 

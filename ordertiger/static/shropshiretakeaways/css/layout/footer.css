@@ -1,0 +1,342 @@
+/*-----------------------------
+         Footer CSS 
+/*---------------------------*/
+#footer {
+  background: #1f1f1f;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  height: auto;
+  color: #fff;
+  font-size: 15px;
+  line-height: 24px;
+  font-family: 'Fira Sans';
+  font-weight: 500;
+  padding: 72px 0 0;
+}
+#footer a {
+  color: #fff;
+}
+#footer h3 {
+  font-family: 'Fira Sans';
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #ed2724;
+  text-align: left;
+  font-weight: bold;
+  margin: 0;
+}
+#footer ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+#footer li {
+  list-style: none;
+  text-align: left;
+}
+#footer li a {
+  width: 100%;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+}
+#footer li a:hover {
+  text-decoration: underline;
+}
+.footer-logo {
+  width: 143px;
+  position: relative;
+  padding-top: 11px;
+  padding-bottom: 20px;
+}
+.footer-right {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.footer-right a {
+  outline: none;
+}
+.footer-left {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.footer-left a {
+  outline: none;
+}
+.icns-sections {
+  width: 100%;
+  float: left;
+  padding: 0px;
+  margin-left: -14px;
+}
+.df-icn {
+  width: 42px;
+  height: 42px;
+}
+.pay-icn {
+  width: 68px;
+  height: 42px;
+  float: left;
+}
+.head-icn {
+  width: 26px;
+  height: 32px;
+  float: left;
+  margin-top: 14px;
+  margin-right: 2px;
+}
+.payment-method {
+  float: right;
+  width: auto !important;
+}
+.social-center {
+  margin-bottom: 0;
+  margin-right: 5px;
+  float: left;
+}
+.social-center > * {
+  float: left;
+}
+.fb {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -21px -5px;
+}
+.tw {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -69px -5px;
+}
+.gp {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -119px -6px;
+}
+.ios {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -166px -5px;
+}
+.and {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -214px -5px;
+}
+.verified {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -5px -55px;
+}
+.secure-code {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -73px -52px;
+}
+.visa {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -159px -52px;
+}
+.master-card {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -232px -50px;
+}
+.footer-bottom {
+  background: #303030;
+  padding: 15px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+.footer-bottom a {
+  margin-right: 15px;
+  text-decoration: underline;
+}
+.footer-bottom a:hover {
+  text-decoration: none;
+}
+.restaurant-list-content {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+.restaurant-list-content p {
+  float: left;
+  color: #2a2a2a;
+  width: 100%;
+  font-size: 14px;
+}
+.restaurant-data h2 a {
+  color: #ae191b;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+  width: 100%;
+}
+.restaurant-data h2 a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.restaurant-data h2 {
+  margin: 8px 5px 5px 0;
+  font-size: 20px;
+  width: 100%;
+}
+.restaurant-data .block {
+  float: left;
+  width: 290px;
+}
+.restaurant-data .starbox {
+  float: left;
+}
+.restaurant-data .block p {
+  float: left;
+  margin-top: 8px;
+  margin-left: 5px;
+  width: auto;
+}
+.status {
+  color: #009640;
+  font-size: 14px;
+  text-align: center;
+  width: 90px;
+  float: left;
+  margin-bottom: 10px;
+}
+.process-step {
+  float: left;
+  width: auto;
+}
+.process-icn {
+  width: 44px;
+  height: 32px;
+  float: left;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.process-discount-icon {
+  width: 35px;
+  height: 30px;
+  float: left;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.delivery-icn {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -5px -740px;
+  background-repeat: no-repeat;
+}
+.restaurant-icn {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -45px -740px;
+  background-repeat: no-repeat;
+}
+.card-icon {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -90px -740px;
+  background-repeat: no-repeat;
+}
+.paymen-icon {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -132px -740px;
+  background-repeat: no-repeat;
+}
+.status i {
+  background: url(/static/shropshiretakeaways/images/sprite.png);
+  background-position: -220px -740px;
+  width: 26px;
+  height: 24px;
+  float: left;
+}
+.first-step {
+  border-right: 0px solid #eee;
+  padding-right: 0px;
+  margin-right: 10px;
+  float: left;
+}
+.first-step .restaurant-icn {
+  margin-right: 0px;
+}
+.order-now-btn {
+  background: #ae191b;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  line-height: 44px;
+  float: left;
+  -webkit-text-shadow: 0px 0px 1px 1px #eee;
+  -moz-text-shadow: 0px 0px 1px 1px #eee;
+  -ms-text-shadow: 0px 0px 1px 1px #eee;
+  text-shadow: 0px 0px 1px 1px #eee;
+  border: 1px solid #ae191b;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+}
+.order-now-btn:hover {
+  background: #da3133;
+  border: 1px solid #da3133;
+  text-decoration: none;
+  color: #fff;
+}
+.device-btn-position {
+  position: static;
+  margin-top: 15px;
+  padding: 0px;
+  /*padding-right:15px;*/
+}
+.app-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+}
+.app-wrap > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.socials-carts {
+  position: relative;
+  margin: 48px 0 0;
+  overflow: hidden;
+  padding: 0 0 11px;
+}
+.get-our-app {
+  margin-right: 10px;
+}
+@media (max-width: 991px) {
+  #footer {
+    padding-top: 50px;
+  }
+  .footer-logo {
+    width: auto;
+    padding-bottom: 40px;
+    padding-top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .app-wrap {
+    position: static;
+    margin: 0;
+    width: auto;
+  }
+  .social-center {
+    float: none !important;
+  }
+  .payment-method {
+    float: none !important;
+  }
+  #footer ul {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  #footer ul li {
+    text-align: center;
+  }
+  #footer li a {
+    text-align: center;
+  }
+  #footer h3 {
+    text-align: center;
+  }
+}

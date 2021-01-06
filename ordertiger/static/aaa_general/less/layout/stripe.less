@@ -141,13 +141,19 @@
 	background-color: #e25950;
 }
 
-.example.example2 input, .example.example2 button {
+.example.example2 input, .example.example2 button, .example.example2 select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	outline: none;
 	border-style: none;
 }
+ .example.example2 select {
+ 	background-image: url(../../images/chevron-thin-bottom.svg);
+ 	background-size: 16px auto;
+ 	background-repeat: no-repeat;
+ 	background-position: 100% 50%;
+ }
 
 .example.example2 input:-webkit-autofill {
 	-webkit-text-fill-color: #e39f48;
@@ -382,4 +388,78 @@
 	&:hover {
 		opacity: 1;
 	}
+}
+
+
+.field-paysafe {
+	position: relative;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+.field-iframe {
+	height: 35px;
+	border-bottom: 1px solid #cfd7df;
+	position: relative;
+	z-index: 2;
+}
+.field-iframe-focus {
+	border-bottom: 1px solid #24b47e;
+}
+.field-iframe-focus + .field-iframe-label, .isEmpty_false + .field-iframe-label {
+	color: #aab7c4;
+	transform: scale(0.85) translateY(-20px);
+	cursor: default;
+}
+.field-iframe-label {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	z-index: 1;
+	bottom: 8px;
+	color: #cfd7df;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	transform-origin: 0 50%;
+	margin: 0;
+	cursor: text;
+	transition-property: color, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.error-card {
+	font-size: 12px;
+	text-align: center;
+	color: red;
+	margin: 15px 0 0;
+}
+.securityCode {
+    position: absolute;
+    top: 21px;
+    right: 44px;
+    height: 25px;
+    width: 40px;
+    text-align: center;
+	input {
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		font-size: 12px !important;
+		border: 1px solid #dbdbdc!important;
+		&:focus {
+			border-color: #000 !important;
+		}
+	}
+}
+.security-code-tilte {
+	position: absolute;
+	top: -20px;
+	font-size: 12px !important;
+	left: 0;
+	width: 100px;
+	text-align: center;
+	left: 50%;
+	margin-left: -50px;
 }

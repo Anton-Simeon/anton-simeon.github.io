@@ -1,10 +1,7 @@
-html, body {
-  height: 100%;
-}
 body {
-  font-weight: 300;
-  position: relative;
-  z-index: 2;
+	font-weight: 300;
+	position: relative;
+	z-index: 2;
 }
 select::-ms-expand {
     display: none;
@@ -12,7 +9,7 @@ select::-ms-expand {
 a, button, input, select {
   outline: none !important;
 }
-html:after {
+body:after {
   content: " ";
   display: block;
   width: 100%;
@@ -20,31 +17,55 @@ html:after {
   top: 0;
   height: 100%;
   background: #fff;
-  z-index: 1;
+  z-index: -1;
   position: fixed;
   box-shadow: 0px 0px 3px #888888;
 }
 
 @media (min-width: 768px) {
-  html:after {
+  body:after {
     width: 750px;
     left: 50%;
     margin-left: -375px;
   }
 }
 @media (min-width: 992px) {
-  html:after {
+  body:after {
     width: 970px;
     margin-left: -485px;
   }
 }
 @media (min-width: 1200px) {
-  html:after {
+  body:after {
     width: 1170px;
     margin-left: -585px;
   }
 }
-
+@media (min-width: 1025px) {
+  html, body {
+    height: 100%;
+  }
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  .mainWrapp_scroll {
+    height: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  .mainWrapp_scroll {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+.mainWrapp {
+  min-height: 100%;
+}
 html[lang^='ka'] {
   h1, h2, h3, h4, h5, h6, .btn, .register-button, .login-button {
     font-family: 'BPG arial caps 2010', 'Nunito' !important;
@@ -55,9 +76,6 @@ html[lang^='ka'] {
   .register-button, .login-button {
     font-size: 12px;
   }
-}
-.mainWrapp {
-  min-height: 100%;
 }
 .containerWrapp {
   .padding3( 120px, 30px, 198px );
@@ -660,6 +678,21 @@ button.tab.active {
       height: 32px;
       .padding-left( 5px );
       .padding-right( 5px );
+    }
+  }
+}
+
+
+@media (max-width: 1025px) {
+  .modal-open {
+    .modal-backdrop {
+      display: none !important;
+    }
+    .bg-mobile {
+      display: block !important;
+    }
+    #header {
+      z-index: 100 !important;
     }
   }
 }

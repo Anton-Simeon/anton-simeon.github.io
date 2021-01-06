@@ -13,12 +13,18 @@
 }
 .index-page {
   #header {
-    .transition(0.8s);
-    background: transparent;
-    border-color: transparent;
+	//.transition(0.2s);
+	background: transparent;
+	border-color: transparent;
+	#home_logo {
+		//.transition(0.2s);
+	}
     &.active {
-      background: #fff;
-      border-color: @main-color;
+		background: #fff;
+		border-color: @main-color;
+		#home_logo {
+			opacity: 1;
+		}
     }
   }
 }
@@ -31,7 +37,8 @@
 #home_logo a {
 	display: block;
 	height: 70px;
-	width: 300px;
+	.float( left );
+	max-width: 300px;
 	font-size: 0;
 }
 #home_logo a:after {
@@ -114,7 +121,7 @@
   border: 2px solid #f27930;
   text-decoration: none;
   min-width: 163px;
-  .margin-left( 44px );
+  .margin-left( 20px );
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -162,7 +169,7 @@
   border: 2px solid #f27930;
   text-decoration: none;
   min-width: 163px;
-  .margin-left( 44px );
+  .margin-left( 20px );
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -312,7 +319,7 @@
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #home_logo a {
-    width: 200px;
+    max-width: 200px;
   }
 }
 
@@ -322,7 +329,7 @@
     .padding-left( 15px );
   }
   #home_logo a {
-    width: 100px;
+    max-width: 100px;
     height: 50px;
   }
 

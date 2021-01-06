@@ -22,7 +22,8 @@
 #home_logo a {
 	display: block;
 	height: 56px;
-	width: 300px;
+    .float( left );
+	max-width: 300px;
 	font-size: 0;
 }
 #home_logo a:after {
@@ -105,7 +106,7 @@
   border: 1px solid #545454;
   text-decoration: none;
   min-width: 97px;
-  .margin-left( 32px );
+  .margin-left( 20px );
   border-radius: 3px;
   outline: none;
   .transition(0.2s);
@@ -144,7 +145,7 @@
   font-weight: 400;
   text-decoration: none;
   min-width: 97px;
-  .margin-left( 32px );
+  .margin-left( 20px );
   border-radius: 3px;
   outline: none;
   .transition(0.2s);
@@ -276,7 +277,7 @@ html[dir="rtl"] .btn-user {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #home_logo a {
-    width: 200px;
+    max-width: 200px;
   }
 }
 
@@ -286,7 +287,7 @@ html[dir="rtl"] .btn-user {
     .padding-left( 15px );
   }
   #home_logo a {
-    width: 100px;
+    max-width: 100px;
   }
   .menu-button-wrap {
     display: block;

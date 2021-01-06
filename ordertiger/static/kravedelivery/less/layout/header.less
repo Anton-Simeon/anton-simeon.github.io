@@ -31,7 +31,8 @@
 #home_logo a {
 	display: block;
 	height: 110px;
-	width: 300px;
+  .float( left );
+	max-width: 300px;
 	font-size: 0;
 }
 #home_logo a:after {
@@ -114,7 +115,7 @@
   border: 2px dotted #fff;
   text-decoration: none;
   min-width: 126px;
-  .margin-left( 36px );
+  .margin-left( 20px );
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -164,7 +165,7 @@
   border: 2px solid #fff;
   text-decoration: none;
   min-width: 126px;
-  .margin-left( 36px );
+  .margin-left( 20px );
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -314,7 +315,7 @@
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #home_logo a {
-    width: 200px;
+    max-width: 200px;
   }
 }
 
@@ -324,7 +325,7 @@
     .padding-left( 15px );
   }
   #home_logo a {
-    width: 100px;
+    max-width: 100px;
     height: 50px;
   }
 
