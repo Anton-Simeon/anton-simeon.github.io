@@ -347,12 +347,9 @@
 
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAroNtwZVVZwUcIQsowdwhssYpzaZcoguw&v=3.27&libraries=geometry,places&region=GB"></script>
                                 <script type="text/javascript">
-                                    jQuery.ajax({
-                                        type: "GET",
-                                        url: 'http://www.deliveron.co/phones/countrycode?companyId=49',
-                                        success: function(response) {
-                                            console.log(response);
-                                            var countryCode = response.country;
+                               
+
+                                            var countryCode = "GB";
 
                                             var input = document.querySelector("#phone"),
                                                 errorMsg = document.querySelector("#error-msg"),
@@ -506,10 +503,6 @@
                                             });
 
 
-
-                                        },
-                                        dataType: 'json'
-                                    });
                                 </script>
                                 <script>
                                     var selectedCompanyId = '49';
