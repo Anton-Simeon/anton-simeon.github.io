@@ -1,0 +1,667 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en_GB" lang="en_GB" class="no-js "">
+<head>
+    <title>Confirm Details</title>
+
+
+
+
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="index,follow" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <script src="static/aaa_general/js/responsive/jquery.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Nunito:400,400i,600,600i,700,700i,800,800i" rel="stylesheet" />
+    <link rel="shortcut icon" href="static/ordertigerwidget/images/favicon.png" type="image/png">
+
+
+
+
+    <link href="static/ordertigerwidget/css/style.css" rel="stylesheet" type="text/css" />
+
+
+
+    <!--
+    <script type="text/javascript" src="https://intl-tel-input.com/node_modules/intl-tel-input/examples/js/prism.js"></script>
+    <script type="text/javascript" src="https://intl-tel-input.com/node_modules/intl-tel-input/build/js/intlTelInput.js?1603274336113"></script>
+     -->
+    <script type="text/javascript" src="static/aaa_general/js/intl-tel-input/prism.js"></script>
+    <script type="text/javascript" src="static/aaa_general/js/intl-tel-input/intlTelInput.js"></script>
+</head>
+<body>
+<div class="mainWrapp_scroll">
+    <div class="mainWrapp">
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="bg-mobile"></div>
+        <header id="header" class="header">
+
+            <div class="container">
+                <div class="row">
+                    <nav role="navigation" class="navbar">
+
+
+                        <div id="home_logo">
+                            <a href="/?companyId=49"><img src="https://res.cloudinary.com/blue-plus-technologies-ltd/image/upload/v1470306371/logo_s_q8rfdp.png" /></a>
+                        </div>
+
+
+
+
+
+                        <div class="navbar-wrapper navbar-collapse pull-right mobile-nav lang-wrap">
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="btn-group profile-dropdown ">
+                                <a href="#" class="btn-user dropdown-toggle btn-sml" data-toggle="dropdown" aria-expanded="true"><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/myaccount?companyId=49">Personal Info</a></li>
+                                    <li><a href="/addressbook?companyId=49">Address Book</a></li>
+                                    <li><a href="/orderhistory?companyId=49">Order History</a></li>
+                                    <li><a href="/updatepassword?companyId=49">Update Password</a></li>
+                                    <li><a href="/signout?companyId=49">Log Out</a></li>
+                                </ul>
+                            </div>
+
+                            <a href="/menu/gogo-panda_test?companyId=49" class="cart-header"><i class="icon icon-shopping-cart"></i><span>1</span></a>
+
+
+
+
+                            <!-- select option for languages -->
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <style type="text/css"> #iubenda-cs-banner { bottom: 0px !important; left: 0px !important; position: fixed !important; width: 100% !important; z-index: 99999998 !important; background-color: black; } .iubenda-cs-content { display: block; margin: 0 auto; padding: 20px; width: auto; font-family: Helvetica,Arial,FreeSans,sans-serif; font-size: 14px; background: #000; color: #fff;} .iubenda-cs-rationale { max-width: 900px; position: relative; margin: 0 auto; } .iubenda-banner-content > p { font-family: Helvetica,Arial,FreeSans,sans-serif; line-height: 1.5; } .iubenda-cs-close-btn { margin:0; color: #fff; text-decoration: none; font-size: 14px; position: absolute; top: 0; right: 0; border: none; } .iubenda-cs-cookie-policy-lnk { text-decoration: underline; color: #fff; font-size: 14px; font-weight: 900; } </style> <script type="text/javascript"> var _iub = _iub || []; _iub.csConfiguration = {"lang":"en","siteId":1169047,"banner":{"slideDown":false,"applyStyles":false},"cookiePolicyId":28362985}; </script><script type="text/javascript" src="//cdn.iubenda.com/cookie_solution/safemode/iubenda_cs.js" charset="UTF-8" async></script>
+        </header>
+        <div id="loginModal" class="modal modal-login-style spinner-active" role="dialog">
+            <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content"></div>
+            </div>
+        </div>
+        <div id="forgotloginModal" class="modal modal-login-style spinner-active" role="dialog">
+            <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content"></div>
+            </div>
+        </div>
+        <div id="registerModal" class="modal modal-login-style spinner-active" role="dialog">
+            <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content"></div>
+            </div>
+        </div>
+        <div class="containerWrapp container">
+            <div class="row">
+                <div id="confirmdetailsForm" class="col-sm-8 vertical-form">
+                    <div class="info_box form_holder">
+                        <div class="info_inner">
+                            <div class="info_content">
+
+
+
+
+
+
+
+
+
+                                <h2>Order Details</h2>
+
+
+
+
+
+                                <div class="row">
+                                    <form id="confirmdetailsform" role="form" class="col-md-6 col-sm-10 col-xs-12" action="/confirmdetails" method="post">
+                                        <input type="hidden" name="isAddressBook" value="true" />
+                                        <input id="companyId" name="companyId" type="hidden" value="49"/>
+
+
+
+
+                                        <div class="form-groups">
+                                            <div class="form-group">
+                                                <label for="ordertype">Order Type <span class="required">*</span></label>
+
+
+
+                                                <input id="orderType" name="orderType" class="form-control" readonly="readonly" type="text" value="DELIVERY" maxlength="60"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="paymentmethod">Payment Method <span class="required">*</span></label>
+                                                <select id="paymentMethod" name="paymentMethod" class="form-control">
+
+                                                    <option selected=\"selected\" value="PAYPAL">PAYPAL</option>
+
+                                                    <option  value="CASH">CASH</option>
+
+                                                    <option  value="CARD">CARD</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="orderDate">Order Date <span class="required">*</span></label>
+                                                <input id="orderDate" name="orderDate" class="form-control" readonly="readonly" type="text" value="2021-01-15" maxlength="60"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ordertime">Order Time <span class="required">*</span> <span aria-hidden="true" class="glyphicon glyphicon-dashboard"></span></label>
+                                                <input id="orderTime" name="orderTime" class="form-control" readonly="readonly" type="text" value="ASAP (AROUND 15 minutes)" maxlength="60"/>
+                                            </div>
+                                            <hr />
+                                            <div class="form-group">
+                                                <label for="firstname">First Name <span class="required">*</span></label>
+                                                <input id="firstname" name="firstName" class="form-control" type="text" value="Sinoeak" maxlength="60"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lastname">Last Name <span class="required">*</span></label>
+                                                <input id="lastname" name="lastName" class="form-control" type="text" value="Kaabi" maxlength="60"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email <span class="required">*</span></label>
+                                                <input id="email" name="email" class="form-control" type="text" value="sinoea.kaabi@ordertiger.com" maxlength="100"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="telephone">Telephone/Mobile <span class="required">*</span></label>
+                                                <div class="form-position">
+                                                    <input id="phone" name="phone" class="form-control" type="tel" value="+447884 091884" maxlength="40"/>
+                                                    <span id="valid-msg" class="hide">✓</span>
+                                                    <span id="error-msg" class="hide"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="instructions">Special Instructions</label>
+                                                <textarea id="specialinstructions" name="specialInstructions" class="form-control" maxlength="250" rows="2" cols="23">
+</textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="promocode">Promotional Code</label>
+                                                <input id="promocode" name="promoCode" class="form-control" type="text" value="" maxlength="60"/>
+                                            </div>
+
+                                            <hr />
+                                            <div class="form-group" id="addressbookdiv">
+                                                <label for="customeraddresses">Address <span class="required">*</span></label>
+                                                <div class="text-right">
+
+
+                                                    <a class="btn btn-primary button-margin" href="/addaddress?companyId=49&referralPage=confirmdetails" data-target="#addressModal" data-refresh="true" role="button" data-toggle="modal">Add New Address</a>
+
+
+
+                                                </div>
+                                                <div id="addressbookTablediv">
+                                                    <div class="wrap-table">
+                                                        <table id="addressbookTable" class="table table-bordered table-striped table-hover" cellspacing="0" role="grid" style="width: 100%;">
+                                                            <tbody>
+
+                                                            <tr id="addressbookTable_row" onclick="changeSelectedItem(this);setSelectedAddresId('372431')" class="even addressbookTable_row" role="row">
+                                                                <td width="5%"><input id="addressId1" name="addressId" type="radio" value="372431" checked="checked"/></td>
+                                                                <td class="address-field-name">
+
+
+
+
+                                                                    New Address<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    SW111RT
+
+
+
+
+                                                                </td>
+                                                                <td class="right-align" width="28%">
+                                                                    <a class="customer-id" role="button" href="javascript: deleteaddress(372431,49);"> Delete </a>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr id="addressbookTable_row" onclick="changeSelectedItem(this);setSelectedAddresId('392286')" class="odd addressbookTable_row" role="row">
+                                                                <td width="5%"><input id="addressId2" name="addressId" type="radio" value="392286"/></td>
+                                                                <td class="address-field-name">
+
+
+
+
+                                                                    4327, 3rd Ave., West Bronx, The Bronx, 3206<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    SW188RT
+
+
+
+
+                                                                </td>
+                                                                <td class="right-align" width="28%">
+                                                                    <a class="customer-id" role="button" href="javascript: deleteaddress(392286,49);"> Delete </a>
+                                                                </td>
+                                                            </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="padding-free">
+
+
+
+
+                                                    <button type="submit" class="btn btn-primary btn-block" id="update-confirm">
+                                                        Continue
+                                                    </button>
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAroNtwZVVZwUcIQsowdwhssYpzaZcoguw&v=3.27&libraries=geometry,places&region=GB"></script>
+                                <script type="text/javascript">
+                                    jQuery.ajax({
+                                        type: "GET",
+                                        url: '/phones/countrycode?companyId=49',
+                                        success: function(response) {
+                                            console.log(response);
+                                            var countryCode = response.country;
+
+                                            var input = document.querySelector("#phone"),
+                                                errorMsg = document.querySelector("#error-msg"),
+                                                validMsg = document.querySelector("#valid-msg");
+
+                                            //here, the index maps to the error code returned from getValidationError - see readme
+                                            var errorMap = ['Invalid number', 'Invalid country code', 'Too short', 'Too long', 'Invalid number'];
+
+                                            //initialise plugin
+                                            var valNumber = jQuery('#phone').val();
+                                            if (valNumber[0] == "+") {
+                                                countryCode = 'auto';
+                                            }
+
+
+                                            var iti = window.intlTelInput(input, {
+                                                initialCountry: countryCode,
+                                                separateDialCode: true,
+                                                geoIpLookup: function(callback) {
+                                                    $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+                                                        var countryCode = (resp && resp.country) ? resp.country : "us";
+                                                        callback(countryCode);
+                                                    });
+                                                },
+                                                utilsScript: "static/aaa_general/js/intl-tel-input/utils.js" // just
+                                            });
+
+                                            var reset = function() {
+                                                input.classList.remove("error");
+                                                errorMsg.innerHTML = "";
+                                                errorMsg.classList.add("hide");
+                                                validMsg.classList.add("hide");
+                                            };
+
+                                            //on blur: validate
+                                            input.addEventListener('blur', function() {
+                                                reset();
+                                                if (input.value.trim()) {
+
+                                                    if (iti.isValidNumber()) {
+                                                        // var valPhone = jQuery('#phone').val();
+
+
+                                                        // var codeNumber = iti.selectedCountryData.dialCode;
+                                                        // var valPhoneFirst = valPhone[0]
+
+                                                        // var codeNumberLast = codeNumber[codeNumber.length - 1];
+
+
+                                                        // console.log(valPhoneFirst);
+                                                        // console.log(codeNumberLast);
+                                                        // if (valPhoneFirst == "0" && codeNumberLast == "0") {
+                                                        // 	var lenghNumber = codeNumber.length - 1;
+                                                        // 	codeNumber = codeNumber.substr(0, lenghNumber);
+                                                        // 	console.log(codeNumber);
+                                                        // }
+
+
+                                                        // if (valPhone[0] != "+") {
+                                                        // 	var valPhoneNew = "+" + codeNumber + valPhone;
+                                                        // 	jQuery('#phone').val(valPhoneNew);
+                                                        // }
+
+                                                        // jQuery('#register-submit').prop("disabled", false);
+                                                        // jQuery('#update-confirm').prop("disabled", false);
+                                                        // validMsg.classList.remove("hide");
+                                                    } else {
+                                                        // jQuery('#register-submit').prop("disabled", true);
+                                                        // jQuery('#update-confirm').prop("disabled", true);
+
+
+                                                        // input.classList.add("error");
+                                                        // var errorCode = iti.getValidationError();
+                                                        // errorMsg.innerHTML = errorMap[errorCode];
+                                                        // errorMsg.classList.remove("hide");
+                                                    }
+                                                }
+                                            });
+
+
+                                            function disableFun() {
+                                                if (input.value.trim()) {
+                                                    if (iti.isValidNumber()) {
+                                                        jQuery('#register-submit').prop("disabled", false);
+                                                        jQuery('#update-confirm').prop("disabled", false);
+                                                        validMsg.classList.remove("hide");
+                                                    } else {
+                                                        jQuery('#register-submit').prop("disabled", true);
+                                                        jQuery('#update-confirm').prop("disabled", true);
+
+                                                        input.classList.add("error");
+                                                        var errorCode = iti.getValidationError();
+                                                        errorMsg.innerHTML = errorMap[errorCode];
+                                                        errorMsg.classList.remove("hide");
+                                                    }
+                                                }
+                                            }
+
+                                            //on keyup / change flag: reset
+                                            // input.addEventListener('change', function() {
+                                            // 	reset();
+                                            // 	disableFun();
+                                            // });
+                                            // input.addEventListener('keyup', function() {
+                                            // 	reset();
+                                            // 	disableFun();
+                                            // });
+
+                                            // input.addEventListener("countrychange", function() {
+                                            // 	reset();
+                                            // 	disableFun();
+                                            // });
+
+
+
+                                            jQuery('#update-confirm').click(function() {
+                                                var beforeNumber = jQuery('.iti__selected-dial-code').text();
+                                                var phoneNumber = jQuery('#phone').val();
+                                                if (phoneNumber[0] != "+") {
+                                                    phoneNumber = beforeNumber + phoneNumber;
+                                                    jQuery('#phone').val(phoneNumber);
+                                                }
+
+
+                                                //new validation
+                                                jQuery('#confirmdetailsform').submit();
+                                                // jQuery('#update-confirm').addClass('disable-btn');
+
+
+
+                                                // if (iti.isValidNumber()) {
+                                                // 	jQuery('#register-submit').prop("disabled", false);
+                                                // 	jQuery('#update-confirm').prop("disabled", false);
+                                                // 	validMsg.classList.remove("hide");
+                                                // 	jQuery('#confirmdetailsform').submit();
+                                                // 	console.log('update form');
+                                                // } else {
+                                                // 	jQuery('#register-submit').prop("disabled", true);
+                                                // 	jQuery('#update-confirm').prop("disabled", true);
+
+                                                // 	input.classList.add("error");
+                                                // 	var errorCode = iti.getValidationError();
+                                                // 	errorMsg.innerHTML = errorMap[errorCode];
+                                                // 	errorMsg.classList.remove("hide");
+                                                // 	jQuery('#update-confirm').removeClass('disable-btn');
+                                                // }
+
+
+
+                                                return false
+                                            });
+
+
+
+                                        },
+                                        dataType: 'json'
+                                    });
+                                </script>
+                                <script>
+                                    var selectedCompanyId = '49';
+                                    function changeSelectedItem(that){
+                                        jQuery(that).find('td input:radio').prop('checked', true);
+                                        jQuery(that).find('td input:radio').trigger("change")
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 myorderForm hidden-xs">
+                    <div class="info_box form_holder">
+                        <div class="info_inner">
+                            <div class="info_content">
+
+
+
+
+
+
+
+
+                                <h2>MY ORDER</h2>
+                                <table class="table shopping-cart-table">
+                                    <tbody>
+
+
+
+                                    <!-- START: Generated HTML code --><tr><td class="orderitem_name"><span class="productname">Margherita Pizza</span><br /><strong>1st servings</strong>:<br /><span class="product-ingredient">12 Inch </span><br /><strong>12 inch extra drink</strong>:<br /><span class="product-ingredient">Coca-Cola </span><br /><strong>2nd serving</strong>:<br /><span class="product-ingredient">16 Inch </span><br /><strong>2nd serving 16 inch extra toppings</strong>:<br /><span class="product-ingredient">Cheese </span><br /><strong>2nd serving 16 inch stuffed crust</strong>:<br /><span class="product-ingredient">Cheese Stuffed Crust  </span><br /><strong>2nd serving 16 inch drink</strong>:<br /><span class="product-ingredient">Coca-Cola </span><br /></td><td class="orderitem_qty">8</td><td class="orderitem_price">£375.84</td></tr><!-- END: Generated HTML code -->
+
+                                    <tr>
+                                        <td class="padding" colspan="3"></td>
+                                    </tr>
+                                    <tr class="food-content">
+                                        <td class="bold-text">Subtotal</td>
+                                        <td class="text-center"></td>
+                                        <td class="amount"><!-- START: Generated HTML code -->£375.84<!-- END: Generated HTML code --></td>
+                                    </tr>
+
+
+
+                                    <tr class="food-content">
+                                        <td class="bold-text">Driver Tip</td>
+                                        <td class="text-center"></td>
+                                        <td class="amount"><!-- START: Generated HTML code -->£56.38<!-- END: Generated HTML code --></td>
+                                    </tr>
+
+
+
+                                    </tbody>
+                                </table>
+                                <div class="hidden" id="warningMessageNoZoneFound">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="addressModal" class="modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"></div>
+                <div class="modal-footer clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <footer id="footer" class="footer ">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="poweredby">
+                    Powered By <a href="http://www.ordertiger.com" rel="external" target="_blank">
+
+
+
+
+
+                    <img class="dynamic-footer-logo" src="static/images/companylogos/ordertiger.png" alt="Order Tiger" />
+
+
+                </a>
+                </div>
+                <div class="copyright">
+                    <p>
+					<span class="copyright-top">Copyright &copy;
+					<script type="text/javascript">
+						var year = new Date();
+                        document.write(year.getFullYear());
+					</script>
+					Order Tiger</span> <span class="hidden-xs">|</span> <a href="/termsandconditions?companyId=49">Terms & Conditions</a> | <a href="/privacypolicy?companyId=49">Privacy Policy <span class="hidden-xs">|</span> </a><span class="visible-xs" style="font-size: 0;"><br></span><a href="/cookiepolicy?companyId=49">Cookie Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="static/aaa_general/libs/v2.3.2/jquery.rateyo.js"></script>
+    <script src="static/aaa_general/js/responsive/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="static/aaa_general/js/responsive/bootstrap.min.js"></script>
+    <script src="static/aaa_general/js/jquery_lazyload-2.x/lazyload.min.js"></script>
+    <script src="static/aaa_general/js/responsive/script.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery('#addressbookTablediv').on("click", "table tr", function(){
+                jQuery(this).find('td input:radio').prop('checked', true);
+            });
+        });
+
+        function deleteaddress(addressid,companyId){
+            jQuery.ajax({
+                type: "POST",
+                url: '/ajaxdeleteaddress/'+addressid,
+                data: {"referer": "confirmdetails","companyId": companyId},
+                success: function(response) {
+                    if (response.status == 'failure') {
+                        alert("Failed to Delete");
+                    } else {
+                        jQuery('#addressbookTablediv').html(response.addressbookHtml);
+                    }
+                },
+                dataType: 'json'
+            });
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        // code for changing language and setting cookie
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        jQuery(document).ready(function(){
+            jQuery("#languageCookieSelector").change(function(){
+                setCookie("languageCookie", jQuery(this).val(), 365);
+                location.reload();
+            })
+        });
+    </script>
+</div>
+</body>
+</html>

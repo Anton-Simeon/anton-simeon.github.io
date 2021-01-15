@@ -1,0 +1,63 @@
+/*-------------------------------
+         FAQ Accordions
+--------------------------------*/
+.accordion {
+   width:100%; 
+   height:auto;  
+   .padding2(8px, 10px); 
+   font-weight:bold; 
+   font-size:14px;
+   .padding-right(40px);
+   color: @main-color;
+   cursor:pointer;
+     border:1px solid #eee;  
+   outline:none;
+   .margin2(2px, 0px);  
+ -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+         border-radius:2px;
+}
+.accordion a{ 
+  background-repeat:no-repeat; 
+  background-position:0px 6px; 
+  .padding-left(25px);
+  text-decoration:none;
+}
+.collapseContent{
+   .padding1(10px);
+    .margin2(4px, 0px);    
+    border:1px solid #eee;
+    outline:none;  
+ -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+         border-radius:2px;
+}
+.collapseContent p{ 
+  font-size:14px;
+  .margin1(0);
+}
+.collapseContent ul{ 
+    .padding1(0);
+    .padding-left(20px);
+}
+.collapseContent ul li{ 
+  font-size:14px;
+  .margin1(0); 
+  color:#000;
+}
+.accordion-close{
+  background:url(/static/hifood_pk/images/aplus.png);
+  background-repeat:no-repeat;
+  background-position:100% -2px;
+  html[dir='rtl'] & {
+    background-position: 0 -2px;
+  }
+}  
+.accordion-open{
+  background:url(/static/hifood_pk/images/aminus.png);
+  background-repeat:no-repeat;
+  background-position:100% -2px;
+  html[dir='rtl'] & {
+    background-position: 0 -2px;
+  }
+}  

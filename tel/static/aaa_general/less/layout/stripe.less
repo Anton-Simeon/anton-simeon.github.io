@@ -1,0 +1,465 @@
+.paymentformgenerator-top {
+	padding: 35px 15px 15px;
+	background: #e8e9ec;
+	border-bottom: 1px solid #dbdbdc;
+	text-align: center;
+	hr {
+		width: 182px;
+		margin: 10px auto !important;
+	}
+	h4 {
+		font-weight: 700;
+		font-size: 24px;
+	}
+}
+.paymentformgenerator-bottom {
+	padding: 35px;
+}
+.example.example2 {
+	background-color: #fff;
+}
+
+.example.example2 * {
+	font-family: Source Code Pro, Consolas, Menlo, monospace;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.example.example2 .field {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example.example2 .field.half-width {
+	width: 50%;
+}
+
+.example.example2 .field.quarter-width {
+	width: calc(25% - 10px);
+}
+
+.example.example2 .baseline {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	left: 0;
+	bottom: 0;
+	background-color: #cfd7df;
+	transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example2 label {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 8px;
+	color: #cfd7df;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	transform-origin: 0 50%;
+	margin: 0;
+	cursor: text;
+	transition-property: color, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example2 .input {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	padding-bottom: 7px;
+	color: #32325d;
+	background-color: transparent;
+}
+
+.example.example2 .input::-webkit-input-placeholder {
+	color: transparent;
+	transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example2 .input::-moz-placeholder {
+	color: transparent;
+	transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example2 .input:-ms-input-placeholder {
+	color: transparent;
+	transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example2 .input.StripeElement {
+	opacity: 0;
+	transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+	will-change: opacity;
+}
+
+.example.example2 .input.focused,
+.example.example2 .input:not(.empty) {
+	opacity: 1;
+}
+
+.example.example2 .input.focused::-webkit-input-placeholder,
+.example.example2 .input:not(.empty)::-webkit-input-placeholder {
+	color: #cfd7df;
+}
+
+.example.example2 .input.focused::-moz-placeholder,
+.example.example2 .input:not(.empty)::-moz-placeholder {
+	color: #cfd7df;
+}
+
+.example.example2 .input.focused:-ms-input-placeholder,
+.example.example2 .input:not(.empty):-ms-input-placeholder {
+	color: #cfd7df;
+}
+
+.example.example2 .input.focused + label,
+.example.example2 .input:not(.empty) + label {
+	color: #aab7c4;
+	transform: scale(0.85) translateY(-25px);
+	cursor: default;
+}
+
+.example.example2 .input.focused + label {
+	color: #24b47e;
+}
+
+.example.example2 .input.invalid + label {
+	color: #ffa27b;
+}
+
+.example.example2 .input.focused + label + .baseline {
+	background-color: #24b47e;
+}
+
+.example.example2 .input.focused.invalid + label + .baseline {
+	background-color: #e25950;
+}
+
+.example.example2 input, .example.example2 button, .example.example2 select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	border-style: none;
+}
+ .example.example2 select {
+ 	background-image: url(../../images/chevron-thin-bottom.svg);
+ 	background-size: 16px auto;
+ 	background-repeat: no-repeat;
+ 	background-position: 100% 50%;
+ }
+
+.example.example2 input:-webkit-autofill {
+	-webkit-text-fill-color: #e39f48;
+	transition: background-color 100000000s;
+	-webkit-animation: 1ms void-animation-out;
+}
+
+.example.example2 .StripeElement--webkit-autofill {
+	background: transparent !important;
+}
+
+.example.example2 input, .example.example2 button {
+	-webkit-animation: 1ms void-animation-out;
+}
+
+.example.example2 button {
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: 30px 0 0;
+	background-color: #24b47e;
+	border-radius: 4px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	cursor: pointer;
+}
+.example.example2 button[disabled="disabled"] {
+	cursor: default;
+	background: #ccc !important;
+}
+
+.example.example2 .error svg {
+	margin-top: 0 !important;
+}
+
+.example.example2 .error svg .base {
+	fill: #e25950;
+}
+
+.example.example2 .error svg .glyph {
+	fill: #fff;
+}
+
+.example.example2 .error {
+	color: #e25950;
+	font-size: 12px;
+	margin: 10px 0 -20px;
+	text-align: center;
+}
+
+.example.example2 .success .icon .border {
+	stroke: #abe9d2;
+}
+
+.example.example2 .success .icon .checkmark {
+	stroke: #24b47e;
+}
+
+.example.example2 .success .title {
+	color: #32325d;
+	font-size: 16px !important;
+}
+
+.example.example2 .success .message {
+	color: #8898aa;
+	font-size: 13px !important;
+}
+
+.example.example2 .success .reset path {
+	fill: #24b47e;
+}
+
+@media (min-width: 768px) {
+	.example.example2  .stripe-text {
+		font-size: 14px;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+	}
+}
+.example.example2 .form-group-checkbox {
+	position: relative;
+	margin: 10px 0 20px;
+}
+.example.example2 .form-group-checkbox input {
+	position: absolute;
+	margin: 0;
+	left: 0;
+	top: 5px;
+}
+.example.example2 .form-group-checkbox label {
+	position: static;
+	padding: 0 0 0 30px;
+}
+.list-cards {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		margin-bottom: 10px;
+		position: relative;
+		padding-right: 50px;
+	}
+	.card-brand {
+		background-image: url(../../images/icons-credit-card2.png);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		height: 43px;
+		width: 70px;
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		opacity: 0.2;
+	}
+	.card-style {
+		border: 1px solid #dbdbdc;
+		position: relative;
+		padding: 10px 10px 10px 90px;
+		cursor: pointer;
+		position: relative;
+		min-height: 57px;
+		&:hover {
+			background: #fafafa;
+		}
+		&:after {
+			content: "";
+			background-image: url(../../images/icon-check.png);
+			background-repeat: no-repeat;
+			width: 14px;
+			height: 14px;
+			position: absolute;
+			top: 50%;
+			margin-top: -7px;
+			right: 15px;
+			display: none;
+		}
+		h6 {
+			text-transform: uppercase;
+			margin: 0;
+			font-size: 16px;
+		}
+		p {
+			font-size: 12px;
+			margin: 0;
+		}
+		&.active {
+			&:after {
+				display: block;
+			}
+		}
+	}
+}
+.delete-card {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 57px;
+	width: 40px;
+	background-size: 24px auto;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-image: url(../../images/delete.png);
+	.transition(0.2s);
+	cursor: pointer;
+	&:hover {
+		opacity: 0.7;
+	}
+}
+.title-modal-question {
+	margin: 20px 0 30px;
+	font-weight: 700;
+	font-size: 18px;
+}
+.card_1 {
+	display: block;
+}
+.card_2 {
+	display: none;
+}
+#add_new_card {
+	border: 1px solid #dbdbdc;
+	padding: 15px 10px 15px 90px;
+	cursor: pointer;
+	position: relative;
+	margin-bottom: 20px;
+	display: block;
+	text-decoration: none;
+	&:hover {
+		background: #fafafa;
+	}
+	&:after {
+		content: "";
+		background-image: url(../../images/icons-chevron-right.png);
+		background-repeat: no-repeat;
+		width: 14px;
+		height: 14px;
+		position: absolute;
+		top: 50%;
+		margin-top: -7px;
+		right: 15px;
+	}
+	.card-brand {
+		background-image: url(../../images/icons-credit-card2.png);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		height: 43px;
+		width: 70px;
+		opacity: 0.2;
+		position: absolute;
+		top: 6px;
+		left: 6px;
+	}
+}
+
+#card-back {
+	background-image: url(../../images/back.png);
+    background-position: 45% 50%;
+    background-repeat: no-repeat;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+    top: 12px;
+    left: 12px;
+    background-size: 15px auto;
+    border-radius: 100%;
+    border: 1px solid #000;
+    margin: 0;
+    opacity: .5;
+    display: block;
+    text-decoration: none;
+	.transition(0.2s);
+	&:hover {
+		opacity: 1;
+	}
+}
+
+
+.field-paysafe {
+	position: relative;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+.field-iframe {
+	height: 35px;
+	border-bottom: 1px solid #cfd7df;
+	position: relative;
+	z-index: 2;
+}
+.field-iframe-focus {
+	border-bottom: 1px solid #24b47e;
+}
+.field-iframe-focus + .field-iframe-label, .isEmpty_false + .field-iframe-label {
+	color: #aab7c4;
+	transform: scale(0.85) translateY(-20px);
+	cursor: default;
+}
+.field-iframe-label {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	z-index: 1;
+	bottom: 8px;
+	color: #cfd7df;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	transform-origin: 0 50%;
+	margin: 0;
+	cursor: text;
+	transition-property: color, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.error-card {
+	font-size: 12px;
+	text-align: center;
+	color: red;
+	margin: 15px 0 0;
+}
+.securityCode {
+    position: absolute;
+    top: 21px;
+    right: 44px;
+    height: 25px;
+    width: 40px;
+    text-align: center;
+	input {
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		font-size: 12px !important;
+		border: 1px solid #dbdbdc!important;
+		&:focus {
+			border-color: #000 !important;
+		}
+	}
+}
+.security-code-tilte {
+	position: absolute;
+	top: -20px;
+	font-size: 12px !important;
+	left: 0;
+	width: 100px;
+	text-align: center;
+	left: 50%;
+	margin-left: -50px;
+}
