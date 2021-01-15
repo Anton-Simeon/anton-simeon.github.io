@@ -17,15 +17,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta name="robots" content="index,follow" />
     <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
-    <script src="static/aaa_general/js/responsive/jquery.min.js"></script>
+    <script src="/tel/static/aaa_general/js/responsive/jquery.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Nunito:400,400i,600,600i,700,700i,800,800i" rel="stylesheet" />
-    <link rel="shortcut icon" href="static/ordertigerwidget/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/tel/static/ordertigerwidget/images/favicon.png" type="image/png">
 
 
 
 
-    <link href="static/ordertigerwidget/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/tel/static/ordertigerwidget/css/style.css" rel="stylesheet" type="text/css" />
 
  
 
@@ -33,8 +33,8 @@
     <script type="text/javascript" src="https://intl-tel-input.com/node_modules/intl-tel-input/examples/js/prism.js"></script>
     <script type="text/javascript" src="https://intl-tel-input.com/node_modules/intl-tel-input/build/js/intlTelInput.js?1603274336113"></script>
      -->
-    <script type="text/javascript" src="static/aaa_general/js/intl-tel-input/prism.js"></script>
-    <script type="text/javascript" src="static/aaa_general/js/intl-tel-input/intlTelInput.js"></script>
+    <script type="text/javascript" src="/tel/static/aaa_general/js/intl-tel-input/prism.js"></script>
+    <script type="text/javascript" src="/tel/static/aaa_general/js/intl-tel-input/intlTelInput.js"></script>
 </head>
 <body>
 <div class="mainWrapp_scroll">
@@ -349,7 +349,7 @@
                                 <script type="text/javascript">
                                     jQuery.ajax({
                                         type: "GET",
-                                        url: '/phones/countrycode?companyId=49',
+                                        url: 'http://www.deliveron.co/phones/countrycode?companyId=49',
                                         success: function(response) {
                                             console.log(response);
                                             var countryCode = response.country;
@@ -377,7 +377,7 @@
                                                         callback(countryCode);
                                                     });
                                                 },
-                                                utilsScript: "static/aaa_general/js/intl-tel-input/utils.js" // just
+                                                utilsScript: "/tel/static/aaa_general/js/intl-tel-input/utils.js" // just
                                             });
 
                                             var reset = function() {
@@ -597,7 +597,7 @@
 
 
 
-                    <img class="dynamic-footer-logo" src="static/images/companylogos/ordertiger.png" alt="Order Tiger" />
+                    <img class="dynamic-footer-logo" src="/tel/static/images/companylogos/ordertiger.png" alt="Order Tiger" />
 
 
                 </a>
@@ -615,11 +615,11 @@
             </div>
         </div>
     </footer>
-    <script src="static/aaa_general/libs/v2.3.2/jquery.rateyo.js"></script>
-    <script src="static/aaa_general/js/responsive/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="static/aaa_general/js/responsive/bootstrap.min.js"></script>
-    <script src="static/aaa_general/js/jquery_lazyload-2.x/lazyload.min.js"></script>
-    <script src="static/aaa_general/js/responsive/script.js"></script>
+    <script src="/tel/static/aaa_general/libs/v2.3.2/jquery.rateyo.js"></script>
+    <script src="/tel/static/aaa_general/js/responsive/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="/tel/static/aaa_general/js/responsive/bootstrap.min.js"></script>
+    <script src="/tel/static/aaa_general/js/jquery_lazyload-2.x/lazyload.min.js"></script>
+    <script src="/tel/static/aaa_general/js/responsive/script.js"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function() {
