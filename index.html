@@ -8,6 +8,25 @@
 	<link rel="stylesheet" type="text/css" href="https://www.lynden.de/web/cache/A.1605002994_db46ccce882db7e717e1988d6246b459.css.pagespeed.cf.ARkSyt9YGB.css">
 </head>
 <body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	  jQuery("#link2-js").on('click', function(){
+	  	jQuery('#link1').click();
+	  });
+</script>
+<style type="text/css">
+	#link2-js {
+		background: #f00;
+		color: #fff;
+		line-height: 50px;
+		display: block;
+		height: 50px;
+		text-align: center;
+		width: 100%;
+		cursor: pointer;
+	}
+</style>
+
 <p class="is--hidden" data-content="Einfach beim Bezahlen den Gutscheincode <span class='code'>BLACKBEARD</span> angeben und 10% sparen bei Abnahme von min. 100 Stück pro Sorte von Beard Vape!" data-additionalClass="custom--modal" data-height="180" data-showCloseButton="false" data-title="10% Gutschein" data-modalbox="true" data-targetSelector="a">
 	<a id="bgsAction" href="#"></a>
 </p>
@@ -147,7 +166,7 @@ Warenkorb
 <span class="breadcrumb--title" itemprop="name">LYNDEN PLAY 2</span>
 </span>
 
-<a href="#asdasd">link1</a>
+<a href="#asdasd" id="link1">link1</a>
 
 <br>
 asdasd
@@ -178,7 +197,7 @@ asdasd
 <br>
 asdasd
 <br>
-<div>link2-js</div>
+<div id="link2-js">link2-js</div>
 
 
 
