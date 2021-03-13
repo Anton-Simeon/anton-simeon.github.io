@@ -146,15 +146,15 @@
 	 color: white;
 }
  html {
-	 background: #fff;
+	 background: #081527;
 	 -moz-osx-font-smoothing: grayscale;
 	 -webkit-font-smoothing: antialiased;
 }
  body {
-	 background-color: #23272a;
+	 background-color: #081527;
 	 overflow: hidden;
 }
- header {
+/* header {
 	 display: block;
 	 position: absolute;
 	 top: 0;
@@ -245,7 +245,7 @@
 	 text-decoration: none;
 	 padding-bottom: 6px;
 	 border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-}
+}*/
  main {
 	 position: relative;
 	 width: 100%;
@@ -253,18 +253,20 @@
 }
  #slider {
 	 width: 100%;
-	 max-width: 1200px;
+	 max-width: 1606px;
 	 height: 100%;
-	 margin: 0 auto;
+	 margin: 0 40px 0 auto;
 	 position: relative;
 }
  #slider canvas {
-	 width: 150%;
-	 height: 150%;
+	 /*width: 150%;
+	 height: 150%;*/
+	 width: 100%;
+	 height: 100%;
 	 position: absolute;
-	 top: 50%;
+	 /*top: 50%;
 	 left: 50%;
-	 transform: translate(-50%, -50%);
+	 transform: translate(-50%, -50%);*/
 	 z-index: 2;
 }
  #slider img {
@@ -278,16 +280,16 @@
 	 display: flex;
 	 align-items: center;
 	 width: 100%;
-	 max-width: 1060px;
+	 max-width: 1606px;
 	 height: 100%;
 	 margin: 0 auto;
 	 z-index: 5;
 }
  #slider-content {
-	 padding: 0 10px;
+	 padding: 0 50px;
 }
  #slider-content h2 {
-	 font-family: 'acta-display', serif;
+	 font-family: 'Inter', sans-serif;
 	 font-weight: 400;
 	 font-size: 30px;
 	 letter-spacing: -1px;
@@ -306,7 +308,7 @@
 }
  #slider-content .meta {
 	 display: inline-block;
-	 font-family: 'Arial', sans-serif;
+	 font-family: 'Inter', sans-serif;
 	 font-size: 11px;
 	 letter-spacing: 5px;
 	 color: #88888a;
@@ -353,45 +355,46 @@
 	 -moz-appearance: none;
 	 appearance: none;
 	 border: 0;
-	 width: 16px;
-	 height: 16px;
-	 background-color: #fff;
-	 border-radius: 100%;
+	 width: 20px;
+	 height: 28px;
 	 padding: 0;
-	 margin: 30px 0;
+	 margin: 0 25px;
 	 cursor: pointer;
 	 position: relative;
-	 opacity: 0.2;
+	 /*opacity: 0.2;*/
 	 transition: opacity 0.2s ease-in-out;
 	 outline: none;
+	 color: #123C68;
 }
  #pagination button:hover {
-	 opacity: 0.5;
+	 /*opacity: 0.5;*/
+	 color: #2090DA;
 }
  #pagination button.active {
-	 opacity: 1;
+	 /*opacity: 1;*/
+	 color: #2090DA;
 }
  #pagination button.active:before {
-	 width: 300%;
-	 height: 300%;
-	 opacity: 1;
+	 width: 4px;
+	 height: 10px;
+	 background-color: #2090DA;
 }
  #pagination button:before {
 	 content: '';
 	 display: block;
 	 position: absolute;
-	 top: 50%;
+	 top: -5px;
 	 left: 50%;
-	 transform: translate(-50%, -50%);
-	 width: 100%;
-	 height: 100%;
-	 border-radius: 100%;
-	 border: 1px solid rgba(255, 255, 255, 0.2);
+	 /*transform: translate(-50%, -50%);*/
+	 width: 4px;
+	 height: 10px;
+	 border-radius: 0;
+	 /*border: 1px solid rgba(255, 255, 255, 0.2);*/
 	 opacity: 0;
 	 transition: opacity 0.4s ease-in-out, width 0.4s ease-in-out, height 0.4s ease-in-out;
 }
 /* Page Loader */
- .loading:before {
+/* .loading:before {
 	 content: '';
 	 position: fixed;
 	 z-index: 100000;
@@ -421,5 +424,5 @@
 		 opacity: 1;
 		 transform: scale3d(0.5, 0.5, 1);
 	}
-}
+}*/
  
