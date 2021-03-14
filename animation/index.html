@@ -10,6 +10,8 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="loading">
 
@@ -34,45 +36,51 @@
 
 			<div class="slider-inner">
 				<div id="slider-content">
-					<div class="meta">Species</div>
-					<h2 id="slide-title">Amur <br>Leopard</h2>
-					<div data-slide-title="0">Amur <br>Leopard</div>
-					<span data-slide-title="1">Asiatic <br>Lion</span>
-					<span data-slide-title="2">Siberian <br>Tiger</span>
-					<span data-slide-title="3">Brown <br>Bear</span>
-					<div class="meta">Status</div>
-					<div id="slide-status">Critically Endangered</div>
-					<span data-slide-status="0">Critically Endangered</span>
-					<span data-slide-status="1">Endangered</span>
-					<span data-slide-status="2">Endangered</span>
-					<span data-slide-status="3">Least Concern</span>
+					<!-- <div class="meta"></div> -->
+					<h2 id="slide-title">
+                        <div class="title" style="bottom: 240px; width: 803px; height: 175px; left: 60px; position: absolute; background-image: url(https://anton-simeon.github.io/animation/images/new/title.png); background-repeat: no-repeat;">
+                        </div>
+                        <div class="title" style="bottom: 240px; width: 283px; height: 140px; right: 250px; position: absolute; background-image: url(https://anton-simeon.github.io/animation/images/new/text.png); background-repeat: no-repeat;">
+                        </div>
+                    </h2>
+					<div data-slide-title="0">
+                        <div class="title" style="bottom: 240px; width: 803px; height: 175px; left: 60px; position: absolute; background-image: url(https://anton-simeon.github.io/animation/images/new/title.png); background-repeat: no-repeat;">
+                        </div>
+                        <div class="title" style="bottom: 240px; width: 283px; height: 140px; right: 250px; position: absolute; background-image: url(https://anton-simeon.github.io/animation/images/new/text.png); background-repeat: no-repeat;">
+                        </div>           
+                    </div>
+					<span data-slide-title="1"></span>
+					<span data-slide-title="2"></span>
+					<span data-slide-title="3"></span>
+					<!-- <div class="meta"></div> -->
+					<div id="slide-status"></div>
+					<span data-slide-status="0"></span>
+					<span data-slide-status="1"></span>
+					<span data-slide-status="2"></span>
+					<span data-slide-status="3"></span>
 				</div>
 			</div>
 
-            <img src="https://anton-simeon.github.io/animation/images/slide_1.jpg" />
+            <img src="https://anton-simeon.github.io/animation/images/new/1.jpg" />
 
-            <img src="https://anton-simeon.github.io/animation/images/slide_2.jpg" />
-            <img src="https://anton-simeon.github.io/animation/images/slide_3.jpg" />
-            <img src="https://anton-simeon.github.io/animation/images/slide_4.jpg" />
-            <img src="https://anton-simeon.github.io/animation/images/slide_5.jpg" />
-            <img src="https://anton-simeon.github.io/animation/images/slide_6.jpg" />
-            <img src="https://anton-simeon.github.io/animation/images/slide_7.jpg" />
-            <img src="https://anton-simeon.github.io/animation/images/slide_8.jpg" />
-	<!-- 		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/lion2.jpg" />
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/tiger2.jpg" />
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/bear2.jpg" /> -->
-			<!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/leopard2.jpg" /> -->
+            <img src="https://anton-simeon.github.io/animation/images/new/2.jpg" />
+            <img src="https://anton-simeon.github.io/animation/images/new/3.jpg" />
+<!--             <img src="https://anton-simeon.github.io/animation/images/new/4.jpg" /> -->
+            <img src="https://anton-simeon.github.io/animation/images/new/5.jpg" />
+            <img src="https://anton-simeon.github.io/animation/images/new/5.jpg" />
+            <img src="https://anton-simeon.github.io/animation/images/new/6.jpg" />
+            <img src="https://anton-simeon.github.io/animation/images/new/7.jpg" />
+            <img src="https://anton-simeon.github.io/animation/images/new/8.jpg" />
 
 			<div id="pagination">
-				<button class="active" data-slide="0">1</button>
-				<button data-slide="1">2</button>
-				<button data-slide="2">3</button>
-				<button data-slide="3">3</button>
-                <button data-slide="4">4</button>
-                <button data-slide="5">5</button>
-                <button data-slide="6">6</button>
-                <button data-slide="7">7</button>
-                <button data-slide="8">8</button>
+				<button class="active" data-slide="0">01</button>
+				<button data-slide="1">02</button>
+				<button data-slide="2">03</button>
+				<button data-slide="3">04</button>
+                <button data-slide="4">05</button>
+                <button data-slide="5">06</button>
+                <button data-slide="6">07</button>
+                <button data-slide="7">08</button>
 			</div>
 
 		</div>

@@ -253,9 +253,8 @@
 }
  #slider {
 	 width: 100%;
-	 max-width: 1606px;
 	 height: 100%;
-	 margin: 0 40px 0 auto;
+	 margin: 0 auto;
 	 position: relative;
 	 background-color: #081527;
 }
@@ -282,7 +281,7 @@
 	 display: flex;
 	 align-items: center;
 	 width: 100%;
-	 max-width: 1606px;
+	 /*max-width: 1606px;*/
 	 height: 100%;
 	 margin: 0 auto;
 	 z-index: 5;
@@ -291,13 +290,13 @@
 	 padding: 0 50px;
 }
  #slider-content h2 {
-	 font-family: 'Inter', sans-serif;
+/*	 font-family: 'Inter', sans-serif;
 	 font-weight: 400;
 	 font-size: 30px;
 	 letter-spacing: -1px;
 	 color: white;
 	 line-height: 30px;
-	 margin: 20px 0 60px;
+	 margin: 20px 0 60px;*/
 }
  @media screen and (min-width: 800px) {
 	 #slider-content h2 {
@@ -346,9 +345,8 @@
 }
  #pagination {
 	 position: absolute;
-	 top: 50%;
-	 transform: translateY(-50%);
-	 right: 30px;
+	 left: 60px;
+	 bottom: 66px;
 	 z-index: 6;
 }
  #pagination button {
@@ -357,11 +355,12 @@
 	 -moz-appearance: none;
 	 appearance: none;
 	 border: 0;
-	 width: 20px;
-	 height: 48px;
 	 padding: 0;
-	 margin: 0 25px;
+	 background: transparent;
+	 margin: 0 30px 0 0;
 	 cursor: pointer;
+	 font-family: 'Inter', sans-serif;
+	 font-size: 26px;
 	 position: relative;
 	 /*opacity: 0.2;*/
 	 transition: opacity 0.2s ease-in-out;
@@ -375,23 +374,23 @@
  #pagination button.active {
 	 /*opacity: 1;*/
 	 color: #2090DA;
+	 font-weight: 700;
 }
  #pagination button.active:before {
-	 width: 4px;
-	 height: 10px;
 	 background-color: #2090DA;
+	 opacity: 1;
 }
  #pagination button:before {
 	 content: '';
 	 display: block;
 	 position: absolute;
-	 top: -5px;
+	 top: -35px;
 	 left: 50%;
+	 width: 6px;
+	 height: 14px;
+	 margin-left: -3px;
 	 /*transform: translate(-50%, -50%);*/
-	 width: 4px;
-	 height: 10px;
 	 border-radius: 0;
-	 /*border: 1px solid rgba(255, 255, 255, 0.2);*/
 	 opacity: 0;
 	 transition: opacity 0.4s ease-in-out, width 0.4s ease-in-out, height 0.4s ease-in-out;
 }
@@ -427,4 +426,13 @@
 		 transform: scale3d(0.5, 0.5, 1);
 	}
 }*/
- 
+ [data-slide-title] {
+ 	display: 	none;	
+ }
+ #slide-title {
+ 	height: 100vh;
+ 	width: 100vw;
+ }
+ #slider-content {
+ 	padding: 0;
+ }
