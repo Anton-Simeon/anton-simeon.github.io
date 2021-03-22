@@ -1,0 +1,11 @@
+html, body {
+	height: 100%;
+}
+.wrapper {
+	padding: $header-height + 40 30px $footer-height + 20;
+	max-width: 1170px;
+	margin: auto;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 0 0 3px #888;
+}

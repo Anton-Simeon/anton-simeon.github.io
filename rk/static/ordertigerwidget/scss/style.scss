@@ -1,0 +1,71 @@
+@import "variables";
+
+@import "../../aaa_general/scss/variables";
+//fonts
+@import "../../aaa_general/scss/fonts/icomoon.scss";
+@import "../../aaa_general/scss/fonts/fonts.scss";
+@import "../../aaa_general/scss/bootstrap-5.0.0-beta/bootstrap.scss";
+
+// partials
+@import "../../aaa_general/scss/partials/baron.scss";
+@import "../../aaa_general/scss/partials/buttons.scss";
+@import "../../aaa_general/scss/partials/alert.scss";
+@import "../../aaa_general/scss/partials/modals.scss";
+@import "../../aaa_general/scss/partials/form.scss";
+@import "../../aaa_general/scss/partials/isValidNumber.scss";
+@import "../../aaa_general/scss/partials/intlTelInput.scss";
+@import "../../aaa_general/scss/partials/loader-btn.scss";
+@import "../../aaa_general/scss/partials/address-lists.scss";
+@import "../../aaa_general/scss/partials/address-modal.scss";
+@import "../../aaa_general/scss/partials/jquery.rateyo.scss";
+
+
+// layout
+@import "../../aaa_general/scss/partials/baron.scss";
+
+@import "../../aaa_general/scss/layout/header.scss";
+
+@import "../../aaa_general/scss/layout/wrapper.scss";
+
+@import "../../aaa_general/scss/layout/index.scss";
+
+@import "../../aaa_general/scss/layout/privacypolicy.scss";
+
+@import "../../aaa_general/scss/layout/cookiepolicy.scss";
+
+@import "../../aaa_general/scss/layout/menu/menu-img-top.scss";
+@import "../../aaa_general/scss/layout/menu/menu-search.scss";
+@import "../../aaa_general/scss/layout/menu/menu-content.scss";
+@import "../../aaa_general/scss/layout/menu/status-menu.scss";
+@import "../../aaa_general/scss/layout/menu/menu-badge.scss";
+@import "../../aaa_general/scss/layout/menu/delivery-charge-min.scss";
+@import "../../aaa_general/scss/layout/menu/menu-rating.scss";
+@import "../../aaa_general/scss/layout/menu/menu-nav.scss";
+@import "../../aaa_general/scss/layout/menu/menu-nav-scroll.scss";
+@import "../../aaa_general/scss/layout/menu/products.scss";
+@import "../../aaa_general/scss/layout/menu/menu-cart.scss";
+@import "../../aaa_general/scss/layout/menu/driver-tip.scss";
+@import "../../aaa_general/scss/layout/menu/addMenuItemModal.scss";
+@import "../../aaa_general/scss/layout/menu/info-modal.scss";
+@import "../../aaa_general/scss/layout/menu/info-modal-review.scss";
+
+@import "../../aaa_general/scss/layout/profile/table-scroll.scss";
+@import "../../aaa_general/scss/layout/profile/profile.scss";
+@import "../../aaa_general/scss/layout/profile/profile-menu.scss";
+@import "../../aaa_general/scss/layout/profile/table-style.scss";
+@import "../../aaa_general/scss/layout/profile/order-detail-from-to.scss";
+@import "../../aaa_general/scss/layout/profile/form-profile.scss";
+@import "../../aaa_general/scss/layout/profile/form-profile-modal.scss";
+@import "../../aaa_general/scss/layout/profile/review.scss";
+
+
+
+@import "../../aaa_general/scss/layout/authorization-confirmdetails/authorization-confirmdetails-form.scss";
+@import "../../aaa_general/scss/layout/authorization-confirmdetails/shopingcart.scss";
+
+
+@import "../../aaa_general/scss/layout/orders/order-summary.scss";
+@import "../../aaa_general/scss/layout/orders/submit-order.scss";
+@import "../../aaa_general/scss/layout/orders/payment.scss";
+
+@import "../../aaa_general/scss/layout/footer.scss";

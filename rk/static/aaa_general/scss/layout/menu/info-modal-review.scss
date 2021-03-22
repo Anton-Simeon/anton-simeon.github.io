@@ -1,0 +1,83 @@
+#nav-reviews {
+	.ratings{
+		list-style: none;
+		padding: 0px;
+	}
+	.ratings li {
+		border-bottom: 1px solid #dfdfdf;
+		padding-top: 20px;
+		word-wrap: break-word;
+	}
+	.ratings li div.name {
+		font-size: 10pt;
+		font-weight: 700;
+		width: 73%;
+		float: left;
+		word-wrap: break-word;
+	}
+	.ratings li div.comment {
+		margin: 10px 0px 20px;
+	}
+	.review-list {
+		margin-bottom: 16px;
+	}
+	.rating-section {
+		padding-left: 15px;
+	}
+	.reviews-header {
+		padding: 20px 0px 10px;
+	}
+	.overall-review h2{
+		text-align: center;
+		font-size: 26px;
+		font-weight: 300;
+	}
+	.overall-review {
+		margin-left: 8px;
+		margin-right: 8px;
+		text-align: center;
+	}
+	.jq-ry-container {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.review-value {
+		font-size: x-large;
+		line-height: 44px;
+	}
+	.order-review {
+		margin: 20px 0px 20px 0px;
+		text-align: center;
+	}
+	.branch-name {   
+		font-weight: 600;
+		font-size: xx-large;
+		color: #2c2525;
+		margin-bottom: 20px;
+	}
+	.rating-center {
+		margin: auto;
+	}
+	.review-form {
+		box-shadow: 0 0 0 1px #cbcbcb;
+		padding: 10px 15px;
+		float:left;
+	}
+	.review-form  .review-button {
+		width: 100%;
+	}
+	#loadingDiv {
+		text-align: center;
+	}
+	span#headerTotalReviewCount {
+		font-size: 16px;
+		color: #444444;
+	}
+	.top-buttons {
+		margin-bottom: 10px;
+	}
+	.review-date {
+		float: right;
+	}
+}

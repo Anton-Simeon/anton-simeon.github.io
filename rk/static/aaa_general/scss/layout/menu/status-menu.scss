@@ -1,0 +1,32 @@
+.status-menu {
+	background: #82c444;
+	font-size: 10px;
+	color: #fff;
+	height: 30px;
+	line-height: 19px;
+	padding: 6px 16px 6px 12px;
+	min-width: 50px;
+	white-space: nowrap;
+	i {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 5px;
+		font-size: 18px;
+		font-family: 'icomoon';
+		font-style: normal;
+		@extend .icon-store;
+	}
+	span {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+.status-menu-close {
+	background: #e13f28;
+}
+.status-menu-pre {
+	background: #ecb62a;
+}
+.status-menu-offline {
+	background: #888888;
+}

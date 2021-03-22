@@ -1,0 +1,19 @@
+.map-address-wrap {
+	position: relative;
+	.form-control {
+		margin-bottom: 5px;
+	}
+}
+.my-location {
+	text-decoration: underline;
+	cursor: pointer;
+	&:hover {
+		text-decoration: none;
+	}
+}
+#addressPolygonModal {
+	.modal-body {
+		padding: 15px;
+		border-top: 1px solid #e5e5e5;
+	}
+}

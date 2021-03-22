@@ -1,0 +1,44 @@
+@each $font-weight-name, $font-weight in $font-weights {	
+	@font-face {
+		font-family: $font-family-main;
+		src: url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.eot');
+		@if $font-format == ttf {
+		src: local('#{$font-family-folder} #{$font-weight-name}'), local('#{$font-family-folder}-#{$font-weight-name}'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.eot#iefix') format('embedded-opentype'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.woff2') format('woff2'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.woff') format('woff'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.ttf') format('truetype');
+		} @else if $font-format == otf {
+		src: local('#{$font-family-folder} #{$font-weight-name}'), local('#{$font-family-folder}-#{$font-weight-name}'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.eot#iefix') format('embedded-opentype'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.woff2') format('woff2'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.woff') format('woff'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.otf') format('opentype');
+		} @else {
+			@error "Unknown direction #{$direction}.";
+		}
+		font-weight: $font-weight;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: $font-family-main;
+		src: url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.eot');
+		@if $font-format == ttf {
+		src: local('#{$font-family-folder} #{$font-weight-name}'), local('#{$font-family-folder}-#{$font-weight-name}'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.eot#iefix') format('embedded-opentype'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.woff2') format('woff2'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.woff') format('woff'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.ttf') format('truetype');
+		} @else if $font-format == otf {
+		src: local('#{$font-family-folder} #{$font-weight-name}'), local('#{$font-family-folder}-#{$font-weight-name}'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.eot#iefix') format('embedded-opentype'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.woff2') format('woff2'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.woff') format('woff'),
+			url('../../aaa_general/fonts/#{$font-family-folder}/#{$font-family-folder}-#{$font-weight-name}.otf') format('opentype');
+		} @else {
+			@error "Unknown direction #{$direction}.";
+		}
+		font-weight: $font-weight;
+		font-style: italic;
+	}
+}

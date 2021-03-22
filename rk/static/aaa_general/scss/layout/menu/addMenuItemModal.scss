@@ -1,0 +1,97 @@
+#addMenuItemModal {
+	.form-check {
+		min-height: 28px;
+		margin-bottom: 4px;
+	}
+	.alert {
+		margin: 30px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 4;
+	}
+	textarea {
+		background: transparent;
+		&:focus {
+			box-shadow: none;
+			border-color: #000;
+		}
+	}
+}
+.btn-close-add-modal {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+}
+.optiongroup {
+	margin-bottom: 20px;
+}
+.nestedoptiongroup {
+	padding-left: 28px;
+	margin-top: 5px;
+}
+.optiongroup-title {
+	margin-bottom: 16px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #d7d7d7;
+	font-weight: 700;
+	text-transform: capitalize;
+}
+h5.optiongroup-title {
+	font-size: 16px;
+}
+h6.optiongroup-title {
+	font-size: 13px;
+}
+
+.add-modal-columns {
+	margin: 0;
+	> * {
+		padding: 15px;
+		&:first-child {
+			background: #fff;
+		}
+		&:last-child {
+			background: #fafafa;
+		}
+	}
+}
+
+.submenu-form-box {
+    max-height: calc(100vh - (280px));
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 30px;
+}
+
+.product-content-menu {
+	font-size: 15px;
+	font-weight: 300;
+	margin: 20px 0;
+	h4 {
+		font-weight: 400;
+		margin-bottom: 1rem;
+	}
+}
+.modal-menu-price {
+	font-size: 15px;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+.modal-menu-quantity {
+	margin-bottom: 30px;
+	label {
+		font-size: 16px;
+		font-weight: 700;
+		margin-right: 15px;
+	}
+	.form-select {
+		display: inline-block;
+		vertical-align: middle;
+		width: 90px;
+	}
+}
