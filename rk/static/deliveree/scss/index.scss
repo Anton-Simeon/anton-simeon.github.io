@@ -8,6 +8,7 @@
 	color: #000000;
 	padding: 211px 0 155px;
 	border-bottom: 1px solid #ccc;
+	position: relative;
 	h2 {
 		font-family: 'Zilla Slab', serif;
 		font-size: 60px;
@@ -25,6 +26,24 @@
 		line-height: normal;
 		letter-spacing: 1px;
 		margin: 0 0 27px;
+	}
+	> .container-index {
+		position: relative;
+		z-index: 2;
+	}
+}
+.top-section-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	img {
+		display: block;
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
 	}
 }
 .container-index {
