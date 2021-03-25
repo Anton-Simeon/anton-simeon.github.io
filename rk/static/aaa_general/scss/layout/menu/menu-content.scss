@@ -7,17 +7,45 @@
 	position: relative;
 }
 .menu-content-wrap {
-	margin-top: $header-height;
-	width: 75vw;
 	position: relative;
 	z-index: 2;
 	background: #fff;
 	border-right: 1px solid #dadada;
-	padding-left: 50%;
+	@media(min-width: 1241px) {
+		padding-left: 50%;
+	}
+	@if $header-height !=  $header-height-mobile {
+		@media(min-width: 768px) {
+			margin-top: $header-height;
+		}
+		@media(max-width: 767px) {
+			margin-top: $header-height-mobile;
+		}
+	} @else {
+		margin-top: $header-height;
+	}
+	@media(min-width: 1561px) {
+		width: 75vw;
+	}
+	@media(min-width: 1201px) and (max-width: 1560px){
+		width: 70vw;
+	}
+	@media(min-width: 1001px) and (max-width: 1200px){
+		width: 65vw;
+	}
+	@media(min-width: 768px) and (max-width: 1000px){
+		width: 60vw;
+	}
 }
 .menu-content {
-	margin-left: -615px;
 	padding: 40px 30px $footer-height + 40;
+	@media(min-width: 1241px) {
+		margin-left: -615px;
+	}
+	@media(max-width: 767px) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
 .menu-title {
 	font-size: 24px;

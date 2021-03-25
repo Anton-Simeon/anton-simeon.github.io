@@ -45,4 +45,7 @@ $("[data-modal-ajax]").on('hide.bs.modal', function (e) {
 
 
 
+$('.menu-button-wrap').click(function(){
+	$('html').toggleClass('menu-open');
+});
 });

@@ -1,0 +1,53 @@
+// Color system
+$primary: #e6e21c !default;
+
+// fonts
+$font-family-main: 'Open Sans' !default;
+$font-family-folder: OpenSans !default;
+$font-weights: (
+  Light: 300,
+  Regular: 400,
+  SemiBold: 600,
+  Bold: 700
+) !default;
+/*ttf, otf*/
+$font-format: ttf !default;
+
+
+$font-family-main2: 'Zilla Slab' !default;
+$font-family-folder2: ZillaSlab !default;
+$font-weights2: (
+  Regular: 400,
+  Bold: 700
+) !default;
+$font-format2: ttf !default;
+
+
+
+// HEADER
+$header-light-bg: false !default;
+$header-height: 94px !default;
+$header-height-mobile: 71px !default;
+$header-bg: #272727 !default;
+$header-login-position: left !default;
+$header-button-height: 40px !default;
+$header-button-border-width: 1px !default;
+$header-button-width: 126px !default;
+$header-button-size: 14px !default;
+$header-button-weight: 600 !default;
+$header-button-radius: 20px !default;
+$header-button-margin: 25px !default;
+$header-button-hover: 0% !default;
+
+
+$login-button-color: $primary !default;
+$login-button-bg: transparent !default;
+$login-button-border-color: $primary !default;
+$login-button-border-style: solid !default;
+
+$register-button-color: #272727 !default;
+$register-button-bg: $primary !default;
+$register-button-border-color: $primary !default;
+$register-button-border-style: solid !default;
+
+$cart-header-bg: #d00 !default;

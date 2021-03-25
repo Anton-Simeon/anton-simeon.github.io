@@ -1,0 +1,43 @@
+// Color system
+$primary: #f83435 !default;
+
+// fonts
+$font-family-main: 'AvenirLT' !default;
+$font-family-folder: AvenirLT !default;
+$font-weights: (
+  Light: 300,
+  Roman: 400,
+  Oblique: 700,
+  Black: 900
+) !default;
+/*ttf, otf*/
+$font-format: ttf !default;
+
+
+// HEADER
+$header-light-bg: false !default;
+$header-height: 71px !default;
+$header-height-mobile: 71px !default;
+$header-bg: #1c3d4e !default;
+$header-login-position: left !default;
+$header-button-height: 50px !default;
+$header-button-border-width: 1px !default;
+$header-button-width: 136px !default;
+$header-button-size: 14px !default;
+$header-button-weight: 900 !default;
+$header-button-radius: 0px !default;
+$header-button-margin: 20px !default;
+$header-button-hover: 0% !default;
+
+
+$login-button-color: #fff !default;
+$login-button-bg: transparent !default;
+$login-button-border-color: #fff !default;
+$login-button-border-style: solid !default;
+
+$register-button-color: #fff !default;
+$register-button-bg: $primary !default;
+$register-button-border-color: $primary !default;
+$register-button-border-style: solid !default;
+
+$cart-header-bg: #d00 !default;

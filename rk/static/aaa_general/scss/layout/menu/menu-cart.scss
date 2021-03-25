@@ -2,11 +2,33 @@
 	top: 0;
 	height: 100vh;
 	position: fixed;
-	width: 25vw;
-	left: 75vw;
-	padding: $header-height + 15px 25px 15px 15px;
 	z-index: 1;
+	@media(min-width: 768px) {
+		padding: $header-height + 15px 25px 15px 15px;
+	}
+	@media(min-width: 1561px) {
+		width: 25vw;
+		left: 75vw;
+	}
+	@media(min-width: 1201px) and (max-width: 1560px){
+		width: 30vw;
+		left: 70vw;
+	}
+	@media(min-width: 1001px) and (max-width: 1200px){
+		width: 35vw;
+		left: 65vw;
+	}
+	@media(min-width: 768px) and (max-width: 1000px){
+		width: 40vw;
+		left: 60vw;
+	}
+	@media(max-width: 767px) {
+		z-index: 1000;
+		width: 100%;
+		display: none;
+	}
 }
+
 .menu-cart {	
 	box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
 	background: #fff;
@@ -23,6 +45,9 @@
 		color: #545454;
 		padding: 6px 20px;
 		margin-bottom: 14px;
+	}
+	@media(max-width: 767px) {
+		height: 100%;
 	}
 }
 
@@ -41,7 +66,7 @@
 		color: #545454;
 		text-align: center;
 		transition: 0.2s;
-		margin-bottom: 4%;
+		margin-bottom: 16px;
 		outline: none;
 		&:nth-child(2n+1) {
 			margin-right: 4%;
@@ -298,66 +323,101 @@
 	}
 }
 
-
-
-$cart-select2: 62px;
-$other-height-cart-top: 146px;
-$other-height-cart-bottom: 140px;
-$tab-height: 77px;
-$tab-height-more2: 58px;
-$driver-tip-height: 100px;
-
-$cart-top-height: $header-height + $other-height-cart-top + $other-height-cart-bottom + $tab-height;
-$cart-top-height-select2: $cart-top-height + $cart-select2;
-
-$cart-top-height-tab2: $cart-top-height + $tab-height-more2;
-$cart-top-height-select2-tab2: $cart-top-height-select2 + $tab-height-more2;
-
-
-// driver tip
-$cart-top-height-drivertip: $cart-top-height + $driver-tip-height;
-$cart-top-height-select2-drivertip: $cart-top-height-select2 + $driver-tip-height;
-
-$cart-top-height-tab2-drivertip: $cart-top-height-tab2 + $driver-tip-height;
-$cart-top-height-select2-tab2-drivertip: $cart-top-height-select2-tab2 + $driver-tip-height;
-
-
 .cart-top {
-	background: #f00;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
 
 
 
-#menu-cart-content:not(.cart-select2):not(.tabs-more2):not(.driver-tip-active) .cart-top {
-	height: calc(100vh - (#{$cart-top-height}));
-}
-#menu-cart-content.cart-select2:not(.tabs-more2):not(.driver-tip-active) .cart-top {
-	height: calc(100vh - (#{$cart-top-height-select2}));
-}
+
+@mixin theme-colors($height-position: max-height,$header-height: $header-height, $cart-select2: 62px, $other-height-cart-top: 146px, $other-height-cart-bottom: 140px, $tab-height: 77px, $tab-height-more2: 58px, $driver-tip-height: 100px) {
+/*	$cart-select2: 62px;
+	$other-height-cart-top: 146px;
+	$other-height-cart-bottom: 140px;
+	$tab-height: 77px;
+	$tab-height-more2: 58px;
+	$driver-tip-height: 100px;*/
+
+	$cart-top-height: $header-height + $other-height-cart-top + $other-height-cart-bottom + $tab-height;
+	$cart-top-height-select2: $cart-top-height + $cart-select2;
+
+	$cart-top-height-tab2: $cart-top-height + $tab-height-more2;
+	$cart-top-height-select2-tab2: $cart-top-height-select2 + $tab-height-more2;
+
+
+	// driver tip
+	$cart-top-height-drivertip: $cart-top-height + $driver-tip-height;
+	$cart-top-height-select2-drivertip: $cart-top-height-select2 + $driver-tip-height;
+
+	$cart-top-height-tab2-drivertip: $cart-top-height-tab2 + $driver-tip-height;
+	$cart-top-height-select2-tab2-drivertip: $cart-top-height-select2-tab2 + $driver-tip-height;
+
+
+	#menu-cart-content:not(.cart-select2):not(.tabs-more2):not(.driver-tip-active) .cart-top {
+		#{$height-position}: calc(100vh - (#{$cart-top-height}));
+	}
+	#menu-cart-content.cart-select2:not(.tabs-more2):not(.driver-tip-active) .cart-top {
+		#{$height-position}: calc(100vh - (#{$cart-top-height-select2}));
+	}
 
 
 
-#menu-cart-content:not(.cart-select2):not(.driver-tip-active).tabs-more2 .cart-top {
-	height: calc(100vh - (#{$cart-top-height-tab2}));
+	#menu-cart-content:not(.cart-select2):not(.driver-tip-active).tabs-more2 .cart-top {
+		#{$height-position}: calc(100vh - (#{$cart-top-height-tab2}));
+	}
+	#menu-cart-content:not(.driver-tip-active).cart-select2.tabs-more2 .cart-top {
+		#{$height-position}: calc(100vh - (#{$cart-top-height-select2-tab2}));
+	}
+
+
+	/*driver-tip-active*/
+	#menu-cart-content:not(.cart-select2):not(.tabs-more2).driver-tip-active .cart-top {
+		#{$height-position}: calc(100vh - (#{$cart-top-height-drivertip}));
+	}
+	#menu-cart-content.cart-select2:not(.tabs-more2).driver-tip-active .cart-top {
+		#{$height-position}: calc(100vh - (#{$cart-top-height-select2-drivertip}));
+	}
+	#menu-cart-content:not(.cart-select2).driver-tip-active.tabs-more2 .cart-top {
+		#{$height-position}: calc(100vh - (#{$cart-top-height-tab2-drivertip}));
+	}
+	#menu-cart-content.driver-tip-active.cart-select2.tabs-more2 .cart-top {
+		#{$height-position}: calc(100vh - (#{$cart-top-height-select2-tab2-drivertip}));
+	}
 }
-#menu-cart-content:not(.driver-tip-active).cart-select2.tabs-more2 .cart-top {
-	height: calc(100vh - (#{$cart-top-height-select2-tab2}));
+
+@media(min-height: 851px) and (min-width: 768px) {
+	@include theme-colors();
+}
+@media(max-height: 850px) and (min-width: 768px) {
+	@include theme-colors($header-height: $header-height, $cart-select2: 50px, $other-height-cart-top: 125px, $other-height-cart-bottom: 140px, $tab-height: 54px, $tab-height-more2: 44px, $driver-tip-height: 100px);
+}
+@media(max-width: 767px) {
+	@include theme-colors($height-position: height, $header-height: 0, $cart-select2: 50px, $other-height-cart-top: 100px, $other-height-cart-bottom: 140px, $tab-height: 54px, $tab-height-more2: 44px, $driver-tip-height: 100px);	
 }
 
 
-
-/*driver-tip-active*/
-#menu-cart-content:not(.cart-select2):not(.tabs-more2).driver-tip-active .cart-top {
-	height: calc(100vh - (#{$cart-top-height-drivertip}));
-}
-#menu-cart-content.cart-select2:not(.tabs-more2).driver-tip-active .cart-top {
-	height: calc(100vh - (#{$cart-top-height-select2-drivertip}));
-}
-#menu-cart-content:not(.cart-select2).driver-tip-active.tabs-more2 .cart-top {
-	height: calc(100vh - (#{$cart-top-height-tab2-drivertip}));
-}
-#menu-cart-content.driver-tip-active.cart-select2.tabs-more2 .cart-top {
-	height: calc(100vh - (#{$cart-top-height-select2-tab2-drivertip}));
+@media(max-height: 850px), (max-width: 767px) {
+	.menu-type-tabs button {
+		height: 36px;
+		font-size: 12px;
+	}
+	.radio-cart-wrap label {
+		font-size: 12px;
+	}
+	.menu-type-tabs {
+		margin-bottom: 6px;
+	}
+	.radio-cart-wrap {
+		margin-bottom: 15px;
+	}
+	.menu-cart .form-select {
+		height: 36px;
+		font-size: 12px;
+	}
+	.menu-type-tabs {
+		button {
+			margin-bottom: 12px;
+		}
+	}
 }

@@ -8,12 +8,15 @@
 }
 .driver-tip-wrap {
 	display: none;
-	padding: 20px;
 	position: absolute;
 	bottom: 110px;
 	left: 0;
 	width: 100%;
 	user-select: none;
+	padding: 20px;
+	@media(max-width: 767px) {
+		padding: 0 20px;
+	}
 }
 .driver-tip-text {
 	font-size: 12px;
@@ -62,6 +65,7 @@
 }
 .driver-tip-value {
 	font-size: 12px;
+	white-space: nowrap;
 	color: #919191;
 }
 .driver-tip-edit {
@@ -87,5 +91,12 @@
 	}
 	.driver-tip-value {
 		display: block;
+	}
+}
+
+
+@media(max-height: 850px), (max-width: 767px) {
+	.driver-tip-value {
+		font-size: 10px;
 	}
 }
