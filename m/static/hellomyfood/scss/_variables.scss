@@ -1,0 +1,47 @@
+// Color system
+$primary: #f83435 !default;
+
+// fonts
+$font-family-main: 'Nunito' !default;
+$font-family-folder: Nunito !default;
+$font-weights: (
+  Regular: 400,
+  Bold: 700,
+  ExtraBold: 700
+) !default;
+/*ttf, otf*/
+$font-format: ttf !default;
+
+
+
+
+
+// HEADER
+$header-light-bg: true !default;
+$header-height: 92px !default;
+$header-height-mobile: 71px !default;
+$header-bg: rgb(159, 216, 211) !default;
+$box-shadow-header: none !default;
+$border-header: 1px solid $primary !default;
+$header-login-position: right !default;
+$header-button-height: 50px !default;
+$header-button-border-width: 2px !default;
+$header-button-width: 136px !default;
+$header-button-size: 14px !default;
+$header-button-weight: 400 !default;
+$header-button-radius: 6px !default;
+$header-button-margin: 20px !default;
+$header-button-hover: 0% !default;
+
+
+$login-button-color: #fff !default;
+$login-button-bg: transparent !default;
+$login-button-border-color: #fff !default;
+$login-button-border-style: solid !default;
+
+$register-button-color: #fff !default;
+$register-button-bg: $primary !default;
+$register-button-border-color: $primary !default;
+$register-button-border-style: solid !default;
+
+$cart-header-bg: #d00 !default;

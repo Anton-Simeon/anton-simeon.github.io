@@ -1,0 +1,41 @@
+ button:focus {
+	outline: none;
+}
+.btn, .search-button, .register-button, .login-button {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+.btn {
+	.icon-plus-alt {
+		display: inline-block;
+		vertical-align: top;
+		margin: 0.28em 0.3em 0 0;
+	}
+	.icon-chevron-with-circle-left {
+		display: inline-block;
+		vertical-align: top;
+		margin: 0.25em 0.625em 0 0;
+	}
+}
+.btn:before, .header-button:before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle, rgba(0,0,0,0.08) 10%, transparent 10.01%) center no-repeat;
+	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+	backface-visibility: hidden;
+	pointer-events: none;
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(15);
+	transition: 0.6s;
+}
+.btn:active:before, .header-button:active:before {
+	transform: translate(-50%, -50%) scale(0);
+	opacity: 1;
+	transition: 0s;
+}

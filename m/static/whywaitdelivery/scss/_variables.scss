@@ -1,0 +1,45 @@
+// Color system
+$primary: #DD2930 !default;
+
+// fonts
+$font-family-main: 'Work Sans' !default;
+$font-family-folder: WorkSans !default;
+$font-weights: (
+  Regular: 400,
+  SemiBold: 600,
+  Bold: 700
+) !default;
+/*ttf, otf*/
+$font-format: ttf !default;
+
+
+// HEADER
+$header-light-bg: true !default;
+$header-height: 94px !default;
+$header-height-mobile: 71px !default;
+$header-bg: #fff !default;
+$box-shadow-header: none !default;
+$border-header: 1px solid $primary !default;
+$header-login-position: right !default;
+$header-button-height: 40px !default;
+$header-button-border-width: 1px !default;
+$header-button-width: 90px !default;
+$header-button-size: 14px !default;
+$header-button-weight: 600 !default;
+$header-button-radius: 20px !default;
+$header-button-margin: 20px !default;
+$header-button-hover: 0% !default;
+$header-upparcase: uppercase !default;
+
+
+$login-button-color: $primary !default;
+$login-button-bg: #fff !default;
+$login-button-border-color: #fff !default;
+$login-button-border-style: solid !default;
+
+$register-button-color: #fff !default;
+$register-button-bg: $primary !default;
+$register-button-border-color: $primary !default;
+$register-button-border-style: solid !default;
+
+$cart-header-bg: #d00 !default;

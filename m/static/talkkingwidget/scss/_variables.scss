@@ -1,0 +1,41 @@
+// Color system
+$primary: #e6e21c !default;
+
+// fonts
+$font-family-main: 'Century Gothic' !default;
+$font-family-folder: CenturyGothic !default;
+$font-weights: (
+  Regular: 400,
+  Bold: 700
+) !default;
+/*ttf, otf*/
+$font-format: ttf !default;
+
+
+// HEADER
+$header-light-bg: true !default;
+$header-height: 71px !default;
+$header-height-mobile: 71px !default;
+$header-bg: #fff !default;
+$header-login-position: left !default;
+$header-button-height: 44px !default;
+$header-button-border-width: 3px !default;
+$header-button-width: 164px !default;
+$header-button-size: 17px !default;
+$header-button-weight: 400 !default;
+$header-button-radius: 7px !default;
+$header-button-margin: 20px !default;
+$header-button-hover: 0% !default;
+
+
+$login-button-color: #000 !default;
+$login-button-bg: transparent !default;
+$login-button-border-color: #000 !default;
+$login-button-border-style: solid !default;
+
+$register-button-color: #fff !default;
+$register-button-bg: #000 !default;
+$register-button-border-color: #000 !default;
+$register-button-border-style: solid !default;
+
+$cart-header-bg: #d00 !default;

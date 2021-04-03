@@ -1,0 +1,32 @@
+.map-address-wrap {
+	position: relative;
+}
+
+.my-location {
+	text-decoration: underline;
+	cursor: pointer;
+	&:hover {
+		text-decoration: none;
+	}
+}
+#addressPolygonModal {
+	.modal-body {
+		padding: 15px;
+		border-top: 1px solid #e5e5e5;
+	}
+}
+#mapSection {
+	margin-top: 5px;
+}
+#mapSection .centerMarker, .centerMarker {
+    position: absolute;
+    background: url(../../images/marker.png) no-repeat;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    margin-left: -10px;
+    margin-top: -34px;
+    height: 34px;
+    width: 20px;
+    cursor: pointer;
+}

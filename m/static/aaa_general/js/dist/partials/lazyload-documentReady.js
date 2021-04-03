@@ -1,0 +1,3 @@
+if($('.lazyload').length) {
+	lazyload();
+}

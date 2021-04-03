@@ -1,0 +1,141 @@
+.footer {
+  color: #fff;
+  min-height: 94px;
+  margin-top: -94px;
+  position: relative;
+  z-index: 2;
+  background-color: #000000;
+  font-size: 12px;
+  line-height: 1.8;
+  img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+}
+.footer-top {
+  padding: 41px 0 23px;
+}
+.footer-bottom {
+  padding: 20px 0;
+  text-align: center;
+  a {
+    color: $primary;
+  }
+}
+.color-text-footer {
+  color: $primary;
+}
+.footer-block {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+
+.footer-social {
+  padding: 0;
+  li {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+  }
+}
+.visa-img {
+  float: right;
+  width: 194px;
+}
+.footer-btn-block{
+  overflow: hidden;
+  margin-bottom: 20px;
+  img {
+    height: 43px;
+  }
+  a{
+    float: right;
+    margin-left: 10px;
+  }
+}
+.logo-footer {
+   img{
+     width: 52px;
+     display: inline-block;
+   }
+    display: block;
+    margin: 0 auto 30px;
+}
+@media (min-width: 992px) and (max-width: 1199px){
+  .footer-social li {
+    margin-right: 0;
+  }
+}
+@media (max-width: 991px){
+  .footer-btn-block{
+    img {
+      height: 30px;
+    }
+  }
+  .footer-block{
+    ul{
+      margin-bottom: 15px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .footer-btn-block {
+    margin-bottom: 0;
+  }
+  .visa-img {
+    float: none;
+  }
+  .footer-social {
+    text-align: center;
+  }
+  .footer-top {
+    padding: 50px 0;
+    .row {
+      margin: 0 -5px;
+      > * {
+        padding: 0 5px;
+      }
+    }
+  }
+  .footer-btn-block{
+    text-align: center;
+    a{
+      float: none;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+  }
+  .footer-top{
+    padding: 20px 0 20px;
+  }
+  .footer-bottom{
+    padding: 0px 0px 10px;
+  }
+  .logo-footer{
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+  .footer-social li {
+    margin-right: 4px;
+  }
+  .footer-social li:last-child {
+    margin-right: 0;
+  }
+  .footer-bottom {
+    text-align: center;
+  }
+  .footer-img {
+    display: block;
+    margin: 20px auto 0;
+  }
+  .footer .container-index {
+    padding: 0 30px;
+  }
+  .visa-img {
+    padding-top: 2px;
+  }
+}
