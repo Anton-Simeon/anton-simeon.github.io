@@ -1,0 +1,79 @@
+.baron__clipper {
+    position: relative;
+    overflow: hidden;
+}
+.baron__scroller {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    /* remove line to customize scrollbar in iOs */
+}
+.baron__scroller::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.baron__track {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 5px;
+}
+.baron._scrollbar .baron__track {
+    display: block;
+}
+.baron__free {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+.baron__bar {
+    display: none;
+    position: absolute;
+    right: 2px;    
+    z-index: 1;
+    width: 10px;
+    background: $primary;
+    border-radius: 3px; 
+    opacity: 0.3;
+    width: 5px;
+    height: 100%;
+    border-radius: 5px;
+}
+.baron._scrollbar .baron__bar {
+    display: block;
+}
+.baron__control {
+    display: none;
+}
+
+.baron__scroller {
+  padding-right: 12px;
+}
+
+.baron__track {
+  height: 5px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+
+.baron {
+    position: relative;
+}
+/*
+.baron-wrap {
+    padding-top: 150px;
+}
+.baron {
+    height: 100px;
+}*/
