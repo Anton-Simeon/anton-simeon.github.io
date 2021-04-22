@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6bd38c8-79c7-4dd4-8563-243a41eef73d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/olga/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/olga/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/olga/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/olga/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +38,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619124506939</updated>
-      <workItem from="1619124510989" duration="694000" />
+      <workItem from="1619124510989" duration="1028000" />
     </task>
     <servers />
   </component>
