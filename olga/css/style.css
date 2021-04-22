@@ -9351,7 +9351,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 .map {
   padding-top: 50px; }
-
+.map iframe {
+  height: 600px;
+  display: block;
+  width: 100%;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
 .block-style {
   margin: 0 0 200px; }
   .block-style .btn {
@@ -9472,7 +9478,11 @@ input[type=number]::-webkit-outer-spin-button {
   .image-block-full-mobile {
     margin: 0 -30px; }
   h3.title-style {
-    font-size: 21px; } }
+    font-size: 21px; }
+  .map iframe {
+    height: 300px;
+  }
+}
 
 @media (min-width: 576px) and (max-width: 991px) {
   .main-width {

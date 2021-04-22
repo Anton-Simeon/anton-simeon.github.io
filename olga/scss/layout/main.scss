@@ -67,6 +67,13 @@ input[type=number]::-webkit-outer-spin-button {
 .map{
 	padding-top: 50px;
 }
+.map iframe {
+	height: 600px;
+	display: block;
+	width: 100%;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+}
 .block-style{
 	margin: 0 0 200px;
 	.btn{
@@ -204,6 +211,9 @@ input[type=number]::-webkit-outer-spin-button {
 		padding-top: 0;
 	}
 	.map-container{
+		height: 300px;
+	}
+	.map iframe {
 		height: 300px;
 	}
 	.image-block-full-mobile {
