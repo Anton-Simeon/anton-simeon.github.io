@@ -275,6 +275,12 @@ img {
 		}
 	}
 }
+@media(min-width: 768px) and (max-width: 1920px) {
+	.img-right {
+		right: 50%;
+		margin-right: -954px;
+	}
+}
 .card {
 	&-step {
 		height: 37 * $rem;
