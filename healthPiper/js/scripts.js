@@ -6,11 +6,10 @@ $(document).ready(function() {
 		$("html, body").animate({ scrollTop: 0 }, 100);
 	});
 	$(window).scroll(function(){
-		console.log('asdsa');
 		if($(window).scrollTop() > $(window).height() ) {
-			$('.footer-top').fadeIn();
+			$('.footer-top').addClass('active');
 		}else {
-			$('.footer-top').fadeOut();
+			$('.footer-top').removeClass('active');
 		}
 	});
 });
