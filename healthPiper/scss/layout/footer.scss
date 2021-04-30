@@ -60,6 +60,7 @@
 		right: 30 * $rem;
 		z-index: 1000;
 		cursor: pointer;
+		display: none;
 		&:hover {
 			opacity: 0.8;
 		}
