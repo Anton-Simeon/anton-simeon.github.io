@@ -1,5 +1,4 @@
 .header {
-	width: 1920px;
 	&-top {
 		background: #13151d;
 		font-size: 14px;
@@ -180,6 +179,7 @@
 	&-bullets {
 		float: right;
 		img {
+			display: inline-block;
 			margin-right: 2px;
 		}
 	}
@@ -216,6 +216,9 @@
 	&-hero {
 		position: relative;
 		padding-bottom: 10px;
+		background-color: #20222b;
+		background-repeat: no-repeat;
+		background-position: 50% 0;
 		&-content {
 			position: relative;
 			.hero-date {
@@ -244,11 +247,87 @@
 			display: block;
 			margin: 10px auto;
 			width: 483px;
-			position: relative;
-			left: 35px;
 		}
 	}
-	&-gun {
-		border-top: 1px solid #a1861f;
+}
+.gun {
+	margin: -17px 0 18px;
+}
+@media(max-width: 1770px) {
+	.header-nav a img {
+		display: block;
+		margin: 0 auto 4px;
+	}
+	.header-nav {
+		left: 415px;
+		right: 415px;
+		top: 12px;
+	}
+	.header-hero-content .hero-date {
+		display: none;
+	}
+	.header-bullets {
+		display: none;
+	}
+}
+@media(max-width: 1380px) {
+	.header-nav {
+		left: 250px;
+	}
+	.header-nav li {
+		margin: 0 10px;
+	}
+}
+@media(max-width: 1200px) {
+	.header-top-menu a {
+		margin: 0 10px;
+	}
+	.header-nav {
+		font-size: 12px;
+		top: 15px;
+	}
+}
+@media(max-width: 991px) {
+	.header-nav {
+		display: none;
+	}
+	.header-top-menu {
+		display: none;
+	}
+}
+@media(max-width: 767px) {
+	.header-button {
+		display: none;
+	}
+	.header-logo {
+		margin: 11px 0;
+		width: 140px;
+	}
+	.header-hero-logo {
+		width: 140px;
+	}
+	.gun {
+		margin: 0;
+	}
+}
+
+@media(max-width: 450px) {
+	.header-language {
+		font-size: 12px;
+	}
+	.header-share {
+		> a {
+			width: 50px;
+		}
+	}
+	.header-main-right p {
+		font-size: 14px;
+	}
+	.header-user {
+		margin-left: 0;
+	}
+	.header-logo {
+		margin: 22px 0;
+		width: 92px;
 	}
 }
