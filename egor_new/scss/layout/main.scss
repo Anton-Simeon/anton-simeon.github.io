@@ -33,6 +33,13 @@ img {
 	padding: 83px 0 207px;
 	position: relative;
 	z-index: 3;
+	@media(min-width: 768px) {
+		background-image: url(../images/hero.png);
+	}
+	@media(max-width: 767px) {
+		background-image: url(../images/hero-mobile.png);
+		background-position: 50% 50%;
+	}
 	@media(max-width: 1200px) {
 		min-height: 100px;
 	}
