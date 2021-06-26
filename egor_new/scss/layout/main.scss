@@ -200,6 +200,12 @@ img {
 	margin-bottom: -94px;
 	position: relative;
 	z-index: 2;
+	@media(min-width: 768px) {
+		background-image: url(../images/section.png);
+	}
+	@media(max-width: 767px) {
+		background-image: url(../images/section-mobile.png);
+	}
 	&-title {
 		font-family: 'aAhaWow';
 		font-weight: normal;
@@ -538,6 +544,12 @@ img {
 	background-size: cover;
 	background-position: 50% 50%;
 	overflow: hidden;
+	@media(min-width: 768px) {
+		background-image: url(../images/section_leaderboard.png);
+	}
+	@media(max-width: 767px) {
+		background-image: url(../images/section_leaderboard-mobile.png);
+	}
 	.section-title {
 		margin-bottom: 24px;
 	}
