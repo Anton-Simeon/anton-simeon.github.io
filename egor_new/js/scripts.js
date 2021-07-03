@@ -5,7 +5,7 @@ $(function() {
 		infinite: true,
 		speed: 500,
 		fade: true,
-		autoplay: false,
+		autoplay: true,
 		autoplaySpeed: 3000,
 		cssEase: 'linear'
 	});
@@ -22,7 +22,6 @@ $(function() {
 		console.log(sec);
 		var timeInterval = setInterval(function() {
 			if(sec == 0 && minute == 0 && hour == 0 && day == 0) {
-				// alert('as');
 				clearInterval(timeInterval);
 			}
 			if(day > 9) {
