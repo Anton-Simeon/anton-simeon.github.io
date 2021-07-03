@@ -27,18 +27,21 @@ img {
 }
 .hero {
 	background-repeat: no-repeat;
-	background-position: 0 50%;
+	background-position: 50% 100%;
 	background-size: cover;
 	min-height: 1080px;
 	padding: 83px 0 207px;
 	position: relative;
+	overflow: hidden;
 	z-index: 3;
-	@media(min-width: 768px) {
+	@media(min-width: 1025px) {
 		background-image: url(../images/hero.png);
+	}
+	@media(min-width: 768px) and (max-width: 1024px) {
+		background-image: url(../images/hero-tablet.png);
 	}
 	@media(max-width: 767px) {
 		background-image: url(../images/hero-mobile.png);
-		background-position: 50% 50%;
 	}
 	@media(max-width: 1200px) {
 		min-height: 100px;
@@ -91,15 +94,16 @@ img {
 			> div {
 				display: inline-block;
 				vertical-align: top;
-				margin: 0 28px;
+				margin: 0 2px;
 				@media(max-width: 991px) {
-					margin: 0 20px;
+					margin: 0 2px;
 				}
 			}
 			h6 {
 				font-family: 'GOODBRUSH';
 				font-weight: normal;
 				font-size: 120px;
+				min-width: 140px;
 				background-color: red;
 				background-image: linear-gradient(0deg, #FF9015 30%, #FFB844 50%, #FFDC7C 70%);
 				background-size: 100%;
@@ -109,11 +113,12 @@ img {
 				-moz-background-clip: text;
 				-moz-text-fill-color: transparent;
 				text-shadow: none;
-				margin: 0 0 -3px;
+				margin: 0 auto -3px;
 				line-height: 1;
 				filter: drop-shadow(0px 4px 7px #25251C);
 				@media(max-width: 991px) {
 					font-size: 78px;
+					min-width: 110px;
 				}
 			}
 			p {
@@ -153,7 +158,7 @@ img {
 	}
 	&-breadcrumbs {
 		padding: 0;
-		margin: -81px 0 155px;
+		margin: -70px 0 155px;
 		text-align: center;
 		font-family: 'Roboto';
 		font-weight: 700;
@@ -193,15 +198,19 @@ img {
 }
 .section {
 	background-repeat: no-repeat;
-	background-position: 50% 50%;
+	background-position: 50% 100%;
 	background-size: cover;
 	padding: 138px 0 100px;
 	margin-top: -72px;
 	margin-bottom: -94px;
 	position: relative;
+	overflow: hidden;
 	z-index: 2;
-	@media(min-width: 768px) {
+	@media(min-width: 1025px) {
 		background-image: url(../images/section.png);
+	}
+	@media(min-width: 768px) and (max-width: 1024px) {
+		background-image: url(../images/section-tablet.png);
 	}
 	@media(max-width: 767px) {
 		background-image: url(../images/section-mobile.png);
@@ -544,8 +553,13 @@ img {
 	background-size: cover;
 	background-position: 50% 50%;
 	overflow: hidden;
-	@media(min-width: 768px) {
+	position: relative;
+	z-index: 1;
+	@media(min-width: 1025px) {
 		background-image: url(../images/section_leaderboard.png);
+	}
+	@media(min-width: 768px) and (max-width: 1024px) {
+		background-image: url(../images/section_leaderboard-tablet.png);
 	}
 	@media(max-width: 767px) {
 		background-image: url(../images/section_leaderboard-mobile.png);
@@ -558,6 +572,7 @@ img {
 		margin-bottom: 40px;
 	}
 }
+
 
 @media(min-width: 1770px) {
 	.table_style-column {
@@ -618,6 +633,44 @@ img {
 		}
 	}
 }
+
+
+.container-shadow {
+	position: relative;
+	z-index: 2;
+}
+
+.shadow {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+	z-index: 1;
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: -300px;
+		bottom: -300px;
+		left: 0;
+		right: 0;
+		box-shadow: 77px 0 77px #20222b inset, -77px 0 77px #20222b inset;
+	}
+}
+.section .shadow {
+	top: 72px;
+	bottom: 0;
+}
+.section_leaderboard .shadow {
+	top: 94px;
+	bottom: 0;
+}
+.hero {
+	box-shadow: 0 180px 100px #20222b inset;
+}
+
 
 @media(max-width: 1770px) {
 	.product-img_bg {
@@ -711,6 +764,13 @@ img {
 		font-size: 20px;
 		padding: 24px 86px 16px 79px;
 	}
+
+	.shadow {
+		&:after {
+			box-shadow: 35px 0 35px #20222b inset, -35px 0 35px #20222b inset;
+		}
+	}
+
 }
 @media(max-width: 991px) {
 	.table_style-content li {
@@ -749,6 +809,10 @@ img {
 
 
 @media(max-width: 767px) {
+	.hero-date-number h6 {
+    	font-size: 55px;
+    	min-width: 57px;
+	}
 	.hero-logo {
 		max-width: 311px;
 		margin: 0 auto 40px;
@@ -965,7 +1029,8 @@ img {
 		margin-right: -15px;
 	}
 	.hero-date-number h6 {
-		font-size: 60px;
+		font-size: 50px;
+		min-width: 60px;
 	}
 	.hero-date-number p {
 		font-size: 12px;

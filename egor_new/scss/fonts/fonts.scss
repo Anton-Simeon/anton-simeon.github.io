@@ -70,3 +70,13 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Counter-Strike-Regular';
+    src:url('../fonts/Counter-Strike-Regular.woff') format('woff'),
+        url('../fonts/Counter-Strike-Regular.svg#Counter-Strike-Regular') format('svg'),
+        url('../fonts/Counter-Strike-Regular.eot'),
+        url('../fonts/Counter-Strike-Regular.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
