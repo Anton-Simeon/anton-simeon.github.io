@@ -6,7 +6,7 @@ html, body {
 	box-sizing: border-box;
 }
 body {
-	font-family: 'Gloriola';
+	font-family: 'Gloriola', sans-serif;
 	font-size: 16px;
 	line-height: 1.34;
 	letter-spacing: 0.015em;
@@ -30,10 +30,6 @@ a {
 		color: #187aba - 20%;
 	}
 }
-/*d 800 - 1600 (половина макета)
-t 496 - 
-m 187.5 - 
-*/
 h1 {
 	font-size: 36px;
 }
