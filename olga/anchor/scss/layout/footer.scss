@@ -1,0 +1,81 @@
+.main-footer {
+	background: $primary;
+	padding-top: 92px;
+	color: rgba(255, 255, 255, 0.8);
+	.btn:hover{
+		background: $white;
+		color: $primary;
+	}
+	.phone{
+		color: rgba(255, 255, 255, 0.8);
+	}
+}
+.footer-logo{
+	display: inline-block;
+	margin-top: -6px;
+	border-bottom: none;
+
+	.icon{
+		font-size: 90px;
+	}
+}
+.footer-contact{
+	.title-style{
+		margin-bottom: 57px;
+	}
+	p{
+		margin-bottom: 10px;
+	}
+}
+.bottom-footer{
+	font-size: 12px;
+	padding: 16px 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	margin-top: 100px;
+}
+.copyright{
+	display: inline-block;
+}
+.site-developer{
+	float: right;
+	a{
+		margin-left: 20px;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+.phone-footer {
+	text-decoration: none;
+	font-size: 26px;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+
+
+@media (max-width:992px) {
+	.main-footer{
+		
+	}
+}
+@media (max-width:575px) {
+	.form-style {
+		margin-bottom: 45px;
+	}
+	.footer-contact .title-style {
+		margin-bottom: 20px;
+	}
+	.form-style .title-style {
+		margin-bottom: 20px;
+	}
+	.bottom-footer {
+		font-size: 10px;
+	}
+	.site-developer a {
+		margin-left: 4px;
+	}
+	.phone-footer {
+		font-size: 18px;
+	}
+}	

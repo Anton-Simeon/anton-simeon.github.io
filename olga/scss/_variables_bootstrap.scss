@@ -66,8 +66,8 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       #093C71 !default;
-$secondary:     #202224 !default;
+$primary:       #5A5B5D !default;
+$secondary:     #A2A4A7 !default;
 $white:     #fff !default;
 $black:     #000 !default;
 $success:       $green !default;
@@ -274,7 +274,7 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      'Lato', sans-serif;
+$font-family-sans-serif:      'Roboto', sans-serif;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
@@ -290,7 +290,7 @@ $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
-$line-height-base:            1.625 !default;
+$line-height-base:            1.75 !default;
 
 $h1-font-size:                $font-size-base * 2.8125 !default; //45 
 $h2-font-size:                $font-size-base * 2.0 !default; //32

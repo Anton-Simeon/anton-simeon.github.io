@@ -1,0 +1,299 @@
+@charset "UTF-8";
+
+// Default Variables
+
+// Slick icon entity codes outputs the following
+// "\2190" outputs ascii character "←"
+// "\2192" outputs ascii character "→"
+// "\2022" outputs ascii character "•"
+
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: #181818 !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+@function slick-image-url($url) {
+    @if function-exists(image-url) {
+        @return image-url($url);
+    }
+    @else {
+        @return url($slick-loader-path + $url);
+    }
+}
+
+@function slick-font-url($url) {
+    @if function-exists(font-url) {
+        @return font-url($url);
+    }
+    @else {
+        @return url($slick-font-path + $url);
+    }
+}
+
+/* Slider */
+
+.slick-list {
+    .slick-loading & {
+        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+    }
+}
+
+/* Icons */
+@if $slick-font-family == "slick" {
+    @font-face {
+        font-family: "slick";
+        src: slick-font-url("slick.eot");
+        src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    height: 120px;
+    width: 120px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    z-index: 1000;
+    transition: 0.2s all 0s;
+    &:hover:before{
+        color: $gray;
+    }
+}
+
+.slick-prev {
+    left: 50px;
+    @extend .icon-arrow-prev;
+    &:before {
+        font-family: 'icomoon';
+        display: inline-block;
+        font-size: 8px;
+        vertical-align: middle;
+        color: $primary;
+    }
+    &:focus {
+        outline: none
+    }
+}
+
+.slick-next {
+    right: 50px;
+    @extend .icon-arrow-next;
+    &:before {
+        font-family: 'icomoon';
+        display: inline-block;
+        font-size: 8px;
+        vertical-align: middle;
+        color: $primary;
+    }
+    &:focus {
+        outline: none
+    }
+}
+.slider-carousel{
+    .slick-prev {
+        left: -68px;
+    }
+}
+.slider-carousel{
+    margin: 15px -30px 0;
+    .slick-next {
+        right: -68px;
+    }
+}
+
+/* Dots */
+
+.slick-dotted.slick-slider {
+    margin-bottom: 30px;
+}
+.slider{
+    .title-style{
+        margin: 42px 0 0;
+    }
+}
+.slick-dots {
+    position: absolute;
+    bottom: 20px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+        position: relative;
+        display: inline-block;
+        margin: 0 8px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            height: 8px;
+            width: 8px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 0;
+            cursor: pointer;
+            border-radius: 100%;
+            opacity: 0.5;
+            background: #fff;
+            &:hover, &:focus {
+                outline: none;
+            }
+        }
+        &.slick-active button {
+            background: #A04695;
+            opacity: 1;
+        }
+    }
+}
+@media(max-width: 1350px) {
+    .slider-carousel{
+        .slick-prev {
+            left: 15px;
+        }
+        .slick-next {
+            right: 15px;
+        }
+    }
+    
+}
+
+
+.slider-carousel{
+    .one-slide{
+        padding: 0 30px;
+    }
+}
+.slick-disabled {
+    opacity: 0.2;
+    cursor: default !important;
+}
+
+@media(max-width: 1199px) {
+    .slick-prev,
+    .slick-next {
+        height: 50px;
+        width: 50px;
+        &:before {
+            font-size: 4.5px;
+        }
+    }
+
+
+    .slick-prev:before {
+        content: "\e900";
+    }
+
+    .slick-next:before {
+        content: "\e901";
+    }
+
+
+}
+@media(max-width: 991px) {
+    .slider .title-style {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        margin: 0;
+        font-size: 21px;
+        padding: 11px 13px;
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) );
+    }
+    .one-slide > div {
+        position: relative;
+    }
+}
+
+
+@media(max-width: 1199px) and (min-width: 992px) {
+    .slider-image {
+        padding: 0 28px;
+    }
+    .slider-carousel .one-slide {
+        padding: 0 24px;       
+    }
+    .slider-carousel {
+        margin: 0 -24px;
+    }
+    .slider  {
+        .slick-prev {
+            left: 85px;
+        }
+        .slick-next {
+            right: 85px;
+        }
+    }
+}
+@media(max-width: 991px) and (min-width: 576px) {
+    .slider-image {
+        padding: 0 21px;
+    }
+    .slider-carousel .one-slide {
+        padding: 0 15px;       
+    }
+    .slider-carousel {
+        margin: 0 -15px;
+    }
+    .slider  {
+        .slick-prev {
+            left: 18px;
+        }
+        .slick-next {
+            right: 18px;
+        }
+    }
+}
+@media(max-width: 575px) {
+    .slider-image {
+        padding: 0 0;
+    }
+    .slider-carousel .one-slide {
+        padding: 0 5px;       
+    }
+    .slider-carousel {
+        margin: 0 -5px;
+    }
+    .slider  {
+        .slick-prev {
+            left: 10px;
+        }
+        .slick-next {
+            right: 10px;
+        }
+    }
+}
