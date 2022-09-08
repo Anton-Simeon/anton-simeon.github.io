@@ -1,3 +1,6 @@
+html, body {
+	height: 100%;
+}
 .align-items-end {
     -webkit-box-align: end!important;
     -ms-flex-align: end!important;
@@ -110,7 +113,6 @@ b {
 }
 .section-hero {
 	padding-top: 198px;
-	height: 100%;
 	.container {
 		height: 100%;
 	}
@@ -175,11 +177,17 @@ b {
 .hero-img-wrap {
 	position: sticky;
 	top: 100px;
+	height: calc(100% - 496px);
 	z-index: 1;
 	margin: 44px 0 0px;
+	> .container {
+		height: 100%;
+	}
 }
 .hero-img {
-	height: 450px;
+	// height: 450px;
+	// height: calc(100% - 450px);
+	height: 100%;
 	overflow: hidden;
 	position: relative;
 	top: 0;
@@ -254,7 +262,7 @@ b {
 	right: 0;
 	bottom: 0;
 	background-size: cover;
-	background-position: 50% 50%;
+	background-position: 50% 100%;
 	z-index: 2; 
 }
 .form-check-wrap {
@@ -269,14 +277,62 @@ b {
 .form-floating>textarea.form-control {
 	height: 150px;
 }
-.section-contact{
+.section-form{
 	h2 {
 		margin-bottom: 26px;
+	}
+}
+.section-contact {
+	h2 {
+		margin-top: 18px;
+		margin-bottom: 36px;
+	}
+	b {
+		color: #8b8b8b;
 	}
 }
 .form-style {
 	margin-top: 59px;
 	.form-check-label {
 		line-height: 26px;
+	}
+}
+.footer {
+	background: #F9F6F7;
+	z-index: 100;
+	position: relative;
+}
+.footer-top {
+	background: #F9F6F7;
+	padding: 50px 0;
+	overflow: hidden;
+}
+.footer-logo {
+	float: left;
+	font-size: 16px;
+	font-weight: 500;
+	> * {
+		float: left;
+	}
+}
+.footer-logo-text {
+	padding-left: 15px;
+	padding-top: 16px;
+	color: $color_dark;
+}
+.footer-bottom {
+	background: #F6812A;
+	padding: 15px 0; 
+	overflow: hidden;
+	font-size: 12px;
+	color: #fff;
+}
+.footer-copy {
+	float: left;
+}
+.company {
+	float: right;
+	span {
+		color: rgba(255, 255, 255, 0.5);
 	}
 }
