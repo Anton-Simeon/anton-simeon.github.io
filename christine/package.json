@@ -1,0 +1,38 @@
+{
+  "name": "plastocart",
+  "version": "1.0.0",
+  "description": "Henke\r #########################\r 1. Pre-ordering admin\r 2. Iframe bug\r 3. BBagel order status and order time\r 4. Popup JSON errors\r 5. promo/order-discount payment type\r 6. Payment gateway integration\r 7. Address field rules with predefined fields\r 8. Design Widget / CMS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrderTigerDev/plastocart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OrderTigerDev/plastocart/issues"
+  },
+  "homepage": "https://github.com/OrderTigerDev/plastocart#readme",
+  "devDependencies": {
+    "bourbon": "^7.0.0",
+    "bourbon-neat": "^4.0.0",
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-connect": "^5.7.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-less": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0",
+    "webpack-stream": "^6.1.2"
+  },
+  "dependencies": {
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1"
+  }
+}
