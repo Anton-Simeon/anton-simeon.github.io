@@ -1,15 +1,26 @@
-// $(function() {
-// 	function scrollImg() {
-// 		var scrollPosition = $( window ).scrollTop();
-// 		var windowHeight = $( window ).height();
-// 		var maxOffset = 250;
+$(function() {
+	
+	function modal(option) {
+		if(option) {
+			$('html').addClass('open-modal');
+			setTimeout(function() {
+				$('html').addClass('animate-modal');
+			}, 200);
+		}else {
+			$('html').removeClass('animate-modal');
+			setTimeout(function() {
+				$('html').removeClass('open-modal');
+			}, 1200);
 
-// 		var marginTop =  (maxOffset / windowHeight) * scrollPosition - 40;
-// 		$('.hero-img > div').css('margin-top', marginTop);
-// 	}
-// 	scrollImg();
-// 	$( window ).scroll(function() {
-// 		scrollImg();
-// 	});
-// 	scrollImg();
-// });
+		}
+		return false;
+	};
+	$('.modal-link').click(function(){
+		modal(true);	
+	})
+	$('.modal-bg, .modal-close').click(function(){
+		modal(false);	
+	})
+	// modal(true);
+	// modal(false);
+});

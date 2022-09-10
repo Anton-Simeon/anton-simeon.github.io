@@ -9,8 +9,6 @@
 	<meta name="generator" content="Contao Open Source CMS">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -22,6 +20,11 @@
 				<div class="logo-text">
 					Haut & Haar
 				</div>
+			</div>
+			<div class="header-btn">
+				<div></div>
+				<div></div>
+				<div></div>
 			</div>
 			<nav class="header-nav">
 				 <ul>
@@ -55,10 +58,12 @@
 	<section class="section-additional-information">
 		<div class="container">
 			<div class="row align-items-md-center">
-				<div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 col-6 col-sm-5">
-					<img src="images/additional-information.jpg" alt="Haarentfernung Wörgl - Haut & Haar">
+				<div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 col-12 col-sm-5">
+					<div class="image-sm-line image-mb">
+						<img src="images/additional-information.jpg" alt="Haarentfernung Wörgl - Haut & Haar">
+					</div>
 				</div>
-				<div class="col-lg-4 col-md-5 col-6">
+				<div class="col-lg-4 col-md-5 col-12">
 					<p>Glatte und zarte Haut hält länger!<br> Kann es für immer sein? Müde von Schnittwunden, Irritationen und Rötungen nach häufigem Rasieren?</p>
 					<p><b>Werde es sofort los</b></p>
 				</div>
@@ -102,22 +107,22 @@
 				<div class="col-md-4 col-12">
 					<h3>Dauerhafte Enthaarung (IPL)</h3>
 				</div>
-				<div class="col-md-4 col-6">
-					<div class="image">
-						<img src="images/content4.jpg">
-					</div>
-				</div>
-				<div class="col-md-4 col-6">
+				<div class="col-md-4 col-sm-6 col-12 order-sm-last">
 					<p>Ohne Schmerzen und Verletzungen. verabschieden Sie sich nach dem Epilationskurs für Jahre von unerwünschten Haaren.</p>
 					<p>Erfahren Sie mehr über die Vorteile der Enthaarung, wie Sie sich darauf vorbereiten und andere Informationen</p>
-					<p class="link"><a href="">Weiterlesen</a></p>
+					<p class="link"><a href="#" class="modal-link" onclick="return false">Weiterlesen</a></p>
+				</div>
+				<div class="col-md-4 col-sm-6 col-12">
+					<div class="image image-sm-line">
+						<img src="images/content4.jpg">
+					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-12 mb-md">
 					<h3>Temporäre Haarentfernung</h3>
 					<p>Befreien Sie sich von unerwünschten Haaren ohne Kratzer und Schnitte mit Heiß- und Filmwachs. Genießen Sie das Ergebnis und erholen Sie sich mindestens 2-3 Wochen lang von aufdringlichem Haar.</p>
-					<p class="link"><a href="">Weiterlesen</a></p>
+					<p class="link"><a href="#" class="modal-link" onclick="return false">Weiterlesen</a></p>
 				</div>
 				<div class="col-md-4 col-6">
 					<div class="image">
@@ -333,5 +338,27 @@
 			</div>
 		</div>
 	</footer>
+	<div class="modal">
+		<div class="modal-bg"></div>
+		<div class="modal-container">
+			<div class="modal-close"></div>
+			<div class="modal-content">
+				<h6>Dienstleistungen</h6>
+				<h3>Dauerhafte Enthaarung (IPL)</h3>
+				<p>Mithilfe des Gerätes von Cosmetic Solution werden kontrollierte Lichtimpulse erzeugt die zur selektiven Verödung der Haarwurzel zum Zwecke der Epilation führen. Hierbei gilt grundsätzlich, daß die Behandlung umso einfacher, bzw. erfolgreicher ist, je heller die Haut und je dunkler die Haare sind. Jedes Haar durchläuft verschiedene Wachstumsphasen, erfolgreich behandelt werden kann nur in der Anagenphase. Da sich aber immer nur ein bestimmter Teil Ihrer Haare in dieser Wachstumsphase befindet, braucht es in der Regel 8-10 Behandlungen um alle Haare in der richtigen Wachstumsphase zu erreichen.</p>
+				<h3>Wie sollten Sie sich auf die Behandlung vorbereiten ?</h3>
+				<p>Ohne Schmerzen und Verletzungen. verabschieden Sie sich nach dem Epilationskurs für Jahre von unerwünschten Haaren.</p>
+				<p>Erfahren Sie mehr über die Vorteile der Enthaarung, wie Sie sich darauf vorbereiten und andere Informationen</p>
+				<ul class="list">
+					<li>Some text Some textSome textSome text Some text Some text Some textSome text</li>
+					<li>Some text Some textSome text</li>
+					<li class="list-close">Don’t do this. Some important information</li>
+					<li class="list-close">More important information</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
