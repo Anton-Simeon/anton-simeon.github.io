@@ -15,10 +15,11 @@ $(function() {
 
 
 	var stopModalFun = false;
-	function modal(option) {
+	function modal(option, thisModal) {
 		if(stopModalFun == false) {
 			if(option) {
 				$('html').addClass('open-modal');
+				$("[data-modal=" + thisModal + "]").show();
 				setTimeout(function() {
 					$('html').addClass('animate-modal');
 				}, 200);
@@ -26,6 +27,7 @@ $(function() {
 				$('html').removeClass('animate-modal');
 				setTimeout(function() {
 					$('html').removeClass('open-modal');
+					$("[data-modal=" + thisModal + "]").hide();
 				}, 900);
 
 			}
@@ -35,14 +37,25 @@ $(function() {
 		}
 		return false;
 	};
-	$('.modal-link').click(function(){
-		modal(true);
+	$('[data-mdl_link]').click(function(){
+		var thisModal = $(this).attr('data-mdl_link');
+		modal(true, thisModal);
 		stopModalFun = true;
 	})
 	$('.modal-bg, .modal-close').click(function(){
-		modal(false);
+		var thisModal = $(this).closest('.modal').attr('data-modal');
+		modal(false, thisModal);
 		stopModalFun = true;
 	})
-	// modal(true);
-	// modal(false);
+
+	$('.link-js').click(function(){
+		var body = $("html, body");
+		var thisId = $(this).attr('href');
+		var thisEl = $(thisId);
+		console.log(thisEl.offset());
+		var scrollPosition = thisEl.offset().top - 75;
+		body.scrollTop(scrollPosition);
+		// body.stop().animate({scrollTop:scrollPosition}, {duration: 0, easing:"linear" } );
+		return false
+	});
 });
