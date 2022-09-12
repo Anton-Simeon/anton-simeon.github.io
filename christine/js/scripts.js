@@ -53,7 +53,7 @@ $(function() {
 		var thisId = $(this).attr('href');
 		var thisEl = $(thisId);
 		console.log(thisEl.offset());
-		var scrollPosition = thisEl.offset().top - 75;
+		var scrollPosition = thisEl.offset().top - 70;
 		body.scrollTop(scrollPosition);
 		// body.stop().animate({scrollTop:scrollPosition}, {duration: 0, easing:"linear" } );
 		return false
