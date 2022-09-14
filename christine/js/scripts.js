@@ -58,4 +58,20 @@ $(function() {
 		// body.stop().animate({scrollTop:scrollPosition}, {duration: 0, easing:"linear" } );
 		return false
 	});
+
+	$('#form').on('submit', function (e) {
+		e.preventDefault();
+		$.ajax({
+			type: 'post',
+			url: 'form.php',
+			data: $('#feedback').serialize(),
+			success: function (data) {
+				console.log(data);
+				// alert('form was  submitted');
+			}
+		});
+	});
+
+
+
 });
