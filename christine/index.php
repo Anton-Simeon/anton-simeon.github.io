@@ -1,9 +1,18 @@
 <?php
+$imgFormat = 'webp';
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+if (stripos( $user_agent, 'Chrome') !== false) {
+    // echo "Google Chrome";
+} elseif (stripos( $user_agent, 'Safari') !== false) {
+   // echo "Safari";
+	$imgFormat = 'jpg';
+}
 echo '<!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
 	<meta charset="utf-8">
 	<title>Haarentfernung Wörgl - Haut & Haar</title>
+	<link rel="preload" as="image" href="images/hero-img-640.'.$imgFormat.'">
 	<link rel="icon" type="image/x-icon" href="images/favicon.png">
 	<meta name="description" content="Sie suchen nach Haarentfernung Wörgl ? Bei uns sind Sie richtig ! Lassen Sie sich ganz unverbindlich beraten.">
 	<meta name="keywords" content="Haarentfernung Wörgl">
@@ -11,8 +20,7 @@ echo '<!DOCTYPE html>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-	<header class="header">
+<body><header class="header">
 		<div class="container">
 			<div class="logo">
 				<div class="logo-img">
@@ -40,12 +48,12 @@ echo '<!DOCTYPE html>
 		<div class="container">
 			<div class="row section-hero-top align-items-end">
 				<div class="col-md-8">
-					<h2>Professionelle Haarentfernung</h2>
 					<h1>Haut <span>&</span> Haar</h1>
-					<p><b>Nie wieder rasieren<br> oder epilieren</b></p>
+					<p><b>Professionelle Haarentfernung</b><br>
+					Nie wieder rasieren oder epilieren</p>
 				</div>
 				<div class="col-md-4">
-					<p>Seidenglatte Haut</p>
+					<p>Eine haarfreie Zukunft?<br>Wir machen es möglich</p>
 					<div class="btn-wrap"><a href="#form" class="link-js btn" onclick="return false"><span class="btn-text">Terminanfrage</span><span class="btn-line"></span></a></div>
 				</div>
 			</div>
@@ -53,15 +61,20 @@ echo '<!DOCTYPE html>
 	</section>
 	<div class="hero-img-wrap">
 		<div class="container">
-			<div class="hero-img" style="background-image: url(images/hero-img.jpg);"></div>
+			<div class="hero-img"> 
+				<picture>
+  					<source media="(min-width:768px)" srcset="images/hero-img.'.$imgFormat.'">
+  					<img src="images/hero-img-640.'.$imgFormat.'" alt="Haut & Haar" width="640" height="480">
+				</picture>
+			</div>
 		</div>
 	</div>
-	<section class="section-additional-information">
+	<div class="section-additional-information">
 		<div class="container">
 			<div class="row align-items-md-center">
 				<div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 col-12 col-sm-6">
 					<div class="image-sm-line image-mb">
-						<img src="images/additional-information.jpg" alt="Haarentfernung Wörgl - Haut & Haar">
+						<img loading="lazy" src="images/additional-information.'.$imgFormat.'" alt="Haarentfernung Wörgl - Haut & Haar" width="359" height="260">
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-5 col-12 col-sm-5">
@@ -70,7 +83,7 @@ echo '<!DOCTYPE html>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 	<section class="section-style bg-dark-gray z-index-3">
 		<div class="container">
 			<div class="row">
@@ -80,18 +93,18 @@ echo '<!DOCTYPE html>
 				<div class="col-md-4 col-sm-6">
 					<div class="images">
 						<div>
-							<img src="images/content1.jpg">
+							<img loading="lazy" src="images/content1.'.$imgFormat.'" alt="Willkommen in der Welt perfekt glatter Haut" width="164" height="254">
 						</div>
 						<div>
-							<img src="images/content2.jpg">
+							<img loading="lazy" src="images/content2.'.$imgFormat.'" alt="Willkommen in der Welt perfekt glatter Haut" width="164" height="254">
 						</div>
 					</div>
 					<p>Ab der ersten Behandlung sichtbare und dauerhafte Erfolge. Müde von Schnittwunden, Irritationen und Rötungen nach häufigem rasieren oder epilieren</p>
-					<p><b>Perfekt glatte Haut <nobr>für Sie und Ihn</nobr></b></p>
+					<p><b>Perfekt glatte Haut für&nbsp;Sie&nbsp;und&nbsp;Ihn</b></p>
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<div class="image-right">
-						<img src="images/content3.jpg">
+						<img loading="lazy" src="images/content3.'.$imgFormat.'" alt="Willkommen in der Welt perfekt glatter Haut" width="459" height="550">
 					</div>
 				</div>
 			</div>
@@ -115,7 +128,7 @@ echo '<!DOCTYPE html>
 				</div>
 				<div class="col-md-4 col-sm-6 col-12">
 					<div class="image image-sm-line">
-						<img src="images/content4.jpg">
+						<img loading="lazy" src="images/content4.'.$imgFormat.'" alt="Dauerhafte Haarentfernung" width="359" height="400">
 					</div>
 				</div>
 			</div>
@@ -129,12 +142,12 @@ echo '<!DOCTYPE html>
 				</div>
 				<div class="col-md-4 col-6">
 					<div class="image">
-						<img src="images/content5.jpg">
+						<img loading="lazy" src="images/content5.'.$imgFormat.'" alt="Temporäre Haarentfernung" width="359" height="550">
 					</div>
 				</div>
 				<div class="col-md-4 col-6">
 					<div class="image">
-						<img src="images/content6.jpg">
+						<img loading="lazy" src="images/content6.'.$imgFormat.'" alt="Temporäre Haarentfernung" width="359" height="550">
 					</div>
 				</div>
 			</div>
@@ -155,22 +168,22 @@ echo '<!DOCTYPE html>
 				</div>
 				<div class="col-3 col-sm-2">
 					<div class="image">
-						<img src="images/content8.jpg">
+						<img loading="lazy" src="images/content8.'.$imgFormat.'" alt="Für fast alle Körperbereiche" width="149" height="570">
 					</div>
 				</div>
 				<div class="col-3 col-sm-2">
 					<div class="image">
-						<img src="images/content9.jpg">
+						<img loading="lazy" src="images/content9.'.$imgFormat.'" alt="Für fast alle Körperbereiche" width="150" height="570">
 					</div>
 				</div>
 				<div class="col-3 col-sm-2">
 					<div class="image">
-						<img src="images/content10.jpg">
+						<img loading="lazy" src="images/content10.'.$imgFormat.'" alt="Für fast alle Körperbereiche" width="150" height="570">
 					</div>
 				</div>
 				<div class="col-3 col-sm-2">
 					<div class="image">
-						<img src="images/content11.jpg">
+						<img loading="lazy" src="images/content11.'.$imgFormat.'" alt="Für fast alle Körperbereiche" width="150" height="570">
 					</div>
 				</div>
 				<div class="col-12 d-md-block">
@@ -191,12 +204,12 @@ echo '<!DOCTYPE html>
 					<div class="row">
 						<div class="col content-img">
 							<div class="image">
-								<img src="images/content12.jpg">
+								<img src="images/content12.'.$imgFormat.'" alt="Über unseren Salon" width="510" height="600">
 							</div>
 						</div>
 						<div class="col">
 							<div class="image">
-								<img src="images/content13.jpg">
+								<img src="images/content13.'.$imgFormat.'" alt="Über unseren Salon" width="210" height="275">
 							</div>
 						</div>
 					</div>
@@ -204,7 +217,9 @@ echo '<!DOCTYPE html>
 				<div class="col-sm-4">
 					<h3>Lernen wir uns kennen</h3>
 					<p>Alle Fragen rund um die Behandlungen beantworte ich gerne bei einem kostenlosen Beratungs gesprach.</p>
-					<p><img src="images/cosmetic-solution.png" width="150"></p>
+					<p>
+						<img loading="lazy" src="images/cosmetic-solution.png" width="150" height="87" alt="cosmetic solution">
+					</p>
 				</div>
 			</div>
 			<div class="numbers row">
@@ -223,7 +238,7 @@ echo '<!DOCTYPE html>
 			</div>
 		</div>
 	</section>
-	<section class="section-quote bg-gray z-index-3">
+	<div class="section-quote bg-gray z-index-3">
 		<div class="container">
 			<div class="row align-items-md-center">
 				<div class="col-8">
@@ -235,12 +250,12 @@ echo '<!DOCTYPE html>
 				</div>
 				<div class="col-4">
 					<div class="image">
-						<img src="images/owner.jpg">
+						<img loading="lazy" src="images/owner.'.$imgFormat.'" alt="Mag. Christine Egger" width="359" height="500">
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 	<section class="section-style bg-white z-index-3">
 		<div class="container">
 			<div class="row">
@@ -251,12 +266,12 @@ echo '<!DOCTYPE html>
 				</div>
 				<div class="col-sm-4 col-6">
 					<div class="image">
-						<img src="images/content14.jpg">
+						<img loading="lazy" src="images/content14.'.$imgFormat.'" alt="Geschenk für einen wunderbaren Freund" width="359" height="530">
 					</div>
 				</div>
 				<div class="col-sm-4 col-6">
 					<div class="image">
-						<img src="images/content15.jpg">
+						<img loading="lazy" src="images/content15.'.$imgFormat.'" alt="Geschenk für einen wunderbaren Freund" width="359" height="530">
 					</div>
 				</div>
 				<div class="col-12 d-md-block">
@@ -271,32 +286,32 @@ echo '<!DOCTYPE html>
 				<div class="col-sm-6">
 					<h2>Holen Sie<br> sich einen Termin</h2>
 					<p>Bitte füllen Sie die folgenden Felder aus</p>
-					<form class="form-style" type="POST" id="feedback">
+					<form class="form-style" method="POST" id="feedback" action="form.php">
 						<div class="form-floating">
-							<input type="text" name="name" class="form-control" id="name" placeholder="Name">
+							<input type="text" name="name" class="form-control" required id="name" placeholder="Name">
 							<label for="name">Name</label>
 						</div>
 						<div class="form-floating">
-							<input type="email" name="email" class="form-control" id="email" placeholder="Email">
+							<input type="text" name="email" class="form-control" required id="email" placeholder="Email">
 							<label for="email">Email</label>
-						</div>
+						</div> 
 						<div class="form-floating">
-							<input type="phone" name="phone" class="form-control" id="phone" placeholder="Telefonnumer">
+							<input type="tel" name="phone" class="form-control" required id="phone" placeholder="Telefonnumer">
 							<label for="phone">Telefonnumer</label>
 						</div>
 						<div class="form-floating">
-							<textarea class="form-control" name="message" id="message" placeholder="Nachricht"></textarea>
+							<textarea class="form-control" name="message" required id="message" placeholder="Nachricht"></textarea>
 							<label for="message">Nachricht</label>
 						</div>
 						<div class="form-check-wrap">
 							<div class="form-check">
-								<input class="form-check-input" name="response_to_email" type="checkbox" value="" id="antwort-per-email">
+								<input class="form-check-input" name="response_to_email" value="response_to_email" type="checkbox" id="antwort-per-email">
 								<label class="form-check-label" for="antwort-per-email">
 									Antwort per Email
 								</label>
 							</div>
 							<div class="form-check">
-								<input class="form-check-input" name="response_to_phone" type="checkbox" value="" id="bitte-um-ruckruf">
+								<input class="form-check-input" name="response_to_phone" value="response_to_phone" type="checkbox" id="bitte-um-ruckruf">
 								<label class="form-check-label" for="bitte-um-ruckruf">
 									Bitte um Ruckruf
 								</label>
@@ -309,7 +324,11 @@ echo '<!DOCTYPE html>
 				</div>
 			</div>
 		</div>
-		<div class="img-form" style="background-image: url(images/img-form.jpg);"></div>
+		<div class="img-form">
+			<div>
+				<img loading="lazy" src="images/img-form.'.$imgFormat.'" alt="Holen Sie sich einen Termin" width="537" height="1100">
+			</div>
+		</div>
 	</section>
 	<section class="section-style section-contact bg-white z-index-3" id="contact">
 		<div class="container">
@@ -321,18 +340,18 @@ echo '<!DOCTYPE html>
 							<p>Mag. Christine Egger</p>
 							<p>Kaiserweg 1<br>
 							A-6342 Niederndorf</p>
-							<p>Telefon: <a href="tel:+43 5373 61477">+43 5373 61477</a> <br>
+							<p>Telefon: <a href="tel:+43537361477">+43 5373 61477</a> <br>
 							eMail: <a href="mailto:rolltreff@haut-haar.eu">rolltreff@haut-haar.eu</a></p>
 						</div>
 						<div class="col-md-6 mb-md">
 							<p><b>Unsere Öffnungszeiten:</b></p>
 							<p>Dienstag und Mittwoch<br>
-							<nobr>8:00-12:00</nobr> und <nobr>17:15-21:00 Uhr</nobr></p>
+							8:00&#8209;12:00 und 17:15&#8209;21:00&nbsp;Uhr</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.92057781033!2d12.212405415821923!3d47.64711019317151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4776393e237da6c9%3A0x8b6db4572458ae08!2sKaiserweg%201%2C%206342%20Niederndorf%20bei%20Kufstein%2C%20%C3%96sterreich!5e0!3m2!1sde!2sua!4v1663150574402!5m2!1sde!2sua" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.92057781033!2d12.212405415821923!3d47.64711019317151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4776393e237da6c9%3A0x8b6db4572458ae08!2sKaiserweg%201%2C%206342%20Niederndorf%20bei%20Kufstein%2C%20%C3%96sterreich!5e0!3m2!1sde!2sua!4v1663150574402!5m2!1sde!2sua" loading="lazy" title="Kaiserweg 1, A-6342 Niederndorf" width="570" height="400" style="border:0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
@@ -342,7 +361,7 @@ echo '<!DOCTYPE html>
 			<div class="container">
 				<div class="footer-logo">
 					<div class="footer-logo-img">
-						<img src="images/logo.png" alt="Haarentfernung Wörgl - Haut & Haar" width="61" height="50">
+						<img src="images/logo.png" loading="lazy" alt="Haarentfernung Wörgl - Haut & Haar" width="61" height="50">
 					</div>
 					<div class="footer-logo-text">
 						Haut & Haar
@@ -357,11 +376,11 @@ echo '<!DOCTYPE html>
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="footer-copy">© Haut & Haar, 2022</div>
-				<div class="company"><span>Made by</span> <a href="https:it-b.at">it-b.at</a></div>
+				<div class="company"><span>Made by</span> <a href="https://it-b.at">it-b.at</a></div>
 			</div>
 		</div>
 	</footer>
-	<div class="modal" data-modal="impressum">
+<div class="modal" data-modal="impressum">
 		<div class="modal-bg"></div>
 		<div class="modal-container">
 			<div class="modal-header">
@@ -374,7 +393,7 @@ echo '<!DOCTYPE html>
 				Mag. Christine Egger<br>
 				Kaiserweg 1<br>
 				6342 Niederndorf</span><br>
-				Telefon: <a href="tel:+43 5373 61477">+43 5373 61477</a><br>
+				Telefon: <a href="tel:+43537361477">+43 5373 61477</a><br>
 				eMail: <a href="mailto:rolltreff@haut-haar.eu">rolltreff@haut-haar.eu</a><br>
 				Internet: <a href="https://haut-haar.eu">haut-haar.eu</a>
 				</p>
@@ -505,26 +524,26 @@ echo '<!DOCTYPE html>
 		<div class="modal-bg"></div>
 		<div class="modal-container">
 			<div class="modal-logo">
-				<img src="images/logo.png" alt="Haarentfernung Wörgl - Haut &amp; Haar" width="61" height="50">
+				<img src="images/logo.png" alt="Haarentfernung Wörgl - Haut & Haar" width="61" height="50">
 			</div>
 			<div class="modal-close"></div>
 			<div class="modal-content">
 				<nav class="mobile-nav">
 					 <ul>
-					 	<li><a href="">Behandlungen</a></li>
-					 	<li><a href="">Über uns</a></li>
-					 	<li><a href="">Kontakt</a></li>
+					 	<li><a href="#services" class="link-js" onclick="return false">Behandlungen</a></li>
+				 		<li><a href="#about-us" class="link-js" onclick="return false">Über uns</a></li>
+				 		<li><a href="#contact" class="link-js" onclick="return false">Kontakt</a></li>
 					 </ul>
 				</nav>
 				<div class="menu-contact">
 					<a href="mailto:rolltreff@haut-haar.eu"><i class="icon-email"></i></a>
-					<a href="tel:+43 5373 61477"><i class="icon-phone"></i></a>
+					<a href="tel:+43537361477"><i class="icon-phone"></i></a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/scripts.js"></script>
 </body>
 </html>'
 ?>
