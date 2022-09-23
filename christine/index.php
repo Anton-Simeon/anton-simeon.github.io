@@ -19,6 +19,16 @@ echo '<!DOCTYPE html>
 	<meta name="generator" content="Contao Open Source CMS">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	window.cookieconsent_options = {
+		message:"Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anbieten zu können und die Zugriffe auf unsere Webseite zu analysieren.",
+		dismiss:"Akzeptieren",
+		learnMore:"</br>Mehr Information",
+		link:"#", 
+		target:"_self",
+		theme:""};
+	</script>
+	<script async type="text/javascript" src="js/cookieconsent.min.js"></script>
 </head>
 <body><header class="header">
 		<div class="container">

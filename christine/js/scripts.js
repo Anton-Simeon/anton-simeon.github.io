@@ -37,10 +37,12 @@ $(function() {
 		}
 		return false;
 	};
-	$('[data-mdl_link]').click(function(){
+
+	$(document).on("click", "[data-mdl_link]", function (event) {
 		var thisModal = $(this).attr('data-mdl_link');
 		modal(true, thisModal);
 		stopModalFun = true;
+
 	})
 	$('.modal-bg, .modal-close').click(function(){
 		var thisModal = $(this).closest('.modal').attr('data-modal');
