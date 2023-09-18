@@ -10068,7 +10068,12 @@ p {
 }
 
 .hero-img {
-  margin: 10px 0 -320px 125px;
+  margin: 10px -1px -320px 125px;
+}
+.hero-img img {
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 .more {
@@ -10226,10 +10231,7 @@ p {
   height: 100%;
 }
 .how-it-work-img img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  min-height: 100%;
+  max-width: 100%;
   height: auto;
 }
 

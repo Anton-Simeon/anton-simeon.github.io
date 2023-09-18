@@ -102,7 +102,12 @@ p {
 	}
 }
 .hero-img {
-	margin: 10px 0 -320px 125px;
+	margin: 10px -1px -320px 125px;
+	img {
+		display: block;
+		height: auto;
+		max-width: 100%;
+	}
 }
 .more {
 	font-size: 16px;
@@ -262,9 +267,7 @@ p {
 	margin-left: 65px;
 	height: 100%;
 	img {
-		object-fit: cover;
-		width: 100%;
-		min-height: 100%;
+		max-width: 100%;
 		height: auto;
 	}
 }
