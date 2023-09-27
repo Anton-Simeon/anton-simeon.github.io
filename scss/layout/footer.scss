@@ -1,0 +1,18 @@
+.main-footer {
+  color: #181818;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  background: #fff;
+  padding: 440px 0 115px;
+  a:not(.btn) {
+    text-decoration: none;
+    color: inherit;
+  }
+  p {
+    margin-bottom: 26px;
+  }
+  .btn {
+    margin-top: 15px;
+  }
+}
