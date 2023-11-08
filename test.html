@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+<head>
+<body>
+	<div id="kalturaPlayer" style="width: 640px;height: 360px"></div>
+
+	<button id="customPauseButton">pause</button>
+	<button id="customPlayButton">play</button>
+
+
+	<script type="text/javascript" src="https://cdnapisec.kaltura.com/p/4699762/embedPlaykitJs/uiconf_id/52359122"></script>
+
+	<script type="text/javascript">
+
+
+
+
+
+	try {
+	let kalturaPlayer = KalturaPlayer.setup({
+		targetId: "kalturaPlayer",
+		provider: {
+			partnerId: 4699762,
+			uiConfId: 52359122
+		},
+		playback: {
+			autoplay: true,
+			loop: true
+		}
+	});
+
+
+
+	kalturaPlayer.loadMedia({entryId: '1_gcmld1ug'});
+
+
+
+var pauseButton = document.getElementById("customPauseButton");
+pauseButton.addEventListener("click", function() {
+    kalturaPlayer.pause(); // Use the appropriate method if available
+});
+
+
+var playButton = document.getElementById("customPlayButton");
+playButton.addEventListener("click", function() {
+    kalturaPlayer.play(); // Use the appropriate method if available
+});
+
+
+	} catch (e) {
+		console.error(e.message)
+	}
+
+
+
+
+
+	</script>
+
+<style type="text/css">
+	.playkit-player .playkit-player-gui {
+		display: none !important;
+	}
+</style>
+
+
+
+
+</body>
+</html>
