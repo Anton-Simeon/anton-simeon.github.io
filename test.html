@@ -5,13 +5,41 @@
 
 <head>
 <body>
-	<div id="kalturaPlayer" style="width: 640px;height: 360px"></div>
+
+<iframe type="text/javascript" src='https://cdnapisec.kaltura.com/p/4699762/embedPlaykitJs/uiconf_id/52359122?iframeembed=true&entry_id=1_gcmld1ug&config[playback]={"autoplay":true, "loop": true}'
+   style="width: 640px;height: 360px" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0">
+</iframe>
+
+
+
+
+
+
+    <button id="customPauseButton">Пауза</button>
+
+    <script type="text/javascript">
+        var kalturaPlayerIframe = document.querySelector('iframe');
+
+        // Функция для посылки команды паузы во встроенный iframe
+        function pauseVideo() {
+
+        	console.log('ddd');
+            // kalturaPlayerIframe.contentWindow.postMessage('doPause', 'https://cdnapisec.kaltura.com'); // Подставьте домен, где работает Kaltura
+            kalturaPlayerIframe.contentWindow.postMessage('doPause', 'https://anton-simeon.github.io/'); // Подставьте домен, где работает Kaltura
+        }
+
+        var pauseButton = document.getElementById("customPauseButton");
+        pauseButton.addEventListener("click", pauseVideo);
+    </script>
+
+
+<!-- 	<div id="kalturaPlayer" style="width: 640px;height: 360px"></div>
 
 	<button id="customPauseButton">pause</button>
 	<button id="customPlayButton">play</button>
 
 
-	<script type="text/javascript" src="https://cdnapisec.kaltura.com/p/4699762/embedPlaykitJs/uiconf_id/52359122"></script>
+	<script type="text/javascript" src="video.js"></script>
 
 	<script type="text/javascript">
 
@@ -58,7 +86,7 @@ playButton.addEventListener("click", function() {
 
 
 
-	</script>
+	</script> -->
 
 <style type="text/css">
 	.playkit-player .playkit-player-gui {
