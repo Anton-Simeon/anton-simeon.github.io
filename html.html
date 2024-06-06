@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>PDF Generation</title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        body, html {
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+        }
+        #element-to-print {
+            width: 8.27in;
+            /* Height for two pages: each page is 11.69in, so 2 * 11.69in */
+/*            height: calc(2 * 11.69in);*/
+
+        }
+        .page {
+/*            height: 11.69in;*/
+            page-break-after: always; /* Ensures that each .page starts a new page in PDF */
+        }
+        .page:last-child {
+            page-break-after: avoid; /* Avoids page break after the last page */
+        }
+    </style>
+</head>
+<body>
+    <div id="element-to-print">
+        <div class="page" style="background: #f00;" id="id1">
+            <div style="height: 11in;"><a href="file.pdf#page=2" name="#page=2" alt="aaaa">Page 1 content</a></div>
+        </div>
+        <div class="page" style="background: #0f0;" id="id2">
+            <div style="height: 11in;"><a href="#id1" alt="aaa3">Page 2 content</a></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var element = document.getElementById('element-to-print');
+            html2pdf(element);
+        });
+    </script>
+</body>
+</html>
